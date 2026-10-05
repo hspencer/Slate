@@ -686,6 +686,7 @@ fn apple_language_tags(lang: &str) -> Vec<&'static str> {
     match lang {
         "fr" | "fr-FR" | "fr_FR" => vec!["fr-FR", "fr"],
         "en" | "en-US" | "en_US" | "en-GB" => vec!["en"],
+        "es" | "es-CL" | "es_CL" => vec!["es"],
         _ => vec![],
     }
 }
@@ -694,7 +695,8 @@ fn apple_language_tags(lang: &str) -> Vec<&'static str> {
 /// tôt possible (`main` avant le Builder) et avant impression / dialogues.
 pub fn apply_persisted_apple_languages() {
     match read_persisted_native_language().as_deref() {
-        None | Some("auto") | Some("") => set_apple_languages("auto"),
+        None | Some("") => set_apple_languages("es"),
+        Some("auto") => set_apple_languages("auto"),
         Some(lang) => set_apple_languages(lang),
     }
 }
@@ -703,20 +705,22 @@ pub fn apply_persisted_apple_languages() {
 /// `auto` / absent → suit la locale processus (souvent le système).
 pub fn effective_ui_language() -> String {
     match read_persisted_native_language().as_deref() {
-        Some("fr") | Some("fr-FR") | Some("fr_FR") => "fr".into(),
-        Some("en") | Some("en-US") | Some("en_US") | Some("en-GB") => "en".into(),
-        Some(other) if other != "auto" && !other.is_empty() => other.to_string(),
-        _ => {
+        // Défaut de ce fork : espagnol tant que rien n'est persisté.
+        None | Some("") => "es".into(),
+        Some("auto") => {
             let locale = std::env::var("LANG")
                 .or_else(|_| std::env::var("LC_ALL"))
                 .unwrap_or_default()
                 .to_lowercase();
             if locale.starts_with("fr") {
                 "fr".into()
-            } else {
+            } else if locale.starts_with("en") {
                 "en".into()
+            } else {
+                "es".into()
             }
         }
+        Some(other) => other.to_string(),
     }
 }
 

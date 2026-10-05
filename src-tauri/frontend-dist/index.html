@@ -10,25 +10,25 @@
 		<main class="app-shell" id="app">
 			<input id="file-input" class="hidden" type="file" accept="application/pdf,.pdf" />
 
-			<header class="tab-strip" aria-label="Open documents">
-				<button class="tab-strip-home" id="home-button" type="button" aria-label="Accueil" title="Accueil">
+			<header data-i18n-aria-label="hOpenDocuments" class="tab-strip" aria-label="Open documents">
+				<button data-i18n-aria-label="hHome" data-i18n-title="hHome" class="tab-strip-home" id="home-button" type="button" aria-label="Accueil" title="Accueil">
 					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 						<path d="M3 11.5 12 4l9 7.5" />
 						<path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9" />
 					</svg>
 				</button>
-				<button class="create-tab-button" id="create-tab-button" type="button">+ Créer</button>
-				<button class="tab-scroll-button hidden" id="tabs-scroll-left" type="button" aria-label="Scroll tabs left">‹</button>
+				<button data-i18n="createTab" class="create-tab-button" id="create-tab-button" type="button">+ Créer</button>
+				<button data-i18n-aria-label="hScrollTabsLeft" class="tab-scroll-button hidden" id="tabs-scroll-left" type="button" aria-label="Scroll tabs left">‹</button>
 				<div class="document-tabs-viewport" id="document-tabs-viewport">
 					<div class="document-tabs" id="document-tabs"></div>
 				</div>
-				<button class="tab-scroll-button hidden" id="tabs-scroll-right" type="button" aria-label="Scroll tabs right">›</button>
-				<button class="profile-avatar" id="profile-avatar" type="button" aria-label="Profil" title="Profil">SL</button>
+				<button data-i18n-aria-label="hScrollTabsRight" class="tab-scroll-button hidden" id="tabs-scroll-right" type="button" aria-label="Scroll tabs right">›</button>
+				<button data-i18n-aria-label="hProfile" data-i18n-title="hProfile" class="profile-avatar" id="profile-avatar" type="button" aria-label="Profil" title="Profil">SL</button>
 			</header>
 
 			<header class="topbar">
 				<div class="topbar-left">
-					<a class="brand" href="./index.html" aria-label="Slate home">
+					<a data-i18n-aria-label="hSlateHome" class="brand" href="./index.html" aria-label="Slate home">
 						<span class="brand-mark" aria-hidden="true">
 							<svg viewBox="0 0 32 32" width="24" height="24" role="img" aria-label="Slate">
 								<defs>
@@ -45,24 +45,24 @@
 						</span>
 						<span>Slate</span>
 					</a>
-					<nav class="top-tabs" aria-label="Primary tools">
-						<button class="tab active" type="button" data-open-panel="tools">All tools</button>
-						<button class="tab" id="modify-tab" type="button">Modify</button>
-						<button class="tab" type="button" data-tool-disabled="Convert PDF is not available yet">Convert</button>
-						<button class="tab" id="sign-tab" type="button" data-open-panel="sign">Sign electronically</button>
-						<button class="tab" id="ai-tab" type="button" data-open-panel="ai">Assistant IA</button>
+					<nav data-i18n-aria-label="hPrimaryTools" class="top-tabs" aria-label="Primary tools">
+						<button data-i18n="allTools" class="tab active" type="button" data-open-panel="tools">All tools</button>
+						<button data-i18n="modify" class="tab" id="modify-tab" type="button">Modify</button>
+						<button data-i18n="convert" class="tab" type="button" data-tool-disabled="Convert PDF is not available yet">Convert</button>
+						<button data-i18n="hSignElectronically" class="tab" id="sign-tab" type="button" data-open-panel="sign">Sign electronically</button>
+						<button data-i18n="aiTitle" class="tab" id="ai-tab" type="button" data-open-panel="ai">Assistant IA</button>
 					</nav>
 				</div>
 
 				<div class="topbar-right">
 					<div class="undo-redo-group">
-						<button class="toolbar-icon undo-redo-button" id="undo-button" type="button" aria-label="Annuler" title="Annuler (⌘Z)" disabled>
+						<button data-i18n-aria-label="cancel" data-i18n-title="hUndoZ" class="toolbar-icon undo-redo-button" id="undo-button" type="button" aria-label="Annuler" title="Annuler (⌘Z)" disabled>
 							<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 								<path d="M9 14 4 9l5-5" />
 								<path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" />
 							</svg>
 						</button>
-						<button class="toolbar-icon undo-redo-button" id="redo-button" type="button" aria-label="Rétablir" title="Rétablir (⌘⇧Z)" disabled>
+						<button data-i18n-aria-label="hRedo" data-i18n-title="hRedoZ" class="toolbar-icon undo-redo-button" id="redo-button" type="button" aria-label="Rétablir" title="Rétablir (⌘⇧Z)" disabled>
 							<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 								<path d="m15 14 5-5-5-5" />
 								<path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13" />
@@ -71,37 +71,37 @@
 					</div>
 					<span class="topbar-sep" aria-hidden="true"></span>
 					<form class="top-search" id="search-form">
-						<input id="search-input" type="search" placeholder="Search text or tools" disabled />
-						<button type="submit" disabled id="search-button" aria-label="Search">Search</button>
+						<input data-i18n-placeholder="searchPlaceholder" id="search-input" type="search" placeholder="Search text or tools" disabled />
+						<button data-i18n-aria-label="search" data-i18n="search" type="submit" disabled id="search-button" aria-label="Search">Search</button>
 					</form>
 					<span class="topbar-sep" aria-hidden="true"></span>
 					<div class="topbar-actions">
-						<button class="toolbar-icon" id="open-button" type="button">Open</button>
-						<button class="toolbar-icon print-button" id="print-button" type="button" data-tool-action="print" aria-label="Imprimer" title="Imprimer (⌘P)" disabled>
+						<button data-i18n="openAnother" class="toolbar-icon" id="open-button" type="button">Open</button>
+						<button data-i18n-aria-label="printTitle" data-i18n-title="hPrintP" class="toolbar-icon print-button" id="print-button" type="button" data-tool-action="print" aria-label="Imprimer" title="Imprimer (⌘P)" disabled>
 							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 								<path d="M6 9V3h12v6" />
 								<path d="M6 18H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1" />
 								<rect x="6" y="14" width="12" height="7" rx="1" />
 							</svg>
-							<span>Imprimer</span>
+							<span data-i18n="printTitle">Imprimer</span>
 						</button>
-						<button class="toolbar-icon save-button" id="save-button" type="button" aria-label="Enregistrer" title="Enregistrer (⌘S)" disabled>
+						<button data-i18n-aria-label="menu.save" data-i18n-title="hSaveS" class="toolbar-icon save-button" id="save-button" type="button" aria-label="Enregistrer" title="Enregistrer (⌘S)" disabled>
 							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 								<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
 								<path d="M17 21v-8H7v8" />
 								<path d="M7 3v5h8" />
 							</svg>
-							<span>Enregistrer</span>
+							<span data-i18n="menu.save">Enregistrer</span>
 						</button>
-						<label class="autosave-toggle" id="autosave-toggle" hidden title="Enregistrement automatique de ce document">
+						<label data-i18n-title="hAutoSaveThisDocument" class="autosave-toggle" id="autosave-toggle" hidden title="Enregistrement automatique de ce document">
 							<input id="toolbar-auto-save" type="checkbox" class="setting-switch" role="switch" />
-							<span id="autosave-toggle-label">Enreg. auto</span>
+							<span data-i18n="autoSaveToolbar" id="autosave-toggle-label">Enreg. auto</span>
 						</label>
-						<button class="toolbar-icon" id="export-edited-pdf" type="button" disabled>Export edited PDF</button>
-						<button class="toolbar-icon" id="export-annotations" type="button" hidden disabled>Export notes</button>
+						<button data-i18n="hExportEditedPdf" class="toolbar-icon" id="export-edited-pdf" type="button" disabled>Export edited PDF</button>
+						<button data-i18n="exportNotes" class="toolbar-icon" id="export-annotations" type="button" hidden disabled>Export notes</button>
 					</div>
 					<span class="topbar-sep" aria-hidden="true"></span>
-					<button
+					<button data-i18n="share"
 						class="toolbar-icon filled share-button"
 						id="share-button"
 						type="button"
@@ -112,264 +112,264 @@
 					>
 						Partager
 					</button>
-					<button class="toolbar-icon" id="settings-button" type="button">Settings</button>
+					<button data-i18n="settings" class="toolbar-icon" id="settings-button" type="button">Settings</button>
 				</div>
 			</header>
 
 			<aside class="tools-panel" id="tools-panel">
 				<div class="panel-heading tools-home-panel">
-					<strong>All tools</strong>
-					<button class="close-panel" type="button" data-close-panel aria-label="Close tools">x</button>
+					<strong data-i18n="allTools">All tools</strong>
+					<button data-i18n-aria-label="closeTools" class="close-panel" type="button" data-close-panel aria-label="Close tools">x</button>
 				</div>
 				<div class="panel-heading modifier-panel-heading">
-					<strong>Modifier</strong>
-					<button class="close-panel" id="exit-edit-mode" type="button" aria-label="Quitter Modifier">x</button>
+					<strong data-i18n="modify">Modifier</strong>
+					<button data-i18n-aria-label="hExitEdit" class="close-panel" id="exit-edit-mode" type="button" aria-label="Quitter Modifier">x</button>
 				</div>
 				<div class="tool-list tools-home-panel">
 					<button class="tool-row active" type="button" id="choose-empty" data-label-key="openPdf">
 						<span class="tool-icon" data-icon="open"></span>
-						<span>Open a PDF</span>
+						<span data-i18n="emptyTitle">Open a PDF</span>
 					</button>
 					<button class="tool-row" type="button" id="download-original" disabled data-label-key="saveCopy">
 						<span class="tool-icon" data-icon="save"></span>
-						<span>Save a copy</span>
+						<span data-i18n="saveCopy">Save a copy</span>
 					</button>
 					<button class="tool-row" type="button" data-open-panel="search" data-label-key="findText">
 						<span class="tool-icon" data-icon="search"></span>
-						<span>Find text</span>
+						<span data-i18n="findText">Find text</span>
 					</button>
 					<button class="tool-row" type="button" data-open-panel="notes" data-label-key="addComments">
 						<span class="tool-icon" data-icon="comment"></span>
-						<span>Add comments</span>
+						<span data-i18n="addComments">Add comments</span>
 					</button>
 					<button class="tool-row" type="button" id="modify-tool" data-label-key="modifyPdf">
 						<span class="tool-icon" data-icon="edit"></span>
-						<span>Modify a PDF</span>
+						<span data-i18n="modifyPdf">Modify a PDF</span>
 					</button>
 					<button class="tool-row" type="button" data-tool-action="export-edited-pdf" data-label-key="exportPdf">
 						<span class="tool-icon" data-icon="export"></span>
-						<span>Export a PDF</span>
+						<span data-i18n="menu.exportPdf">Export a PDF</span>
 					</button>
 					<button class="tool-row" type="button" data-tool-action="combine" data-label-key="combineFiles">
 						<span class="tool-icon" data-icon="merge"></span>
-						<span>Combine files</span>
+						<span data-i18n="combineFiles">Combine files</span>
 					</button>
 					<button class="tool-row" type="button" data-open-panel="pages" data-label-key="organizePages">
 						<span class="tool-icon" data-icon="pages"></span>
-						<span>Organize pages</span>
+						<span data-i18n="organizePages">Organize pages</span>
 					</button>
 					<button class="tool-row" type="button" data-open-panel="sign" data-label-key="fillSign">
 						<span class="tool-icon" data-icon="sign"></span>
-						<span>Fill and sign</span>
+						<span data-i18n="fillSign">Fill and sign</span>
 					</button>
 					<button class="tool-row" type="button" data-open-panel="history" data-label-key="historyTool">
 						<span class="tool-icon" data-icon="clock"></span>
-						<span>Historique</span>
+						<span data-i18n="historyTool">Historique</span>
 					</button>
 					<button class="tool-row" type="button" data-tool-action="ocr-page" data-label-key="scanOcr">
 						<span class="tool-icon" data-icon="ocr"></span>
-						<span>Scan and OCR</span>
+						<span data-i18n="menu.scanOcr">Scan and OCR</span>
 					</button>
 					<button class="tool-row" type="button" data-tool-action="protect" data-label-key="protectPdf">
 						<span class="tool-icon" data-icon="lock"></span>
-						<span>Protect a PDF</span>
+						<span data-i18n="protectPdf">Protect a PDF</span>
 					</button>
 					<div class="more-tools hidden" id="more-tools">
 						<button class="tool-row" type="button" data-tool-action="prepress" data-label-key="usePrepress">
 							<span class="tool-icon" data-icon="prepress"></span>
-							<span>Utiliser le prépresse</span>
+							<span data-i18n="menu.prepress">Utiliser le prépresse</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="compress" data-label-key="compressPdf">
 							<span class="tool-icon" data-icon="compress"></span>
-							<span>Compress a PDF</span>
+							<span data-i18n="compressPdf">Compress a PDF</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="deskew" data-label-key="deskewPdf">
 							<span class="tool-icon" data-icon="measure"></span>
-							<span>Straighten a scan</span>
+							<span data-i18n="deskewPdf">Straighten a scan</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="export-image" data-label-key="exportImage">
 							<span class="tool-icon" data-icon="convert"></span>
-							<span>Export page to image</span>
+							<span data-i18n="exportImage">Export page to image</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="properties" data-label-key="docProperties">
 							<span class="tool-icon" data-icon="index"></span>
-							<span>Document properties</span>
+							<span data-i18n="docProperties">Document properties</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="recent" data-label-key="recentFiles">
 							<span class="tool-icon" data-icon="clock"></span>
-							<span>Recent files</span>
+							<span data-i18n="recentFiles">Recent files</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="compare-files" data-label-key="compareFiles">
 							<span class="tool-icon" data-icon="compare"></span>
-							<span>Compare files</span>
+							<span data-i18n="compareFiles">Compare files</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="watermark" data-label-key="watermark">
 							<span class="tool-icon" data-icon="watermark"></span>
-							<span>Add watermark</span>
+							<span data-i18n="watermark">Add watermark</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="page-numbers" data-label-key="pageNumbers">
 							<span class="tool-icon" data-icon="number"></span>
-							<span>Add page numbers</span>
+							<span data-i18n="pageNumbers">Add page numbers</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="images-to-pdf" data-label-key="imagesToPdf">
 							<span class="tool-icon" data-icon="image"></span>
-							<span>Images to PDF</span>
+							<span data-i18n="imagesToPdf">Images to PDF</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="crop" data-label-key="cropPages">
 							<span class="tool-icon" data-icon="crop"></span>
-							<span>Crop pages</span>
+							<span data-i18n="cropPages">Crop pages</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="auto-redact" data-label-key="autoRedact">
 							<span class="tool-icon" data-icon="redact"></span>
-							<span>Auto-redact</span>
+							<span data-i18n="autoRedact">Auto-redact</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="flatten" data-label-key="flatten">
 							<span class="tool-icon" data-icon="flatten"></span>
-							<span>Flatten</span>
+							<span data-i18n="flatten">Flatten</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="extract-images" data-label-key="extractImages">
 							<span class="tool-icon" data-icon="image"></span>
-							<span>Extract images</span>
+							<span data-i18n="extractImages">Extract images</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="unlock" data-label-key="unlockPdf">
 							<span class="tool-icon" data-icon="unlock"></span>
-							<span>Unlock (remove password)</span>
+							<span data-i18n="unlockPdf">Unlock (remove password)</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="sanitize" data-label-key="sanitize">
 							<span class="tool-icon" data-icon="shield"></span>
-							<span>Sanitize</span>
+							<span data-i18n="sanitize">Sanitize</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="bookmarks" data-label-key="editBookmarks">
 							<span class="tool-icon" data-icon="bookmark"></span>
-							<span>Edit bookmarks</span>
+							<span data-i18n="editBookmarks">Edit bookmarks</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="remove-annotations" data-label-key="removeAnnotations">
 							<span class="tool-icon" data-icon="comment"></span>
-							<span>Remove annotations</span>
+							<span data-i18n="removeAnnotations">Remove annotations</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="remove-blank-pages" data-label-key="removeBlankPages">
 							<span class="tool-icon" data-icon="pages"></span>
-							<span>Remove blank pages</span>
+							<span data-i18n="removeBlankPages">Remove blank pages</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="ocr-searchable" data-label-key="ocrSearchable">
 							<span class="tool-icon" data-icon="ocr"></span>
-							<span>Make searchable (OCR)</span>
+							<span data-i18n="ocrSearchable">Make searchable (OCR)</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="sign-certificate" data-label-key="signPdf">
 							<span class="tool-icon" data-icon="certificate"></span>
-							<span>Sign with a certificate</span>
+							<span data-i18n="signPdf">Sign with a certificate</span>
 						</button>
 						<button class="tool-row" type="button" data-tool-action="repair" data-label-key="repairPdf">
 							<span class="tool-icon" data-icon="shield"></span>
-							<span>Repair PDF</span>
+							<span data-i18n="repairPdf">Repair PDF</span>
 						</button>
 						<button class="tool-row" type="button" data-open-panel="forms" data-label-key="fillForms">
 							<span class="tool-icon" data-icon="edit"></span>
-							<span>Fill forms</span>
+							<span data-i18n="fillForms">Fill forms</span>
 						</button>
 					</div>
-					<button class="show-more" id="toggle-more-tools" type="button">Show more</button>
+					<button data-i18n="showMore" class="show-more" id="toggle-more-tools" type="button">Show more</button>
 				</div>
 				<div class="prepress-panel hidden" id="prepress-panel">
 					<div class="panel-heading prepress-heading">
-						<button class="prepress-back" id="prepress-back" type="button" aria-label="Retour">‹</button>
-						<strong data-label-key="usePrepress">Utiliser le prépresse</strong>
-						<button class="close-panel" type="button" data-close-panel aria-label="Close tools">x</button>
+						<button data-i18n-aria-label="hBack" class="prepress-back" id="prepress-back" type="button" aria-label="Retour">‹</button>
+						<strong data-i18n="menu.prepress" data-label-key="usePrepress">Utiliser le prépresse</strong>
+						<button data-i18n-aria-label="closeTools" class="close-panel" type="button" data-close-panel aria-label="Close tools">x</button>
 					</div>
 					<div class="tool-list">
 						<button class="tool-row" type="button" data-tool-action="convert-colors" data-label-key="convertColors">
 							<span class="tool-icon" data-icon="prepress"></span>
-							<span>Convertir les couleurs</span>
+							<span data-i18n="convertColors">Convertir les couleurs</span>
 						</button>
-						<button class="tool-row" type="button" disabled title="Bientôt">
+						<button data-i18n-title="hSoon" class="tool-row" type="button" disabled title="Bientôt">
 							<span class="tool-icon" data-icon="search"></span>
-							<span>Aperçu de la sortie</span>
+							<span data-i18n="hOutputPreview">Aperçu de la sortie</span>
 						</button>
-						<button class="tool-row" type="button" disabled title="Bientôt">
+						<button data-i18n-title="hSoon" class="tool-row" type="button" disabled title="Bientôt">
 							<span class="tool-icon" data-icon="standards"></span>
-							<span>Contrôle en amont</span>
+							<span data-i18n="hPreflight">Contrôle en amont</span>
 						</button>
-						<button class="tool-row" type="button" disabled title="Bientôt">
+						<button data-i18n-title="hSoon" class="tool-row" type="button" disabled title="Bientôt">
 							<span class="tool-icon" data-icon="export"></span>
-							<span>Enregistrer au format PDF/X</span>
+							<span data-i18n="hSaveAsPdfX">Enregistrer au format PDF/X</span>
 						</button>
-						<button class="tool-row" type="button" disabled title="Bientôt">
+						<button data-i18n-title="hSoon" class="tool-row" type="button" disabled title="Bientôt">
 							<span class="tool-icon" data-icon="crop"></span>
-							<span>Définir des zones de page</span>
+							<span data-i18n="hSetPageBoxes">Définir des zones de page</span>
 						</button>
-						<button class="tool-row" type="button" disabled title="Bientôt">
+						<button data-i18n-title="hSoon" class="tool-row" type="button" disabled title="Bientôt">
 							<span class="tool-icon" data-icon="measure"></span>
-							<span>Ajouter des repères d’impression</span>
+							<span data-i18n="hAddPrinterMarks">Ajouter des repères d’impression</span>
 						</button>
-						<button class="tool-row" type="button" disabled title="Bientôt">
+						<button data-i18n-title="hSoon" class="tool-row" type="button" disabled title="Bientôt">
 							<span class="tool-icon" data-icon="stamp"></span>
-							<span>Gestionnaires d’encres</span>
+							<span data-i18n="hInkManager">Gestionnaires d’encres</span>
 						</button>
 					</div>
 				</div>
 				<div class="modifier-panel">
 					<section class="modifier-section">
-						<p class="panel-kicker">Modifier la page</p>
-						<div class="modifier-icon-row" aria-label="Actions page">
-							<button class="modifier-icon-button active" id="edit-select-tool" type="button" aria-label="Sélectionner">
+						<p data-i18n="hEditPage" class="panel-kicker">Modifier la page</p>
+						<div data-i18n-aria-label="hPageActions" class="modifier-icon-row" aria-label="Actions page">
+							<button data-i18n-aria-label="hSelect" class="modifier-icon-button active" id="edit-select-tool" type="button" aria-label="Sélectionner">
 								<span class="tool-icon" data-icon="edit"></span>
 							</button>
-							<button class="modifier-icon-button" type="button" data-tool-action="rotate-cw" aria-label="Rotation">
+							<button data-i18n-aria-label="hRotate" class="modifier-icon-button" type="button" data-tool-action="rotate-cw" aria-label="Rotation">
 								<span class="tool-icon" data-icon="rotate"></span>
 							</button>
-							<button class="modifier-icon-button" type="button" data-tool-action="delete-page" aria-label="Supprimer">
+							<button data-i18n-aria-label="deleteNote" class="modifier-icon-button" type="button" data-tool-action="delete-page" aria-label="Supprimer">
 								<span class="tool-icon" data-icon="redact"></span>
 							</button>
-							<button class="modifier-icon-button" type="button" data-tool-action="extract-page" aria-label="Extraire">
+							<button data-i18n-aria-label="hExtract" class="modifier-icon-button" type="button" data-tool-action="extract-page" aria-label="Extraire">
 								<span class="tool-icon" data-icon="export"></span>
 							</button>
 						</div>
 						<button class="modifier-menu-row" type="button" data-tool-disabled="Organize pages is not available yet">
 							<span class="tool-icon" data-icon="pages"></span>
-							<span>Organiser les pages</span>
+							<span data-i18n="menu.organizePages">Organiser les pages</span>
 						</button>
 					</section>
 					<section class="modifier-section">
-						<p class="panel-kicker">Ajouter un contenu</p>
+						<p data-i18n="hAddContent" class="panel-kicker">Ajouter un contenu</p>
 						<button class="modifier-menu-row" id="add-text-tool" type="button" aria-pressed="false">
 							<span class="tool-icon" data-icon="textAdd"></span>
-							<span>Texte</span>
+							<span data-i18n="watermarkText">Texte</span>
 						</button>
 						<button class="modifier-menu-row" id="add-image-tool" type="button">
 							<span class="tool-icon" data-icon="media"></span>
-							<span>Image</span>
+							<span data-i18n="menu.image">Image</span>
 						</button>
 						<button class="modifier-menu-row" id="add-signature-tool" type="button">
 							<span class="tool-icon" data-icon="sign"></span>
-							<span>Signature</span>
+							<span data-i18n="histSignature">Signature</span>
 						</button>
 						<button class="modifier-menu-row" id="add-header-footer-tool" type="button">
 							<span class="tool-icon" data-icon="form"></span>
-							<span>En-tête et pied de page</span>
+							<span data-i18n="headerFooter">En-tête et pied de page</span>
 						</button>
-						<button class="modifier-link-button" id="modifier-more-tools" type="button" aria-expanded="false">Plus</button>
+						<button data-i18n="hMore" class="modifier-link-button" id="modifier-more-tools" type="button" aria-expanded="false">Plus</button>
 						<div id="modifier-more-content" class="modifier-more-content hidden">
 							<button class="modifier-menu-row" type="button" data-tool-action="watermark">
 								<span class="tool-icon" data-icon="watermark"></span>
-								<span>Filigrane</span>
+								<span data-i18n="hWatermark">Filigrane</span>
 							</button>
 							<button class="modifier-menu-row" type="button" data-tool-action="page-numbers">
 								<span class="tool-icon" data-icon="pages"></span>
-								<span>Numéros de page</span>
+								<span data-i18n="pageNumbers">Numéros de page</span>
 							</button>
 						</div>
 					</section>
 					<section class="modifier-selected-section">
 						<div class="format-panel" id="format-panel" data-empty="true">
-							<p class="panel-kicker">Mettre le texte en forme</p>
+							<p data-i18n="hFormatText" class="panel-kicker">Mettre le texte en forme</p>
 							<div class="font-combo" id="font-combo">
 								<button type="button" class="font-combo-trigger" id="font-combo-trigger" disabled aria-haspopup="listbox" aria-expanded="false">
-									<span class="font-combo-value" id="font-combo-value">Police du document</span>
+									<span data-i18n="fontDocument" class="font-combo-value" id="font-combo-value">Police du document</span>
 									<span class="font-combo-chevron" aria-hidden="true">⌄</span>
 								</button>
 								<div class="font-combo-popover" id="font-combo-popover" hidden>
 									<div class="font-combo-search-wrap">
-										<input type="text" class="font-combo-search" id="font-combo-search" placeholder="Rechercher une police…" autocomplete="off" spellcheck="false" />
+										<input data-i18n-placeholder="hSearchForAFont" type="text" class="font-combo-search" id="font-combo-search" placeholder="Rechercher une police…" autocomplete="off" spellcheck="false" />
 									</div>
 									<div class="font-combo-list" id="font-combo-list" role="listbox"></div>
 								</div>
@@ -379,29 +379,29 @@
 									<span class="format-size-icon">A</span>
 									<input type="number" id="format-size" class="format-size" min="4" max="300" step="0.5" disabled />
 								</label>
-								<div class="format-toggles" role="group" aria-label="Style">
-									<button class="format-toggle" id="format-bold" data-fmt="bold" type="button" aria-label="Gras" disabled><b>B</b></button>
-									<button class="format-toggle" id="format-italic" data-fmt="italic" type="button" aria-label="Italique" disabled><i>I</i></button>
-									<button class="format-toggle" id="format-underline" data-fmt="underline" type="button" aria-label="Souligné" disabled><u>U</u></button>
+								<div data-i18n-aria-label="hStyle" class="format-toggles" role="group" aria-label="Style">
+									<button data-i18n-aria-label="watermarkBold" class="format-toggle" id="format-bold" data-fmt="bold" type="button" aria-label="Gras" disabled><b>B</b></button>
+									<button data-i18n-aria-label="hItalic" class="format-toggle" id="format-italic" data-fmt="italic" type="button" aria-label="Italique" disabled><i>I</i></button>
+									<button data-i18n-aria-label="hUnderline" class="format-toggle" id="format-underline" data-fmt="underline" type="button" aria-label="Souligné" disabled><u>U</u></button>
 								</div>
-								<label class="format-color-field" aria-label="Couleur du texte">
+								<label data-i18n-aria-label="hTextColor" class="format-color-field" aria-label="Couleur du texte">
 									<input type="color" id="format-color" class="format-color" value="#161616" disabled />
 								</label>
 							</div>
-							<div class="format-toggles format-align" role="group" aria-label="Alignement">
-								<button class="format-toggle" data-align="left" type="button" aria-label="Aligner à gauche" disabled>≤</button>
-								<button class="format-toggle" data-align="center" type="button" aria-label="Centrer" disabled>≡</button>
-								<button class="format-toggle" data-align="right" type="button" aria-label="Aligner à droite" disabled>≥</button>
+							<div data-i18n-aria-label="hAlignment" class="format-toggles format-align" role="group" aria-label="Alignement">
+								<button data-i18n-aria-label="hAlignLeft" class="format-toggle" data-align="left" type="button" aria-label="Aligner à gauche" disabled>≤</button>
+								<button data-i18n-aria-label="menu.center" class="format-toggle" data-align="center" type="button" aria-label="Centrer" disabled>≡</button>
+								<button data-i18n-aria-label="hAlignRight" class="format-toggle" data-align="right" type="button" aria-label="Aligner à droite" disabled>≥</button>
 							</div>
-							<div class="format-toggles format-list" role="group" aria-label="Listes">
-								<button class="format-toggle" data-list="bullet" type="button" aria-label="Liste à puces" title="Liste à puces" disabled>•—</button>
-								<button class="format-toggle" data-list="number" type="button" aria-label="Liste numérotée" title="Liste numérotée" disabled>1.</button>
+							<div data-i18n-aria-label="hLists" class="format-toggles format-list" role="group" aria-label="Listes">
+								<button data-i18n-aria-label="hBulletedList" data-i18n-title="hBulletedList" class="format-toggle" data-list="bullet" type="button" aria-label="Liste à puces" title="Liste à puces" disabled>•—</button>
+								<button data-i18n-aria-label="hNumberedList" data-i18n-title="hNumberedList" class="format-toggle" data-list="number" type="button" aria-label="Liste numérotée" title="Liste numérotée" disabled>1.</button>
 							</div>
 						</div>
 						<div class="signature-transform-panel" id="signature-transform-panel" hidden>
-							<p class="panel-kicker">Inclinaison</p>
+							<p data-i18n="hSkew" class="panel-kicker">Inclinaison</p>
 							<label class="signature-rotation-field">
-								<span>Inclinaison</span>
+								<span data-i18n="hSkew">Inclinaison</span>
 								<div class="signature-rotation-controls">
 									<input id="signature-rotation-range" type="range" min="-180" max="180" step="1" value="0" />
 									<input id="signature-rotation-input" type="number" min="-180" max="180" step="1" value="0" />
@@ -410,66 +410,66 @@
 							</label>
 						</div>
 						<label class="modifier-edit-field">
-							<span>Texte sélectionné</span>
-							<textarea id="edit-text-panel" placeholder="Sélectionne un bloc sur la page..." disabled></textarea>
+							<span data-i18n="selectedText">Texte sélectionné</span>
+							<textarea data-i18n-placeholder="hSelectABlockOnThe" id="edit-text-panel" placeholder="Sélectionne un bloc sur la page..." disabled></textarea>
 						</label>
 						<div class="modifier-actions">
-							<button id="apply-edit-text-panel" type="button" disabled>Appliquer</button>
-							<button id="delete-edit-block-panel" type="button" disabled>Masquer</button>
+							<button data-i18n="apply" id="apply-edit-text-panel" type="button" disabled>Appliquer</button>
+							<button data-i18n="hideBlock" id="delete-edit-block-panel" type="button" disabled>Masquer</button>
 						</div>
 					</section>
 					<section class="modifier-section">
-						<p class="panel-kicker">Concevoir avec Alto</p>
-						<p class="modifier-muted-copy">Crée des documents exceptionnels avec Alto Express, inclus dans votre abonnement.</p>
+						<p data-i18n="hDesignWithAlto" class="panel-kicker">Concevoir avec Alto</p>
+						<p data-i18n="hCreateOutstandingDocumentsWithAlto" class="modifier-muted-copy">Crée des documents exceptionnels avec Alto Express, inclus dans votre abonnement.</p>
 						<button class="modifier-menu-row" type="button" data-tool-disabled="PDF styling is not available yet">
 							<span class="tool-icon" data-icon="style"></span>
-							<span>Styliser ce PDF</span>
+							<span data-i18n="stylePdf">Styliser ce PDF</span>
 						</button>
 						<button class="modifier-menu-row" type="button" data-tool-disabled="Design tools are not available yet">
 							<span class="tool-icon" data-icon="actions"></span>
-							<span>Utiliser les outils de conception</span>
+							<span data-i18n="hUseDesignTools">Utiliser les outils de conception</span>
 						</button>
 						<button class="modifier-menu-row" type="button" data-tool-disabled="New page design is not available yet">
 							<span class="tool-icon" data-icon="plus"></span>
-							<span>Concevoir une nouvelle page</span>
+							<span data-i18n="hDesignANewPage">Concevoir une nouvelle page</span>
 						</button>
 					</section>
 					<section class="modifier-section">
-						<p class="panel-kicker">Autres options</p>
+						<p data-i18n="hMoreOptions" class="panel-kicker">Autres options</p>
 						<button class="modifier-menu-row" type="button" data-tool-action="combine">
 							<span class="tool-icon" data-icon="merge"></span>
-							<span>Combiner des fichiers</span>
+							<span data-i18n="combineFiles">Combiner des fichiers</span>
 						</button>
 						<button class="modifier-menu-row" type="button" data-tool-disabled="Redaction is not available yet">
 							<span class="tool-icon" data-icon="redact"></span>
-							<span>Biffer un PDF</span>
+							<span data-i18n="menu.redact">Biffer un PDF</span>
 						</button>
 						<button class="modifier-menu-row" type="button" data-tool-disabled="Form preparation is not available yet">
 							<span class="tool-icon" data-icon="form"></span>
-							<span>Préparer un formulaire</span>
+							<span data-i18n="prepareForm">Préparer un formulaire</span>
 						</button>
 					</section>
 				</div>
 				<div class="panel-note tools-home-panel">
-					<strong>Local only</strong>
-					<span>PDF files and notes stay on this Mac.</span>
+					<strong data-i18n="localOnly">Local only</strong>
+					<span data-i18n="localOnlyDesc">PDF files and notes stay on this Mac.</span>
 				</div>
 			</aside>
 
 			<section class="reader">
 				<div class="reader-toolbar">
 					<div class="document-meta">
-						<strong id="document-name">No PDF open</strong>
-						<span id="document-meta">Drop a PDF anywhere.</span>
+						<strong data-i18n="noPdfOpen" id="document-name">No PDF open</strong>
+						<span data-i18n="dropPdf" id="document-meta">Drop a PDF anywhere.</span>
 					</div>
 					<div class="page-controls">
-						<button id="prev-page" type="button" disabled>Previous</button>
+						<button data-i18n="previous" id="prev-page" type="button" disabled>Previous</button>
 						<span id="page-label">0 / 0</span>
-						<button id="next-page" type="button" disabled>Next</button>
+						<button data-i18n="next" id="next-page" type="button" disabled>Next</button>
 					</div>
 					<div class="zoom-controls">
 						<button id="zoom-out" type="button" disabled>-</button>
-						<button id="fit-width" type="button" disabled>Fit width</button>
+						<button data-i18n="fitWidth" id="fit-width" type="button" disabled>Fit width</button>
 						<span id="zoom-label">115%</span>
 						<button id="zoom-in" type="button" disabled>+</button>
 					</div>
@@ -482,20 +482,20 @@
 								<div class="home-hero-text">
 									<p class="home-eyebrow">Slate</p>
 									<h1 class="home-title" id="home-greeting">Bonjour</h1>
-									<p class="home-sub" id="home-sub">Ouvrez un PDF, déposez-le ici, ou reprenez un fichier récent.</p>
+									<p data-i18n="hOpenAPdfDropIt" class="home-sub" id="home-sub">Ouvrez un PDF, déposez-le ici, ou reprenez un fichier récent.</p>
 								</div>
 								<div class="home-actions">
 									<button class="home-action primary" id="home-open" type="button">
 										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 											<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
 										</svg>
-										<span>Ouvrir un PDF</span>
+										<span data-i18n="emptyTitle">Ouvrir un PDF</span>
 									</button>
 									<button class="home-action" id="home-create" type="button">
 										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 											<path d="M12 5v14M5 12h14" />
 										</svg>
-										<span>Créer</span>
+										<span data-i18n="menu.create">Créer</span>
 									</button>
 								</div>
 							</header>
@@ -505,22 +505,22 @@
 									<path d="M12 16V4M7 9l5-5 5 5" />
 									<path d="M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" />
 								</svg>
-								<span>Glissez un PDF ici, ou cliquez pour choisir</span>
+								<span data-i18n="hDragAPdfHereOr">Glissez un PDF ici, ou cliquez pour choisir</span>
 							</button>
 
 							<section class="home-recents">
 								<div class="home-recents-head">
-									<h2 id="home-recents-title">Récents</h2>
+									<h2 data-i18n="hRecent" id="home-recents-title">Récents</h2>
 									<div class="home-recents-tools">
-										<div class="home-view-toggle" role="group" aria-label="Affichage">
-											<button type="button" class="home-view-btn active" data-home-view="grid" aria-label="Grille" title="Grille">
+										<div data-i18n-aria-label="menu.view" class="home-view-toggle" role="group" aria-label="Affichage">
+											<button data-i18n-aria-label="hGrid" data-i18n-title="hGrid" type="button" class="home-view-btn active" data-home-view="grid" aria-label="Grille" title="Grille">
 												<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
 											</button>
-											<button type="button" class="home-view-btn" data-home-view="list" aria-label="Liste" title="Liste">
+											<button data-i18n-aria-label="hList" data-i18n-title="hList" type="button" class="home-view-btn" data-home-view="list" aria-label="Liste" title="Liste">
 												<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>
 											</button>
 										</div>
-										<button type="button" class="home-clear" id="home-clear-recents">Effacer la liste</button>
+										<button data-i18n="hClearList" type="button" class="home-clear" id="home-clear-recents">Effacer la liste</button>
 									</div>
 								</div>
 								<div class="home-recents-body" id="home-recents-body"></div>
@@ -528,26 +528,26 @@
 						</div>
 					</div>
 
-					<div class="pages-stack hidden" id="pages-stack" aria-label="PDF pages"></div>
+					<div data-i18n-aria-label="hPdfPages" class="pages-stack hidden" id="pages-stack" aria-label="PDF pages"></div>
 				</div>
 
 				<div class="create-view hidden" id="create-view">
 					<header class="create-view-header">
-						<strong>Créer un PDF</strong>
-						<button class="create-close" id="create-close" type="button">Fermer</button>
+						<strong data-i18n="menu.createPdf">Créer un PDF</strong>
+						<button data-i18n="hClose" class="create-close" id="create-close" type="button">Fermer</button>
 					</header>
 					<div class="create-view-body">
-						<h1 class="create-view-title">Créer un PDF, un modèle ou un PDF Space</h1>
+						<h1 data-i18n="hCreateAPdfATemplate" class="create-view-title">Créer un PDF, un modèle ou un PDF Space</h1>
 						<div class="create-view-grid">
-							<nav class="create-sources" id="create-sources" aria-label="Sources">
-								<button class="create-source active" type="button" data-create-source="file">Un seul fichier</button>
-								<button class="create-source" type="button" data-create-source="multiple" disabled title="Pas encore disponible">Plusieurs fichiers</button>
-								<button class="create-source" type="button" data-create-source="space" disabled title="Pas encore disponible">PDF Spaces</button>
-								<button class="create-source" type="button" data-create-source="screenshot" disabled title="Pas encore disponible">Capture d'écran</button>
-								<button class="create-source" type="button" data-create-source="scanner" disabled title="Pas encore disponible">Scanner</button>
-								<button class="create-source" type="button" data-create-source="web" disabled title="Pas encore disponible">Page web</button>
-								<button class="create-source" type="button" data-create-source="clipboard" disabled title="Pas encore disponible">Presse-papiers</button>
-								<button class="create-source" type="button" data-create-source="blank">Page vierge</button>
+							<nav data-i18n-aria-label="hSources" class="create-sources" id="create-sources" aria-label="Sources">
+								<button data-i18n="hSingleFile" class="create-source active" type="button" data-create-source="file">Un seul fichier</button>
+								<button data-i18n-title="hNotAvailableYet" data-i18n="hMultipleFiles" class="create-source" type="button" data-create-source="multiple" disabled title="Pas encore disponible">Plusieurs fichiers</button>
+								<button data-i18n-title="hNotAvailableYet" data-i18n="hPdfSpaces" class="create-source" type="button" data-create-source="space" disabled title="Pas encore disponible">PDF Spaces</button>
+								<button data-i18n-title="hNotAvailableYet" data-i18n="hScreenCapture" class="create-source" type="button" data-create-source="screenshot" disabled title="Pas encore disponible">Capture d'écran</button>
+								<button data-i18n-title="hNotAvailableYet" data-i18n="hScanner" class="create-source" type="button" data-create-source="scanner" disabled title="Pas encore disponible">Scanner</button>
+								<button data-i18n-title="hNotAvailableYet" data-i18n="hWebPage" class="create-source" type="button" data-create-source="web" disabled title="Pas encore disponible">Page web</button>
+								<button data-i18n-title="hNotAvailableYet" data-i18n="hClipboard" class="create-source" type="button" data-create-source="clipboard" disabled title="Pas encore disponible">Presse-papiers</button>
+								<button data-i18n="hBlankPage" class="create-source" type="button" data-create-source="blank">Page vierge</button>
 							</nav>
 							<div class="create-detail">
 								<div class="create-preview" id="create-preview">
@@ -556,41 +556,41 @@
 										<path d="M16 24h32M16 36h32M16 48h22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 									</svg>
 								</div>
-								<button class="create-pick" id="create-pick" type="button">Sélectionner un fichier</button>
-								<p class="create-hint" id="create-hint">Choisir parmi .pdf pour le moment (autres formats à venir).</p>
-								<button class="create-link" type="button" disabled title="Pas encore disponible">Formats pris en charge</button>
-								<button class="create-advanced" type="button" disabled title="Pas encore disponible">
+								<button data-i18n="hSelectAFile" class="create-pick" id="create-pick" type="button">Sélectionner un fichier</button>
+								<p data-i18n="createPickHint" class="create-hint" id="create-hint">Choisir parmi .pdf pour le moment (autres formats à venir).</p>
+								<button data-i18n-title="hNotAvailableYet" data-i18n="hSupportedFormats" class="create-link" type="button" disabled title="Pas encore disponible">Formats pris en charge</button>
+								<button data-i18n-title="hNotAvailableYet" class="create-advanced" type="button" disabled title="Pas encore disponible">
 									<span class="tool-icon" data-icon="settings"></span>
-									Paramètres avancés
+									<span data-i18n="hAdvancedSettings">Paramètres avancés</span>
 								</button>
-								<button class="create-primary" id="create-confirm" type="button">Créer</button>
-								<button class="create-link" type="button" disabled title="Pas encore disponible">Aide</button>
+								<button data-i18n="menu.create" class="create-primary" id="create-confirm" type="button">Créer</button>
+								<button data-i18n-title="hNotAvailableYet" data-i18n="menu.help" class="create-link" type="button" disabled title="Pas encore disponible">Aide</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<aside class="right-rail" aria-label="Quick tools">
-				<button class="rail-button" type="button" data-open-panel="search" aria-label="Search">F</button>
-				<button class="rail-button" type="button" data-open-panel="notes" aria-label="Notes">C</button>
-				<button class="rail-button" type="button" data-open-panel="pages" aria-label="Pages">P</button>
-				<button class="rail-button" type="button" data-open-panel="outline" aria-label="Marque-pages">B</button>
-				<button class="rail-button" type="button" id="rail-fit-width" aria-label="Ajuster la page" title="Ajuster la page" disabled>W</button>
-				<button class="rail-button" type="button" id="rail-zoom-in" aria-label="Zoom in" disabled>+</button>
-				<button class="rail-button" type="button" id="rail-zoom-out" aria-label="Zoom out" disabled>-</button>
-				<button class="rail-button page-layout-toggle" type="button" id="rail-layout-single" aria-label="Page unique" data-layout="single" disabled></button>
-				<button class="rail-button" type="button" data-open-panel="history" aria-label="Historique des modifications" title="Historique des modifications">H</button>
-				<button class="rail-button" type="button" data-open-settings aria-label="Settings">S</button>
+			<aside data-i18n-aria-label="hQuickTools" class="right-rail" aria-label="Quick tools">
+				<button data-i18n-aria-label="search" class="rail-button" type="button" data-open-panel="search" aria-label="Search">F</button>
+				<button data-i18n-aria-label="notes" class="rail-button" type="button" data-open-panel="notes" aria-label="Notes">C</button>
+				<button data-i18n-aria-label="pages" class="rail-button" type="button" data-open-panel="pages" aria-label="Pages">P</button>
+				<button data-i18n-aria-label="outlineTitle" class="rail-button" type="button" data-open-panel="outline" aria-label="Marque-pages">B</button>
+				<button data-i18n-aria-label="hFitPage" data-i18n-title="hFitPage" class="rail-button" type="button" id="rail-fit-width" aria-label="Ajuster la page" title="Ajuster la page" disabled>W</button>
+				<button data-i18n-aria-label="hZoomIn" class="rail-button" type="button" id="rail-zoom-in" aria-label="Zoom in" disabled>+</button>
+				<button data-i18n-aria-label="hZoomOut" class="rail-button" type="button" id="rail-zoom-out" aria-label="Zoom out" disabled>-</button>
+				<button data-i18n-aria-label="hSinglePage" class="rail-button page-layout-toggle" type="button" id="rail-layout-single" aria-label="Page unique" data-layout="single" disabled></button>
+				<button data-i18n-aria-label="historyTitle" data-i18n-title="historyTitle" class="rail-button" type="button" data-open-panel="history" aria-label="Historique des modifications" title="Historique des modifications">H</button>
+				<button data-i18n-aria-label="settings" class="rail-button" type="button" data-open-settings aria-label="Settings">S</button>
 			</aside>
 
 			<aside class="side-drawer hidden" id="side-drawer" aria-live="polite">
 				<header>
 					<div>
-						<p class="eyebrow" id="drawer-kicker">Search</p>
-						<h2 id="drawer-title">Find text</h2>
+						<p data-i18n="search" class="eyebrow" id="drawer-kicker">Search</p>
+						<h2 data-i18n="findText" id="drawer-title">Find text</h2>
 					</div>
-					<button class="close-panel" id="drawer-close" type="button" aria-label="Close panel">x</button>
+					<button data-i18n-aria-label="hClosePanel" class="close-panel" id="drawer-close" type="button" aria-label="Close panel">x</button>
 				</header>
 
 				<section class="drawer-section drawer-search" data-drawer-section="search">
@@ -598,78 +598,78 @@
 				</section>
 
 				<section class="drawer-section drawer-notes hidden" data-drawer-section="notes">
-					<textarea id="annotation-text" placeholder="Write a note or select a search result..." disabled></textarea>
+					<textarea data-i18n-placeholder="notePlaceholder" id="annotation-text" placeholder="Write a note or select a search result..." disabled></textarea>
 					<div class="annotation-actions">
-						<button id="highlight-button" type="button" disabled>Highlight</button>
-						<button id="comment-button" type="button" disabled>Comment</button>
+						<button data-i18n="highlight" id="highlight-button" type="button" disabled>Highlight</button>
+						<button data-i18n="comment" id="comment-button" type="button" disabled>Comment</button>
 					</div>
 					<div class="notes" id="notes"></div>
 				</section>
 
 				<section class="drawer-section drawer-pages hidden" data-drawer-section="pages">
 					<div class="page-summary">
-						<strong id="page-summary-title">No document</strong>
-						<span id="page-summary-meta">Open a PDF to see page controls.</span>
+						<strong data-i18n="noDocument" id="page-summary-title">No document</strong>
+						<span data-i18n="pageSummaryEmpty" id="page-summary-meta">Open a PDF to see page controls.</span>
 					</div>
 					<div class="thumbs-grid" id="thumbs-grid"></div>
 				</section>
 
 				<section class="drawer-section drawer-outline hidden" data-drawer-section="outline">
-					<div class="outline-empty" id="outline-empty">Pas de marque-pages dans ce PDF.</div>
+					<div data-i18n="hNoBookmarksInThisPdf" class="outline-empty" id="outline-empty">Pas de marque-pages dans ce PDF.</div>
 					<ol class="outline-tree" id="outline-tree"></ol>
 				</section>
 
 				<section class="drawer-section drawer-forms hidden" data-drawer-section="forms">
-					<div class="forms-empty" id="forms-empty">Ce PDF ne contient pas de formulaire à remplir.</div>
+					<div data-i18n="formsEmpty" class="forms-empty" id="forms-empty">Ce PDF ne contient pas de formulaire à remplir.</div>
 					<div class="forms-fields" id="forms-fields"></div>
-					<button class="forms-apply" id="forms-apply" type="button" disabled>Remplir et enregistrer</button>
+					<button data-i18n="hFillAndSave" class="forms-apply" id="forms-apply" type="button" disabled>Remplir et enregistrer</button>
 				</section>
 
 				<section class="drawer-section drawer-sign hidden" data-drawer-section="sign">
-					<p class="sign-intro" id="sign-intro">Enregistre une signature et un paraphe, puis clique sur la page pour les poser.</p>
+					<p data-i18n="hSaveASignatureAndInitials" class="sign-intro" id="sign-intro">Enregistre une signature et un paraphe, puis clique sur la page pour les poser.</p>
 					<div class="sign-slots">
 						<div class="sign-slot">
-							<p class="sign-slot-label">Signature</p>
+							<p data-i18n="histSignature" class="sign-slot-label">Signature</p>
 							<div class="sign-list" id="sign-list-signature"></div>
 						</div>
 						<div class="sign-slot">
-							<p class="sign-slot-label">Paraphe</p>
+							<p data-i18n="hInitials" class="sign-slot-label">Paraphe</p>
 							<div class="sign-list" id="sign-list-initials"></div>
 						</div>
 					</div>
-					<p class="sign-hint" id="sign-hint">Clique une carte puis la page pour poser. Poignées : coins pour redimensionner, rond du haut pour pivoter.</p>
+					<p data-i18n="hClickACardThenThe" class="sign-hint" id="sign-hint">Clique une carte puis la page pour poser. Poignées : coins pour redimensionner, rond du haut pour pivoter.</p>
 				</section>
 
 				<section class="drawer-section drawer-history hidden" data-drawer-section="history">
-					<div class="history-empty" id="history-empty">Aucune modification pour l’instant.</div>
+					<div data-i18n="historyEmpty" class="history-empty" id="history-empty">Aucune modification pour l’instant.</div>
 					<ol class="history-list" id="history-list"></ol>
 				</section>
 
 				<section class="drawer-section drawer-ai hidden" data-drawer-section="ai">
 					<details class="ai-settings" id="ai-settings">
-						<summary>Connexion au modèle</summary>
+						<summary data-i18n="hModelConnection">Connexion au modèle</summary>
 						<div class="ai-settings-body">
 							<label class="ai-field">
-								<span>Fournisseur</span>
+								<span data-i18n="aiProviderLabel">Fournisseur</span>
 								<select id="ai-provider">
 									<option value="claude">Claude (Anthropic)</option>
 									<option value="openai">OpenAI (GPT)</option>
-									<option value="local">Local / compatible OpenAI</option>
+									<option data-i18n="hLocalOpenaiCompatible" value="local">Local / compatible OpenAI</option>
 								</select>
 							</label>
 							<label class="ai-field">
-								<span>Modèle</span>
+								<span data-i18n="aiModelLabel">Modèle</span>
 								<input id="ai-model" type="text" placeholder="claude-3-5-sonnet-latest" />
 							</label>
 							<label class="ai-field">
-								<span>Clé API</span>
+								<span data-i18n="aiKeyLabel">Clé API</span>
 								<input id="ai-key" type="password" placeholder="sk-..." autocomplete="off" />
 							</label>
 							<label class="ai-field" id="ai-baseurl-field">
-								<span>URL de base (local / proxy)</span>
+								<span data-i18n="hBaseUrlLocalProxy">URL de base (local / proxy)</span>
 								<input id="ai-baseurl" type="text" placeholder="http://localhost:11434" />
 							</label>
-							<button class="ai-save-button" id="ai-save-config" type="button">Enregistrer</button>
+							<button data-i18n="menu.save" class="ai-save-button" id="ai-save-config" type="button">Enregistrer</button>
 							<p class="ai-config-status" id="ai-config-status"></p>
 						</div>
 					</details>
@@ -677,27 +677,27 @@
 					<div class="ai-chat" id="ai-chat"></div>
 
 					<form class="ai-composer" id="ai-form">
-						<textarea id="ai-input" rows="2" placeholder="Demande une modification : « Remplace SERVILEC par SERVITEC », « Supprime la page 2 »..."></textarea>
-						<button class="ai-send-button" id="ai-send" type="submit" aria-label="Envoyer">Envoyer</button>
+						<textarea data-i18n-placeholder="hAskForAChangeReplace" id="ai-input" rows="2" placeholder="Demande une modification : « Remplace SERVILEC par SERVITEC », « Supprime la page 2 »..."></textarea>
+						<button data-i18n-aria-label="hSend" data-i18n="hSend" class="ai-send-button" id="ai-send" type="submit" aria-label="Envoyer">Envoyer</button>
 					</form>
 				</section>
 
 				<section class="drawer-section drawer-edit hidden" data-drawer-section="edit">
 					<div class="edit-actions edit-detection-actions">
-						<button id="scan-edit-blocks" type="button" disabled>Scan editable blocks</button>
-						<button id="ocr-current-page" type="button" disabled>OCR current page</button>
+						<button data-i18n="scanBlocks" id="scan-edit-blocks" type="button" disabled>Scan editable blocks</button>
+						<button data-i18n="ocrPage" id="ocr-current-page" type="button" disabled>OCR current page</button>
 					</div>
 					<label class="edit-field">
-						<span>Selected text</span>
-						<textarea id="edit-text" placeholder="Select a detected text block..." disabled></textarea>
+						<span data-i18n="selectedText">Selected text</span>
+						<textarea data-i18n-placeholder="editTextPlaceholder" id="edit-text" placeholder="Select a detected text block..." disabled></textarea>
 					</label>
 					<div class="edit-actions">
-						<button id="apply-edit-text" type="button" disabled>Apply text</button>
-						<button id="delete-edit-block" type="button" disabled>Hide block</button>
+						<button data-i18n="applyText" id="apply-edit-text" type="button" disabled>Apply text</button>
+						<button data-i18n="hideBlock" id="delete-edit-block" type="button" disabled>Hide block</button>
 					</div>
 					<div class="edit-help">
-						<strong>Native editing MVP</strong>
-						<span>Detected text blocks can be edited and moved, then exported as a flattened PDF.</span>
+						<strong data-i18n="nativeEditing">Native editing MVP</strong>
+						<span data-i18n="nativeEditingDesc">Detected text blocks can be edited and moved, then exported as a flattened PDF.</span>
 					</div>
 				</section>
 			</aside>
@@ -706,51 +706,51 @@
 			<div class="modal-backdrop hidden" id="protect-backdrop"></div>
 			<section class="save-changes-modal hidden" id="protect-modal" role="dialog" aria-modal="true" aria-labelledby="protect-title">
 				<p class="eyebrow">Slate</p>
-				<h2 id="protect-title">Protéger ce PDF</h2>
-				<p id="protect-help">Définis un mot de passe (AES-256). Il sera demandé à l'ouverture.</p>
+				<h2 data-i18n="protectTitle" id="protect-title">Protéger ce PDF</h2>
+				<p data-i18n="hSetAPasswordAes256" id="protect-help">Définis un mot de passe (AES-256). Il sera demandé à l'ouverture.</p>
 				<label class="save-changes-filename-row">
-					<span>Mot de passe</span>
+					<span data-i18n="protectPassword">Mot de passe</span>
 					<div class="save-changes-filename-field">
 						<input type="password" id="protect-password" autocomplete="new-password" spellcheck="false" />
 					</div>
 				</label>
 				<label class="save-changes-filename-row">
-					<span>Confirmer</span>
+					<span data-i18n="hConfirm">Confirmer</span>
 					<div class="save-changes-filename-field">
 						<input type="password" id="protect-confirm" autocomplete="new-password" spellcheck="false" />
 					</div>
 				</label>
 				<p class="protect-error" id="protect-error"></p>
 				<footer class="save-changes-actions">
-					<button id="protect-cancel-button" type="button">Annuler</button>
-					<button id="protect-confirm-button" class="filled" type="button">Protéger</button>
+					<button data-i18n="cancel" id="protect-cancel-button" type="button">Annuler</button>
+					<button data-i18n="protectCta" id="protect-confirm-button" class="filled" type="button">Protéger</button>
 				</footer>
 			</section>
 
 			<div class="modal-backdrop hidden" id="tool-options-backdrop"></div>
 			<section class="save-changes-modal hidden" id="tool-options-modal" role="dialog" aria-modal="true" aria-labelledby="tool-options-title">
 				<p class="eyebrow">Slate</p>
-				<h2 id="tool-options-title">Options</h2>
+				<h2 data-i18n="options" id="tool-options-title">Options</h2>
 				<p id="tool-options-help"></p>
 				<div id="tool-options-body"></div>
 				<p class="protect-error" id="tool-options-error"></p>
 				<footer class="save-changes-actions">
-					<button id="tool-options-cancel" type="button">Annuler</button>
-					<button id="tool-options-confirm" class="filled" type="button">Appliquer</button>
+					<button data-i18n="cancel" id="tool-options-cancel" type="button">Annuler</button>
+					<button data-i18n="apply" id="tool-options-confirm" class="filled" type="button">Appliquer</button>
 				</footer>
 			</section>
 
 			<div class="modal-backdrop hidden" id="bookmarks-backdrop"></div>
 			<section class="save-changes-modal hidden" id="bookmarks-modal" role="dialog" aria-modal="true" aria-labelledby="bookmarks-title">
 				<p class="eyebrow">Slate</p>
-				<h2 id="bookmarks-title">Marque-pages</h2>
-				<p id="bookmarks-help">Ajoute un titre et le numéro de page cible. La liste remplace les marque-pages existants.</p>
+				<h2 data-i18n="outlineTitle" id="bookmarks-title">Marque-pages</h2>
+				<p data-i18n="hAddATitleAndThe" id="bookmarks-help">Ajoute un titre et le numéro de page cible. La liste remplace les marque-pages existants.</p>
 				<div id="bookmarks-list" class="bookmarks-list"></div>
-				<button id="bookmarks-add" class="bookmarks-add" type="button">+ Ajouter un marque-page</button>
+				<button data-i18n="hAddABookmark" id="bookmarks-add" class="bookmarks-add" type="button">+ Ajouter un marque-page</button>
 				<p class="protect-error" id="bookmarks-error"></p>
 				<footer class="save-changes-actions">
-					<button id="bookmarks-cancel" type="button">Annuler</button>
-					<button id="bookmarks-save" class="filled" type="button">Enregistrer</button>
+					<button data-i18n="cancel" id="bookmarks-cancel" type="button">Annuler</button>
+					<button data-i18n="menu.save" id="bookmarks-save" class="filled" type="button">Enregistrer</button>
 				</footer>
 			</section>
 
@@ -759,18 +759,18 @@
 				<header class="signature-modal-header">
 					<div>
 						<p class="eyebrow">Slate</p>
-						<h2 id="signature-title">Créer une signature</h2>
+						<h2 data-i18n="hCreateASignature" id="signature-title">Créer une signature</h2>
 					</div>
-					<button class="close-panel" id="signature-close" type="button" aria-label="Fermer">x</button>
+					<button data-i18n-aria-label="hClose" class="close-panel" id="signature-close" type="button" aria-label="Fermer">x</button>
 				</header>
 				<div class="signature-tabs" role="tablist">
-					<button class="signature-tab active" id="sig-tab-draw" type="button" data-sig-mode="draw">Dessiner</button>
-					<button class="signature-tab" id="sig-tab-type" type="button" data-sig-mode="type">Taper</button>
-					<button class="signature-tab" id="sig-tab-import" type="button" data-sig-mode="import">Importer</button>
+					<button data-i18n="hDraw" class="signature-tab active" id="sig-tab-draw" type="button" data-sig-mode="draw">Dessiner</button>
+					<button data-i18n="hType" class="signature-tab" id="sig-tab-type" type="button" data-sig-mode="type">Taper</button>
+					<button data-i18n="hImport" class="signature-tab" id="sig-tab-import" type="button" data-sig-mode="import">Importer</button>
 				</div>
 
 				<div class="signature-toolbar" id="signature-color-row">
-					<label>Couleur
+					<label><span data-i18n="watermarkColor">Couleur</span>
 						<input type="color" id="signature-color" value="#0a3a8c" />
 					</label>
 				</div>
@@ -778,12 +778,12 @@
 				<div class="signature-pane" id="sig-pane-draw">
 					<canvas id="signature-canvas" width="640" height="220"></canvas>
 					<div class="signature-toolbar">
-						<button id="signature-clear" type="button">Effacer</button>
+						<button data-i18n="hClear" id="signature-clear" type="button">Effacer</button>
 					</div>
 				</div>
 
 				<div class="signature-pane hidden" id="sig-pane-type">
-					<input type="text" id="signature-typed" placeholder="Tape ton nom" autocomplete="off" spellcheck="false" />
+					<input data-i18n-placeholder="hTypeYourName" type="text" id="signature-typed" placeholder="Tape ton nom" autocomplete="off" spellcheck="false" />
 					<div class="signature-font-row" id="signature-font-row"></div>
 					<div class="signature-preview" id="signature-typed-preview"></div>
 				</div>
@@ -794,113 +794,113 @@
 				</div>
 
 				<footer class="save-changes-actions">
-					<button id="signature-cancel" type="button">Annuler</button>
-					<button id="signature-save" class="filled" type="button">Enregistrer la signature</button>
+					<button data-i18n="cancel" id="signature-cancel" type="button">Annuler</button>
+					<button data-i18n="hSaveSignature" id="signature-save" class="filled" type="button">Enregistrer la signature</button>
 				</footer>
 			</section>
 
 			<div class="modal-backdrop hidden" id="default-app-backdrop"></div>
 			<section class="save-changes-modal hidden" id="default-app-modal" role="dialog" aria-modal="true" aria-labelledby="default-app-title">
 				<p class="eyebrow">Slate</p>
-				<h2 id="default-app-title">Définir Slate comme lecteur PDF par défaut ?</h2>
-				<p id="default-app-help">Tes fichiers PDF s'ouvriront directement dans Slate d'un double-clic.</p>
+				<h2 data-i18n="hSetSlateAsYourDefault" id="default-app-title">Définir Slate comme lecteur PDF par défaut ?</h2>
+				<p data-i18n="hYourPdfFilesWillOpen" id="default-app-help">Tes fichiers PDF s'ouvriront directement dans Slate d'un double-clic.</p>
 				<footer class="save-changes-actions default-app-actions">
-					<button id="default-app-never" type="button">Ne plus demander</button>
-					<button id="default-app-later" type="button">Plus tard</button>
-					<button id="default-app-yes" class="filled" type="button">Oui, définir par défaut</button>
+					<button data-i18n="hDonTAskAgain" id="default-app-never" type="button">Ne plus demander</button>
+					<button data-i18n="hLater" id="default-app-later" type="button">Plus tard</button>
+					<button data-i18n="hYesSetAsDefault" id="default-app-yes" class="filled" type="button">Oui, définir par défaut</button>
 				</footer>
 			</section>
 
 			<div class="modal-backdrop hidden" id="print-backdrop"></div>
 			<section class="print-dialog hidden" id="print-modal" role="dialog" aria-modal="true" aria-labelledby="print-title">
 				<div class="dialog-titlebar" id="print-titlebar">
-					<h2 id="print-title">Imprimer</h2>
+					<h2 data-i18n="printTitle" id="print-title">Imprimer</h2>
 				</div>
 				<header class="print-dialog-top">
 					<div class="print-top-row">
 						<label class="print-field print-field-printer">
-							<span>Imprimante</span>
+							<span data-i18n="hPrinter">Imprimante</span>
 							<select id="print-printer"></select>
 						</label>
-						<button type="button" class="properties-secondary-btn print-advanced-btn" id="print-advanced-open">Options avancées</button>
+						<button data-i18n="printAdvanced" type="button" class="properties-secondary-btn print-advanced-btn" id="print-advanced-open">Options avancées</button>
 						<label class="print-field print-field-copies">
-							<span>Copies</span>
+							<span data-i18n="hCopies">Copies</span>
 							<input type="number" id="print-copies" min="1" max="999" value="1" />
 						</label>
 						<label class="print-check print-check-inline">
 							<input type="checkbox" id="print-grayscale" />
-							<span>Imprimer en nuances de gris</span>
+							<span data-i18n="hPrintInGrayscale">Imprimer en nuances de gris</span>
 						</label>
 					</div>
 				</header>
 				<div class="print-dialog-main">
 					<div class="print-dialog-settings">
 						<fieldset class="print-fieldset">
-							<legend>Pages à imprimer</legend>
-							<label class="print-radio"><input type="radio" name="print-pages" value="all" checked /> Tout</label>
-							<label class="print-radio"><input type="radio" name="print-pages" value="active" /> Active</label>
+							<legend data-i18n="hPagesToPrint">Pages à imprimer</legend>
+							<label class="print-radio"><input type="radio" name="print-pages" value="all" checked /> <span data-i18n="hAll">Tout</span></label>
+							<label class="print-radio"><input type="radio" name="print-pages" value="active" /> <span data-i18n="hCurrent">Active</span></label>
 							<label class="print-radio print-radio-custom">
 								<input type="radio" name="print-pages" value="range" />
-								Pages
+								<span data-i18n="pages">Pages</span>
 								<input type="text" id="print-page-range" placeholder="1-3,5" disabled />
 							</label>
 							<label class="print-check">
 								<input type="checkbox" id="print-reverse" />
-								<span>Inverser</span>
+								<span data-i18n="hReverse">Inverser</span>
 							</label>
 						</fieldset>
 						<fieldset class="print-fieldset">
-							<legend>Dimensionnement et gestion des pages</legend>
+							<legend data-i18n="hPageSizingAndHandling">Dimensionnement et gestion des pages</legend>
 							<div class="print-size-tabs" aria-hidden="true">
-								<span class="print-size-tab is-active">Taille</span>
+								<span data-i18n="watermarkSize" class="print-size-tab is-active">Taille</span>
 							</div>
-							<label class="print-radio"><input type="radio" name="print-scaling" value="fit" /> Ajuster</label>
-							<label class="print-radio"><input type="radio" name="print-scaling" value="actual" checked /> Taille réelle</label>
-							<label class="print-radio"><input type="radio" name="print-scaling" value="shrink" /> Réduire les pages hors format</label>
+							<label class="print-radio"><input type="radio" name="print-scaling" value="fit" /> <span data-i18n="hFit">Ajuster</span></label>
+							<label class="print-radio"><input type="radio" name="print-scaling" value="actual" checked /> <span data-i18n="hActualSize">Taille réelle</span></label>
+							<label class="print-radio"><input type="radio" name="print-scaling" value="shrink" /> <span data-i18n="hShrinkOversizedPages">Réduire les pages hors format</span></label>
 							<label class="print-radio print-radio-custom">
 								<input type="radio" name="print-scaling" value="custom" />
-								Échelle personnalisée
+								<span data-i18n="hCustomScale">Échelle personnalisée</span>
 								<input type="number" id="print-custom-scale" min="1" max="400" value="100" disabled /> %
 							</label>
 							<label class="print-field">
-								<span>Format de papier</span>
+								<span data-i18n="hPaperSize">Format de papier</span>
 								<select id="print-paper"></select>
 							</label>
 							<label class="print-field" id="print-input-slot-row" hidden>
-								<span>Bac</span>
+								<span data-i18n="hTray">Bac</span>
 								<select id="print-input-slot"></select>
 							</label>
 							<label class="print-check">
 								<input type="checkbox" id="print-auto-paper" />
-								<span>Choisir la source de papier selon le format de la page PDF</span>
+								<span data-i18n="hChooseThePaperSourceBy">Choisir la source de papier selon le format de la page PDF</span>
 							</label>
 							<label class="print-check print-check-label-fit">
 								<input type="checkbox" id="print-fit-label" />
-								<span>Adapter à l’étiquette (recadrage automatique)</span>
+								<span data-i18n="hFitToLabelAutoCrop">Adapter à l’étiquette (recadrage automatique)</span>
 							</label>
-							<p class="print-hint" id="print-fit-label-hint">Supprime les marges blanches et resserre les espaces vides pour imprimer l’étiquette au plus grand, sans rien couper.</p>
+							<p data-i18n="hRemovesWhiteMarginsAndTightens" class="print-hint" id="print-fit-label-hint">Supprime les marges blanches et resserre les espaces vides pour imprimer l’étiquette au plus grand, sans rien couper.</p>
 							<label class="print-check print-check-nested" id="print-fit-compact-row">
 								<input type="checkbox" id="print-fit-compact" checked />
-								<span>Resserrer les espaces vides entre les blocs</span>
+								<span data-i18n="hTightenEmptyGapsBetweenBlocks">Resserrer les espaces vides entre les blocs</span>
 							</label>
 						</fieldset>
 						<fieldset class="print-fieldset">
 							<label class="print-check">
 								<input type="checkbox" id="print-duplex" />
-								<span>Imprimer en recto verso</span>
+								<span data-i18n="hPrintDoubleSided">Imprimer en recto verso</span>
 							</label>
 							<div class="print-orient-row">
-								<span class="print-orient-label">Orientation</span>
-								<label class="print-radio print-radio-inline"><input type="radio" name="print-orientation" value="auto" checked /> Auto.</label>
-								<label class="print-radio print-radio-inline"><input type="radio" name="print-orientation" value="portrait" /> Portrait</label>
-								<label class="print-radio print-radio-inline"><input type="radio" name="print-orientation" value="landscape" /> Paysage</label>
+								<span data-i18n="hOrientation" class="print-orient-label">Orientation</span>
+								<label class="print-radio print-radio-inline"><input type="radio" name="print-orientation" value="auto" checked /> <span data-i18n="hAuto">Auto.</span></label>
+								<label class="print-radio print-radio-inline"><input type="radio" name="print-orientation" value="portrait" /> <span data-i18n="hPortrait">Portrait</span></label>
+								<label class="print-radio print-radio-inline"><input type="radio" name="print-orientation" value="landscape" /> <span data-i18n="hLandscape">Paysage</span></label>
 							</div>
 						</fieldset>
 						<p class="print-error hidden" id="print-error" role="alert"></p>
 					</div>
 					<aside class="print-dialog-preview">
 						<p class="print-preview-meta">
-							<span id="print-scale-label">Échelle : 100 %</span>
+							<span id="print-scale-label" data-i18n="printScale" data-i18n-args="100">Échelle : 100 %</span>
 							<span id="print-dims-label"></span>
 						</p>
 						<p class="print-fit-summary hidden" id="print-fit-summary"></p>
@@ -908,199 +908,199 @@
 							<canvas id="print-preview-canvas"></canvas>
 						</div>
 						<div class="print-preview-nav">
-							<button type="button" id="print-preview-prev" aria-label="Page précédente">‹</button>
-							<span id="print-preview-page">Page 1 sur 1</span>
-							<button type="button" id="print-preview-next" aria-label="Page suivante">›</button>
+							<button data-i18n-aria-label="menu.prevPage" type="button" id="print-preview-prev" aria-label="Page précédente">‹</button>
+							<span id="print-preview-page" data-i18n="printPreviewPage" data-i18n-args="1,1">Page 1 sur 1</span>
+							<button data-i18n-aria-label="menu.nextPage" type="button" id="print-preview-next" aria-label="Page suivante">›</button>
 						</div>
 					</aside>
 				</div>
 				<footer class="print-dialog-footer">
-					<button type="button" class="properties-secondary-btn" id="print-layout-focus">Imprimante…</button>
+					<button data-i18n="hPrinter2" type="button" class="properties-secondary-btn" id="print-layout-focus">Imprimante…</button>
 					<div class="print-footer-actions">
-						<button type="button" class="properties-secondary-btn" id="print-cancel">Annuler</button>
-						<button type="button" class="properties-primary-btn" id="print-submit">Imprimer</button>
+						<button data-i18n="cancel" type="button" class="properties-secondary-btn" id="print-cancel">Annuler</button>
+						<button data-i18n="printTitle" type="button" class="properties-primary-btn" id="print-submit">Imprimer</button>
 					</div>
 				</footer>
 			</section>
 
 			<section class="print-advanced-dialog hidden" id="print-advanced-modal" role="dialog" aria-modal="false" aria-labelledby="print-advanced-title">
 				<div class="dialog-titlebar" id="print-advanced-titlebar">
-					<h2 id="print-advanced-title">Réglages de l’imprimante</h2>
+					<h2 data-i18n="hPrinterSettings" id="print-advanced-title">Réglages de l’imprimante</h2>
 				</div>
 				<p class="print-advanced-printer" id="print-advanced-printer"></p>
 				<div class="print-advanced-body" id="print-advanced-body"></div>
 				<footer class="print-advanced-footer">
-					<button type="button" class="properties-secondary-btn" id="print-advanced-reset">Réglages par défaut</button>
-					<button type="button" class="properties-primary-btn" id="print-advanced-close">Terminé</button>
+					<button data-i18n="hDefaultSettings" type="button" class="properties-secondary-btn" id="print-advanced-reset">Réglages par défaut</button>
+					<button data-i18n="done" type="button" class="properties-primary-btn" id="print-advanced-close">Terminé</button>
 				</footer>
 			</section>
 
 			<div class="modal-backdrop hidden" id="convert-colors-backdrop"></div>
 			<section class="convert-colors-dialog hidden" id="convert-colors-modal" role="dialog" aria-modal="true" aria-labelledby="convert-colors-title">
 				<header class="convert-colors-header">
-					<h2 id="convert-colors-title">Convertir les couleurs</h2>
+					<h2 data-i18n="convertColors" id="convert-colors-title">Convertir les couleurs</h2>
 				</header>
 				<div class="convert-colors-body">
-					<p class="convert-colors-lead">Convertit le document en CMYK pour l’impression offset selon le profil cible.</p>
+					<p data-i18n="hConvertsTheDocumentToCmyk" class="convert-colors-lead">Convertit le document en CMYK pour l’impression offset selon le profil cible.</p>
 					<label class="convert-colors-field">
-						<span>Profil de destination</span>
+						<span data-i18n="hDestinationProfile">Profil de destination</span>
 						<select id="convert-colors-profile" disabled>
 							<option value="fogra39" selected>Coated FOGRA39 (ISO 12647-2:2004)</option>
 						</select>
 					</label>
-					<p class="convert-colors-profile-status" id="convert-colors-profile-status">Recherche du profil ICC…</p>
+					<p class="convert-colors-profile-status" id="convert-colors-profile-status" data-i18n="iccSearching">Recherche du profil ICC…</p>
 					<ul class="convert-colors-notes">
-						<li>Conversion via Ghostscript (CMYK Device).</li>
-						<li>Le fichier source n’est pas écrasé tant que tu n’enregistres pas.</li>
-						<li>Certains effets / transparences peuvent être aplatis.</li>
+						<li data-i18n="hConversionViaGhostscriptCmykDevice">Conversion via Ghostscript (CMYK Device).</li>
+						<li data-i18n="hTheSourceFileIsNot">Le fichier source n’est pas écrasé tant que tu n’enregistres pas.</li>
+						<li data-i18n="hSomeEffectsTransparenciesMayBe">Certains effets / transparences peuvent être aplatis.</li>
 					</ul>
 				</div>
 				<footer class="convert-colors-footer">
-					<button type="button" class="properties-secondary-btn" id="convert-colors-cancel">Annuler</button>
-					<button type="button" class="properties-primary-btn" id="convert-colors-ok">Convertir</button>
+					<button data-i18n="cancel" type="button" class="properties-secondary-btn" id="convert-colors-cancel">Annuler</button>
+					<button data-i18n="convert" type="button" class="properties-primary-btn" id="convert-colors-ok">Convertir</button>
 				</footer>
 			</section>
 
 			<div class="modal-backdrop hidden" id="properties-backdrop"></div>
 			<section class="properties-dialog hidden" id="properties-modal" role="dialog" aria-modal="true" aria-labelledby="properties-title">
 				<header class="properties-dialog-header">
-					<h2 id="properties-title">Propriétés du document</h2>
+					<h2 data-i18n="docProperties" id="properties-title">Propriétés du document</h2>
 				</header>
-				<nav class="properties-tabs" role="tablist" aria-label="Sections des propriétés">
-					<button type="button" class="properties-tab active" role="tab" aria-selected="true" data-props-tab="description">Description</button>
-					<button type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="protection">Protection</button>
-					<button type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="fonts">Polices</button>
-					<button type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="initial">Vue initiale</button>
-					<button type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="custom">Personnalisées</button>
-					<button type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="advanced">Avancées</button>
+				<nav data-i18n-aria-label="hPropertySections" class="properties-tabs" role="tablist" aria-label="Sections des propriétés">
+					<button data-i18n="hDescription" type="button" class="properties-tab active" role="tab" aria-selected="true" data-props-tab="description">Description</button>
+					<button data-i18n="menu.protection" type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="protection">Protection</button>
+					<button data-i18n="hFonts" type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="fonts">Polices</button>
+					<button data-i18n="hInitialView" type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="initial">Vue initiale</button>
+					<button data-i18n="hCustom" type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="custom">Personnalisées</button>
+					<button data-i18n="hAdvanced" type="button" class="properties-tab" role="tab" aria-selected="false" data-props-tab="advanced">Avancées</button>
 				</nav>
 				<div class="properties-body">
 					<div class="properties-panel active" data-props-panel="description" role="tabpanel">
 						<section class="properties-card">
-							<h3>Description</h3>
+							<h3 data-i18n="hDescription">Description</h3>
 							<div class="properties-grid">
-								<label>Fichier :</label>
+								<label data-i18n="hFile">Fichier :</label>
 								<span id="props-file-name">—</span>
-								<label for="props-title">Titre :</label>
+								<label data-i18n="hTitle" for="props-title">Titre :</label>
 								<input id="props-title" type="text" autocomplete="off" />
-								<label for="props-author">Auteur :</label>
+								<label data-i18n="hAuthor" for="props-author">Auteur :</label>
 								<input id="props-author" type="text" autocomplete="off" />
-								<label for="props-subject">Sujet :</label>
+								<label data-i18n="hSubject" for="props-subject">Sujet :</label>
 								<input id="props-subject" type="text" autocomplete="off" />
-								<label for="props-keywords">Mots-clés :</label>
+								<label data-i18n="hKeywords" for="props-keywords">Mots-clés :</label>
 								<textarea id="props-keywords" rows="3"></textarea>
-								<label>Date de création :</label>
+								<label data-i18n="hCreated">Date de création :</label>
 								<span id="props-created">—</span>
-								<label>Modifié le :</label>
+								<label data-i18n="hModified">Modifié le :</label>
 								<span id="props-modified">—</span>
-								<label>Application :</label>
+								<label data-i18n="hApplication">Application :</label>
 								<span id="props-creator">—</span>
 							</div>
-							<button type="button" class="properties-secondary-btn" id="props-extra-meta" disabled title="Bientôt disponible">Métadonnées supplémentaires...</button>
+							<button data-i18n-title="hComingSoon" data-i18n="hAdditionalMetadata" type="button" class="properties-secondary-btn" id="props-extra-meta" disabled title="Bientôt disponible">Métadonnées supplémentaires...</button>
 						</section>
 						<section class="properties-card">
-							<h3>Description avancée</h3>
+							<h3 data-i18n="hAdvancedDescription">Description avancée</h3>
 							<div class="properties-grid">
-								<label>Outil de conversion PDF :</label>
+								<label data-i18n="hPdfProducer">Outil de conversion PDF :</label>
 								<span id="props-producer">—</span>
-								<label>Version PDF :</label>
+								<label data-i18n="hPdfVersion">Version PDF :</label>
 								<span id="props-pdf-version">—</span>
-								<label>Emplacement :</label>
+								<label data-i18n="hLocation">Emplacement :</label>
 								<span id="props-location" class="properties-path">—</span>
-								<label>Taille du fichier :</label>
+								<label data-i18n="hFileSize">Taille du fichier :</label>
 								<span id="props-file-size">—</span>
-								<label>Format de page :</label>
+								<label data-i18n="hPageSize">Format de page :</label>
 								<span id="props-page-format">—</span>
-								<label>Nombre de pages :</label>
+								<label data-i18n="hNumberOfPages">Nombre de pages :</label>
 								<span id="props-page-count">—</span>
-								<label>PDF balisé :</label>
+								<label data-i18n="hTaggedPdf">PDF balisé :</label>
 								<span id="props-tagged">—</span>
-								<label>Affichage web rapide :</label>
+								<label data-i18n="hFastWebView">Affichage web rapide :</label>
 								<span id="props-linearized">—</span>
 							</div>
 						</section>
 					</div>
 					<div class="properties-panel" data-props-panel="protection" role="tabpanel" hidden>
 						<section class="properties-card">
-							<h3>Sécurité du document</h3>
+							<h3 data-i18n="hDocumentSecurity">Sécurité du document</h3>
 							<div class="properties-grid">
-								<label>Méthode de sécurité :</label>
+								<label data-i18n="hSecurityMethod">Méthode de sécurité :</label>
 								<span id="props-security-method">—</span>
-								<label>Impression :</label>
+								<label data-i18n="hPrinting">Impression :</label>
 								<span id="props-perm-print">—</span>
-								<label>Modification du document :</label>
+								<label data-i18n="hDocumentEditing">Modification du document :</label>
 								<span id="props-perm-modify">—</span>
-								<label>Assemblage du document :</label>
+								<label data-i18n="hDocumentAssembly">Assemblage du document :</label>
 								<span id="props-perm-assemble">—</span>
-								<label>Copie du contenu :</label>
+								<label data-i18n="hContentCopying">Copie du contenu :</label>
 								<span id="props-perm-copy">—</span>
-								<label>Commentaires :</label>
+								<label data-i18n="hCommenting">Commentaires :</label>
 								<span id="props-perm-annotate">—</span>
-								<label>Remplissage de formulaires :</label>
+								<label data-i18n="hFormFilling">Remplissage de formulaires :</label>
 								<span id="props-perm-forms">—</span>
 							</div>
 						</section>
 					</div>
 					<div class="properties-panel" data-props-panel="fonts" role="tabpanel" hidden>
 						<section class="properties-card properties-card-fill">
-							<h3>Polices utilisées dans ce document</h3>
+							<h3 data-i18n="hFontsUsedInThisDocument">Polices utilisées dans ce document</h3>
 							<ul class="properties-fonts-list" id="props-fonts-list"></ul>
 						</section>
 					</div>
 					<div class="properties-panel" data-props-panel="initial" role="tabpanel" hidden>
 						<section class="properties-card">
-							<h3>Vue initiale</h3>
+							<h3 data-i18n="hInitialView">Vue initiale</h3>
 							<div class="properties-grid">
-								<label>Disposition des pages :</label>
+								<label data-i18n="hPageLayout">Disposition des pages :</label>
 								<span id="props-page-layout">—</span>
-								<label>Mode d’affichage :</label>
+								<label data-i18n="hPageMode">Mode d’affichage :</label>
 								<span id="props-page-mode">—</span>
-								<label>Magnification :</label>
-								<span id="props-magnification">Par défaut</span>
-								<label>Ouvrir à la page :</label>
+								<label data-i18n="hMagnification">Magnification :</label>
+								<span data-i18n="propDefault" id="props-magnification">Par défaut</span>
+								<label data-i18n="hOpenToPage">Ouvrir à la page :</label>
 								<span id="props-open-page">1</span>
 							</div>
 						</section>
 					</div>
 					<div class="properties-panel" data-props-panel="custom" role="tabpanel" hidden>
 						<section class="properties-card properties-card-fill">
-							<h3>Propriétés personnalisées</h3>
+							<h3 data-i18n="hCustomProperties">Propriétés personnalisées</h3>
 							<div class="properties-custom-table-wrap">
 								<table class="properties-custom-table">
 									<thead>
-										<tr><th>Nom</th><th>Valeur</th></tr>
+										<tr><th data-i18n="identityNameLabel">Nom</th><th data-i18n="hValue">Valeur</th></tr>
 									</thead>
 									<tbody id="props-custom-body"></tbody>
 								</table>
 							</div>
-							<p class="properties-empty" id="props-custom-empty">Aucune propriété personnalisée.</p>
+							<p data-i18n="hNoCustomProperties" class="properties-empty" id="props-custom-empty">Aucune propriété personnalisée.</p>
 						</section>
 					</div>
 					<div class="properties-panel" data-props-panel="advanced" role="tabpanel" hidden>
 						<section class="properties-card">
-							<h3>Options de lecture</h3>
+							<h3 data-i18n="hReadingOptions">Options de lecture</h3>
 							<div class="properties-grid">
-								<label>Sens de lecture :</label>
-								<span id="props-reading-direction">Gauche à droite</span>
-								<label>Langue :</label>
+								<label data-i18n="hReadingDirection">Sens de lecture :</label>
+								<span data-i18n="hLeftToRight" id="props-reading-direction">Gauche à droite</span>
+								<label data-i18n="hLanguage">Langue :</label>
 								<span id="props-language">—</span>
 							</div>
 						</section>
 						<section class="properties-card">
-							<h3>Options d’impression</h3>
+							<h3 data-i18n="hPrintOptions">Options d’impression</h3>
 							<div class="properties-grid">
-								<label>Recouvrement :</label>
+								<label data-i18n="hTrapping">Recouvrement :</label>
 								<span id="props-trapped">—</span>
-								<label>Prévisualisation de la surimpression :</label>
-								<span>Toujours</span>
+								<label data-i18n="hOverprintPreview">Prévisualisation de la surimpression :</label>
+								<span data-i18n="hAlways">Toujours</span>
 							</div>
 						</section>
 					</div>
 				</div>
 				<footer class="properties-dialog-footer">
-					<button type="button" class="properties-secondary-btn" id="properties-help-button">Aide</button>
+					<button data-i18n="menu.help" type="button" class="properties-secondary-btn" id="properties-help-button">Aide</button>
 					<div class="properties-footer-right">
-						<button type="button" class="properties-secondary-btn" id="properties-cancel-button">Annuler</button>
+						<button data-i18n="cancel" type="button" class="properties-secondary-btn" id="properties-cancel-button">Annuler</button>
 						<button type="button" class="properties-primary-btn" id="properties-ok-button">OK</button>
 					</div>
 				</footer>
@@ -1109,11 +1109,11 @@
 			<div class="modal-backdrop hidden" id="recent-backdrop"></div>
 			<section class="save-changes-modal hidden" id="recent-modal" role="dialog" aria-modal="true" aria-labelledby="recent-title">
 				<p class="eyebrow">Slate</p>
-				<h2 id="recent-title">Fichiers récents</h2>
+				<h2 data-i18n="recentFiles" id="recent-title">Fichiers récents</h2>
 				<ul class="recent-list" id="recent-list"></ul>
 				<footer class="save-changes-actions">
-					<button id="recent-clear-button" type="button">Effacer la liste</button>
-					<button id="recent-close-button" class="filled" type="button">Fermer</button>
+					<button data-i18n="hClearList" id="recent-clear-button" type="button">Effacer la liste</button>
+					<button data-i18n="hClose" id="recent-close-button" class="filled" type="button">Fermer</button>
 				</footer>
 			</section>
 
@@ -1122,14 +1122,14 @@
 				<header class="compare-header">
 					<div>
 						<p class="eyebrow">Slate</p>
-						<h2 id="compare-title">Comparer deux PDF</h2>
+						<h2 data-i18n="hCompareTwoPdfs" id="compare-title">Comparer deux PDF</h2>
 					</div>
-					<button class="close-panel" id="compare-close" type="button" aria-label="Close">x</button>
+					<button data-i18n-aria-label="hClose" class="close-panel" id="compare-close" type="button" aria-label="Close">x</button>
 				</header>
 				<div class="compare-controls">
-					<button id="compare-pick-a" type="button">Choisir PDF A</button>
+					<button data-i18n="hChoosePdfA" id="compare-pick-a" type="button">Choisir PDF A</button>
 					<span id="compare-name-a" class="compare-name">—</span>
-					<button id="compare-pick-b" type="button">Choisir PDF B</button>
+					<button data-i18n="hChoosePdfB" id="compare-pick-b" type="button">Choisir PDF B</button>
 					<span id="compare-name-b" class="compare-name">—</span>
 					<button id="compare-prev" type="button">‹</button>
 					<span id="compare-page-label">1 / 1</span>
@@ -1145,29 +1145,29 @@
 			<div class="modal-backdrop hidden" id="save-changes-backdrop"></div>
 			<section class="save-changes-modal hidden" id="save-changes-modal" role="dialog" aria-modal="true" aria-labelledby="save-changes-title">
 				<p class="eyebrow">Slate</p>
-				<h2 id="save-changes-title">Enregistrer les modifications ?</h2>
-				<p id="save-changes-message">Ce PDF contient des modifications non enregistrées.</p>
+				<h2 data-i18n="saveChangesTitle" id="save-changes-title">Enregistrer les modifications ?</h2>
+				<p data-i18n="saveChangesMessage" id="save-changes-message">Ce PDF contient des modifications non enregistrées.</p>
 				<label class="save-changes-filename-row">
-					<span id="save-changes-filename-label">Nom du fichier</span>
+					<span data-i18n="hFileName" id="save-changes-filename-label">Nom du fichier</span>
 					<div class="save-changes-filename-field">
 						<input type="text" id="save-changes-filename" autocomplete="off" spellcheck="false" />
 						<span class="save-changes-filename-ext">.pdf</span>
 					</div>
 				</label>
 				<footer class="save-changes-actions">
-					<button id="save-cancel-close" type="button">Annuler</button>
-					<button id="save-discard-close" type="button">Ne pas enregistrer</button>
-					<button id="save-confirm-close" class="filled" type="button">Enregistrer</button>
+					<button data-i18n="cancel" id="save-cancel-close" type="button">Annuler</button>
+					<button data-i18n="saveChangesDiscard" id="save-discard-close" type="button">Ne pas enregistrer</button>
+					<button data-i18n="menu.save" id="save-confirm-close" class="filled" type="button">Enregistrer</button>
 				</footer>
 			</section>
 
 			<div class="share-popover" id="share-popover" role="dialog" aria-labelledby="share-popover-title" hidden>
 				<header class="share-popover-header">
-					<h2 class="share-popover-title" id="share-popover-title">Partager</h2>
+					<h2 data-i18n="share" class="share-popover-title" id="share-popover-title">Partager</h2>
 				</header>
 				<label class="share-invite-field">
-					<span class="sr-only" id="share-invite-label">Inviter par e-mail</span>
-					<input
+					<span data-i18n="hInviteByEmail" class="sr-only" id="share-invite-label">Inviter par e-mail</span>
+					<input data-i18n-placeholder="shareInvitePlaceholder"
 						id="share-invite-input"
 						type="text"
 						autocomplete="off"
@@ -1214,7 +1214,7 @@
 							<span class="share-channel-icon share-channel-icon--neutral" aria-hidden="true">
 								<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.54.54l2.08-2.08a5 5 0 0 0-7.07-7.07L11.2 5.8"/><path d="M14 11a5 5 0 0 0-7.54-.54L4.38 12.54a5 5 0 0 0 7.07 7.07L12.8 18.2"/></svg>
 							</span>
-							<span class="share-channel-label">Obtenir un lien</span>
+							<span data-i18n="hGetALink" class="share-channel-label">Obtenir un lien</span>
 						</button>
 					</li>
 					<li>
@@ -1222,11 +1222,11 @@
 							<span class="share-channel-icon share-channel-icon--neutral" aria-hidden="true">
 								<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
 							</span>
-							<span class="share-channel-label">Adresse e-mail</span>
+							<span data-i18n="hEmailAddress" class="share-channel-label">Adresse e-mail</span>
 						</button>
 					</li>
 				</ul>
-				<p class="share-info-banner" id="share-info-banner">
+				<p data-i18n="shareInfoLocal" class="share-info-banner" id="share-info-banner">
 					Le fichier reste sur votre ordinateur — Slate ne charge rien dans le cloud.
 				</p>
 				<button class="share-link-settings" type="button" id="share-reveal-button">
@@ -1234,8 +1234,8 @@
 						<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15.3 15.3 0 0 1 4 9 15.3 15.3 0 0 1-4 9 15.3 15.3 0 0 1-4-9 15.3 15.3 0 0 1 4-9Z"/></svg>
 					</span>
 					<span class="share-link-settings-copy">
-						<strong>Accès au fichier</strong>
-						<span id="share-link-settings-help">Afficher dans le Finder pour joindre ou envoyer le PDF.</span>
+						<strong data-i18n="hFileAccess">Accès au fichier</strong>
+						<span data-i18n="shareLinkHelp" id="share-link-settings-help">Afficher dans le Finder pour joindre ou envoyer le PDF.</span>
 					</span>
 					<span class="share-link-settings-chevron" aria-hidden="true">›</span>
 				</button>
@@ -1245,40 +1245,40 @@
 				<header>
 					<div>
 						<p class="eyebrow">Slate</p>
-						<h2 id="settings-title">Settings</h2>
+						<h2 data-i18n="settings" id="settings-title">Settings</h2>
 					</div>
-					<button class="close-panel" id="settings-close" type="button" aria-label="Close settings">x</button>
+					<button data-i18n-aria-label="hCloseSettings" class="close-panel" id="settings-close" type="button" aria-label="Close settings">x</button>
 				</header>
 
 				<nav class="settings-tabs" role="tablist">
-					<button class="settings-tab active" type="button" data-settings-tab="general" id="settings-tab-general">Général</button>
-					<button class="settings-tab" type="button" data-settings-tab="display" id="settings-tab-display">Affichage</button>
-					<button class="settings-tab" type="button" data-settings-tab="identity" id="settings-tab-identity">Identité</button>
-					<button class="settings-tab" type="button" data-settings-tab="ai" id="settings-tab-ai">IA</button>
-					<button class="settings-tab" type="button" data-settings-tab="connectors" id="settings-tab-connectors">Connecteurs</button>
+					<button data-i18n="settingsTabGeneral" class="settings-tab active" type="button" data-settings-tab="general" id="settings-tab-general">Général</button>
+					<button data-i18n="menu.view" class="settings-tab" type="button" data-settings-tab="display" id="settings-tab-display">Affichage</button>
+					<button data-i18n="settingsTabIdentity" class="settings-tab" type="button" data-settings-tab="identity" id="settings-tab-identity">Identité</button>
+					<button data-i18n="aiKicker" class="settings-tab" type="button" data-settings-tab="ai" id="settings-tab-ai">IA</button>
+					<button data-i18n="settingsTabConnectors" class="settings-tab" type="button" data-settings-tab="connectors" id="settings-tab-connectors">Connecteurs</button>
 				</nav>
 
 				<div class="settings-grid" data-settings-pane="general">
 					<label class="setting-row">
 						<span>
-							<strong>Par défaut pour les nouveaux documents</strong>
-							<small>Appliqué à l’ouverture d’un fichier qui n’a pas encore de préférence.</small>
+							<strong data-i18n="autoSaveSetting">Par défaut pour les nouveaux documents</strong>
+							<small data-i18n="autoSaveDesc">Appliqué à l’ouverture d’un fichier qui n’a pas encore de préférence.</small>
 						</span>
 						<input id="setting-auto-save" type="checkbox" class="setting-switch" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>Mises à jour automatiques</strong>
-							<small>Télécharge et installe les nouvelles versions sans demander, puis redémarre Slate.</small>
+							<strong data-i18n="autoUpdateSetting">Mises à jour automatiques</strong>
+							<small data-i18n="autoUpdateDesc">Télécharge et installe les nouvelles versions sans demander, puis redémarre Slate.</small>
 						</span>
 						<input id="setting-auto-update" type="checkbox" class="setting-switch" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>Default zoom</strong>
-							<small>Applied when opening a PDF unless fit width is enabled.</small>
+							<strong data-i18n="defaultZoom">Default zoom</strong>
+							<small data-i18n="defaultZoomDesc">Applied when opening a PDF unless fit width is enabled.</small>
 						</span>
 						<select id="setting-default-zoom">
 							<option value="1">100%</option>
@@ -1291,24 +1291,25 @@
 
 					<label class="setting-row">
 						<span>
-							<strong>Language</strong>
-							<small>Use the Mac language automatically or force one language.</small>
+							<strong data-i18n="language">Language</strong>
+							<small data-i18n="languageDesc">Use the Mac language automatically or force one language.</small>
 						</span>
 						<select id="setting-language">
 							<option value="auto">Auto</option>
 							<option value="fr">Français</option>
 							<option value="en">English</option>
+							<option value="es">Español</option>
 						</select>
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>Mise en page</strong>
-							<small>Défilement continu ou page par page.</small>
+							<strong data-i18n="pageLayoutSetting">Mise en page</strong>
+							<small data-i18n="pageLayoutDesc">Défilement continu ou page par page.</small>
 						</span>
 						<select id="setting-page-layout">
-							<option value="continuous">Continu</option>
-							<option value="single">Page par page</option>
+							<option data-i18n="pageLayoutContinuous" value="continuous">Continu</option>
+							<option data-i18n="pageLayoutSingle" value="single">Page par page</option>
 						</select>
 					</label>
 				</div>
@@ -1316,48 +1317,48 @@
 				<div class="settings-grid hidden" data-settings-pane="display">
 					<label class="setting-row">
 						<span>
-							<strong>Open documents in fit width</strong>
-							<small>Makes pages larger and easier to read by default.</small>
+							<strong data-i18n="fitWidthSetting">Open documents in fit width</strong>
+							<small data-i18n="fitWidthDesc">Makes pages larger and easier to read by default.</small>
 						</span>
 						<input id="setting-fit-width" type="checkbox" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>Show tools panel</strong>
-							<small>Keep the Acrobat-style tools panel visible on the left.</small>
+							<strong data-i18n="showTools">Show tools panel</strong>
+							<small data-i18n="showToolsDesc">Keep the Acrobat-style tools panel visible on the left.</small>
 						</span>
 						<input id="setting-show-tools" type="checkbox" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>Show quick rail</strong>
-							<small>Keep the right-side quick actions visible.</small>
+							<strong data-i18n="showRail">Show quick rail</strong>
+							<small data-i18n="showRailDesc">Keep the right-side quick actions visible.</small>
 						</span>
 						<input id="setting-show-rail" type="checkbox" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>Show page notes</strong>
-							<small>Display annotation chips on top of the PDF page.</small>
+							<strong data-i18n="showNotes">Show page notes</strong>
+							<small data-i18n="showNotesDesc">Display annotation chips on top of the PDF page.</small>
 						</span>
 						<input id="setting-show-notes" type="checkbox" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong id="setting-guides-label">Smart alignment guides</strong>
-							<small id="setting-guides-desc">Affiche des lignes rouges quand un bloc s'aligne avec un autre pendant le drag.</small>
+							<strong data-i18n="smartGuides" id="setting-guides-label">Smart alignment guides</strong>
+							<small data-i18n="smartGuidesDesc" id="setting-guides-desc">Affiche des lignes rouges quand un bloc s'aligne avec un autre pendant le drag.</small>
 						</span>
 						<input id="setting-show-guides" type="checkbox" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>Highlight color</strong>
-							<small>Default color for new highlights.</small>
+							<strong data-i18n="highlightColor">Highlight color</strong>
+							<small data-i18n="highlightColorDesc">Default color for new highlights.</small>
 						</span>
 						<input id="setting-highlight-color" type="color" />
 					</label>
@@ -1366,16 +1367,16 @@
 				<div class="settings-grid hidden" data-settings-pane="identity">
 					<label class="setting-row">
 						<span>
-							<strong>Nom</strong>
-							<small>Utilisé pour signer tes notes et commentaires.</small>
+							<strong data-i18n="identityNameLabel">Nom</strong>
+							<small data-i18n="identityNameDesc">Utilisé pour signer tes notes et commentaires.</small>
 						</span>
 						<input id="setting-identity-name" type="text" autocomplete="name" spellcheck="false" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>E-mail</strong>
-							<small>Associé à ton identité dans les documents.</small>
+							<strong data-i18n="identityEmailLabel">E-mail</strong>
+							<small data-i18n="identityEmailDesc">Associé à ton identité dans les documents.</small>
 						</span>
 						<input id="setting-identity-email" type="email" autocomplete="email" spellcheck="false" />
 					</label>
@@ -1384,8 +1385,8 @@
 				<div class="settings-grid hidden" data-settings-pane="ai">
 					<label class="setting-row">
 						<span>
-							<strong>Fournisseur</strong>
-							<small>Le modèle qui assiste tes documents.</small>
+							<strong data-i18n="aiProviderLabel">Fournisseur</strong>
+							<small data-i18n="aiProviderDesc">Le modèle qui assiste tes documents.</small>
 						</span>
 						<select id="setting-ai-provider">
 							<option value="claude">Claude (Anthropic)</option>
@@ -1396,24 +1397,24 @@
 
 					<label class="setting-row">
 						<span>
-							<strong>Modèle</strong>
-							<small>Laisser vide pour le modèle recommandé.</small>
+							<strong data-i18n="aiModelLabel">Modèle</strong>
+							<small data-i18n="aiModelDesc">Laisser vide pour le modèle recommandé.</small>
 						</span>
 						<input id="setting-ai-model" type="text" spellcheck="false" placeholder="auto" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>Clé API</strong>
-							<small>Stockée uniquement sur ce Mac.</small>
+							<strong data-i18n="aiKeyLabel">Clé API</strong>
+							<small data-i18n="aiKeyDesc">Stockée uniquement sur ce Mac.</small>
 						</span>
 						<input id="setting-ai-key" type="password" autocomplete="off" spellcheck="false" />
 					</label>
 
 					<label class="setting-row">
 						<span>
-							<strong>URL locale</strong>
-							<small>Pour un modèle local ou un endpoint compatible.</small>
+							<strong data-i18n="aiBaseUrlLabel">URL locale</strong>
+							<small data-i18n="aiBaseUrlDesc">Pour un modèle local ou un endpoint compatible.</small>
 						</span>
 						<input id="setting-ai-baseurl" type="text" spellcheck="false" placeholder="http://localhost:11434" />
 					</label>
@@ -1423,23 +1424,23 @@
 					<div class="setting-row">
 						<span>
 							<strong id="setting-claude-label">Claude Desktop</strong>
-							<small id="setting-claude-desc">Connecte Alto à Claude Desktop (serveur MCP local) pour que Claude modifie tes PDF lui-même.</small>
+							<small data-i18n="hConnectAltoToClaudeDesktop" id="setting-claude-desc">Connecte Alto à Claude Desktop (serveur MCP local) pour que Claude modifie tes PDF lui-même.</small>
 						</span>
-						<button id="connect-claude" class="setting-action-button" type="button">Connecter</button>
+						<button data-i18n="connectClaude" id="connect-claude" class="setting-action-button" type="button">Connecter</button>
 					</div>
 
 					<div class="setting-row">
 						<span>
-							<strong id="setting-mcp-label">ChatGPT, Cursor et autres clients MCP</strong>
-							<small id="setting-mcp-desc">Copie le chemin du serveur MCP d'Alto pour le coller dans n'importe quel client compatible.</small>
+							<strong data-i18n="mcpClientsLabel" id="setting-mcp-label">ChatGPT, Cursor et autres clients MCP</strong>
+							<small data-i18n="hCopyThePathOfAlto" id="setting-mcp-desc">Copie le chemin du serveur MCP d'Alto pour le coller dans n'importe quel client compatible.</small>
 						</span>
-						<button id="copy-mcp-path" class="setting-action-button" type="button">Copier le chemin</button>
+						<button data-i18n="copyMcpPath" id="copy-mcp-path" class="setting-action-button" type="button">Copier le chemin</button>
 					</div>
 				</div>
 
 				<footer class="settings-footer">
-					<button id="clear-local-data" type="button">Clear local notes</button>
-					<button id="settings-done" class="filled" type="button">Done</button>
+					<button data-i18n="clearLocalNotes" id="clear-local-data" type="button">Clear local notes</button>
+					<button data-i18n="done" id="settings-done" class="filled" type="button">Done</button>
 				</footer>
 			</section>
 

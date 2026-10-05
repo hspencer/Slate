@@ -8,6 +8,10 @@ const BACKGROUND_CHECK_INITIAL_DELAY: Duration = Duration::from_secs(4);
 /// Intervalle du poll Rust — indépendant du WebView (timers JS gelés hors focus).
 const BACKGROUND_CHECK_INTERVAL: Duration = Duration::from_secs(15);
 
+/// Fork : les mises à jour pointent vers les releases de l'auteur original (build
+/// sans i18n, signé avec sa clé). Désactivées ; remettre à `true` avec un endpoint propre.
+const UPDATES_ENABLED: bool = false;
+
 /// Doit rester synchronisée avec `plugins.updater.endpoints` dans `tauri.conf.json`.
 const UPDATE_MANIFEST_URL: &str =
     "https://github.com/Soflutionltd/Slate/releases/latest/download/latest.json";
@@ -53,6 +57,9 @@ struct UpdateProgress {
 }
 
 async fn probe_update(app: &AppHandle) -> Option<UpdateInfo> {
+    if !UPDATES_ENABLED {
+        return None;
+    }
     let updater = match fresh_updater(app) {
         Ok(updater) => updater,
         Err(err) => {
@@ -87,6 +94,9 @@ pub async fn check_for_update(app: AppHandle) -> Result<Option<UpdateInfo>, Stri
 /// Poll natif : survit au gel des timers WKWebView dès que la fenêtre n'est plus au focus.
 /// Émet `slate-update-available` — le frontend affiche le toast.
 pub fn start_background_checks(app: AppHandle) {
+    if !UPDATES_ENABLED {
+        return;
+    }
     std::thread::Builder::new()
         .name("slate-updater".into())
         .spawn(move || {
@@ -113,6 +123,9 @@ pub fn start_background_checks(app: AppHandle) {
 pub async fn install_update(app: AppHandle) -> Result<(), String> {
     // Re-vérification fraîche au moment du clic : si une version encore plus récente
     // que celle affichée dans le pop-up vient de sortir, c'est elle qu'on installe.
+    if !UPDATES_ENABLED {
+        return Err("Mises à jour désactivées".to_string());
+    }
     let updater = fresh_updater(&app)?;
 
     let Some(update) = updater.check().await.map_err(|e| e.to_string())? else {

@@ -42,7 +42,8 @@
 		"resources": {
 			"libpdfium.dylib": "libpdfium.dylib",
 			"infoplist/en.lproj/InfoPlist.strings": "en.lproj/InfoPlist.strings",
-			"infoplist/fr.lproj/InfoPlist.strings": "fr.lproj/InfoPlist.strings"
+			"infoplist/fr.lproj/InfoPlist.strings": "fr.lproj/InfoPlist.strings",
+			"infoplist/es.lproj/InfoPlist.strings": "es.lproj/InfoPlist.strings"
 		},
 		"externalBin": ["binaries/alto-mcp"],
 		"icon": [

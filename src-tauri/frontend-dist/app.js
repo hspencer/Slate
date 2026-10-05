@@ -70,7 +70,7 @@ function pageViewport(page, zoom = state.zoom) {
 
 const defaultSettings = {
 	settingsVersion: 5,
-	language: 'auto',
+	language: 'es',
 	defaultZoom: 1,
 	fitWidth: true,
 	pageLayout: 'continuous',
@@ -396,683 +396,41 @@ const elements = {
 	compareCanvasDiff: document.getElementById('compare-canvas-diff')
 };
 
-const translations = {
-	en: {
-		allTools: 'All tools',
-		modify: 'Modify',
-		convert: 'Convert',
-		sign: 'Sign electronically',
-		searchPlaceholder: 'Search text or tools',
-		search: 'Search',
-		open: 'Open',
-		openAnother: 'Open',
-		exportNotes: 'Export notes',
-		exportEditedPdf: 'Export',
-		saveDocument: 'Save',
-		share: 'Share',
-		shareTitle: (name) => `Share “${name}”`,
-		shareInvitePlaceholder: 'Add a name or email address to invite',
-		shareInfoLocal: 'The file stays on your computer — Slate does not upload anything to the cloud.',
-		shareLinkHelp: 'Show in Finder to attach or send the PDF.',
-		sharePathCopied: 'File path copied to clipboard.',
-		shareOpenedWhatsApp: 'WhatsApp opened — file path copied.',
-		shareOpenedGmail: 'Gmail compose opened.',
-		shareOpenedOutlook: 'Outlook compose opened.',
-		shareOpenedTeams: 'Message copied — paste it in Teams.',
-		shareOpenedEmail: 'Email client opened.',
-		shareRevealed: 'File revealed in Finder.',
-		shareFailed: 'Unable to share this document.',
-		shareNoDocument: 'Open a PDF before sharing.',
-		settings: 'Settings',
-		closeTools: 'Close tools',
-		openPdf: 'Open a PDF',
-		saveCopy: 'Save a copy',
-		findText: 'Find text',
-		addComments: 'Add comments',
-		modifyPdf: 'Modify a PDF',
-		exportPdf: 'Export a PDF',
-		combineFiles: 'Combine files',
-		organizePages: 'Organize pages',
-		fillSign: 'Fill and sign',
-		scanOcr: 'Scan and OCR',
-		protectPdf: 'Protect a PDF',
-		redactPdf: 'Redact a PDF',
-		compressPdf: 'Compress a PDF',
-		deskewPdf: 'Straighten a scan',
-		exportImage: 'Export page to image',
-		docProperties: 'Document properties',
-		recentFiles: 'Recent files',
-		prepareForm: 'Prepare a form',
-		convertToPdf: 'Convert to PDF',
-		addStamp: 'Add a stamp',
-		useCertificate: 'Use a certificate',
-		usePrepress: 'Use print production',
-		convertColors: 'Convert colors',
-		convertColorsDone: 'Colors converted to Coated FOGRA39.',
-		convertColorsNeedPdf: 'Open a PDF before converting colors.',
-		convertColorsRunning: 'Converting colors to FOGRA39…',
-		printTitle: 'Print',
-		printPreparing: 'Preparing print…',
-		printSending: 'Sending to printer…',
-		printDone: 'Print job sent.',
-		printNoPrinters: 'No printers found.',
-		printNeedPdf: 'Open a PDF before printing.',
-		measureObjects: 'Measure objects',
-		compareFiles: 'Compare files',
-		addMultimedia: 'Add multimedia content',
-		sendComments: 'Send for comments',
-		guidedActions: 'Use guided actions',
-		prepareAccessibility: 'Prepare accessibility',
-		applyPdfStandards: 'Apply PDF standards',
-		addSearchIndex: 'Add a search index',
-		useJavascript: 'Use JavaScript',
-		customTool: 'Create a custom tool',
-		stylePdf: 'Style this PDF',
-		translatePdf: 'Translate this PDF',
-		showMore: 'Show more',
-		showLess: 'Show less',
-		localOnly: 'Local only',
-		localOnlyDesc: 'PDF files and notes stay on this Mac.',
-		noPdfOpen: 'No PDF open',
-		dropPdf: 'Drop a PDF anywhere.',
-		previous: 'Previous',
-		next: 'Next',
-		fitWidth: 'Fit width',
-		emptyTitle: 'Open a PDF',
-		emptyDesc: 'Drop a file here or choose one from your computer.',
-		choosePdf: 'Choose PDF',
-		notes: 'Notes',
-		annotations: 'Annotations',
-		notePlaceholder: 'Write a note or select a search result...',
-		highlight: 'Highlight',
-		comment: 'Comment',
-		noAnnotations: 'No annotations on this page.',
-		pages: 'Pages',
-		document: 'Document',
-		noDocument: 'No document',
-		pageSummaryEmpty: 'Open a PDF to see page controls.',
-		scanBlocks: 'Scan editable blocks',
-		ocrPage: 'OCR current page',
-		selectedText: 'Selected text',
-		editTextPlaceholder: 'Select a detected text block...',
-		applyText: 'Apply text',
-		hideBlock: 'Hide block',
-		nativeEditing: 'Native editing MVP',
-		nativeEditingDesc: 'Detected text blocks can be edited and moved, then exported as a flattened PDF.',
-		defaultZoom: 'Default zoom',
-		defaultZoomDesc: 'Applied when opening a PDF unless fit width is enabled.',
-		language: 'Language',
-		languageDesc: 'Use the Mac language automatically or force one language.',
-		fitWidthSetting: 'Open documents in fit width',
-		fitWidthDesc: 'Makes pages larger and easier to read by default.',
-		showTools: 'Show tools panel',
-		showToolsDesc: 'Keep the Acrobat-style tools panel visible on the left.',
-		showRail: 'Show quick rail',
-		showRailDesc: 'Keep the right-side quick actions visible.',
-		showNotes: 'Show page notes',
-		showNotesDesc: 'Display annotation chips on top of the PDF page.',
-		highlightColor: 'Highlight color',
-		highlightColorDesc: 'Default color for new highlights.',
-		clearLocalNotes: 'Clear local notes',
-		done: 'Done',
-		resultsEmpty: 'Search results will appear here.',
-		pdfLoaded: 'PDF loaded locally.',
-		openingPdf: 'Opening PDF...',
-		onlyPdf: 'Only PDF files are supported.',
-		docRepaired: 'Damaged document repaired on open.',
-		searching: 'Searching...',
-		noResults: 'No results.',
-		resultsFound: (count) => `${count} result(s) found.`,
-		annotationSaved: 'Annotation saved locally.',
-		textUpdated: 'Text block updated.',
-		blockHidden: 'Block hidden for edited export.',
-		editEnabled: 'Edit mode enabled.',
-		editDisabled: 'Edit mode disabled.',
-		scanningBlocks: 'Scanning editable text blocks...',
-		blocksDetected: (count) => `${count} editable text block(s) detected.`,
-		ocrRunning: 'Running local OCR...',
-		ocrDetected: (count) => `${count} OCR block(s) detected locally.`,
-		exportingEdited: 'Flattening edited PDF...',
-		exportedEdited: 'Edited PDF exported.',
-		localNotesCleared: 'Local notes cleared.',
-		fileSaved: 'File saved.',
-		fontsWebGroup: 'Online fonts',
-		fontsCatSans: 'Online · Sans-serif',
-		fontsCatSerif: 'Online · Serif',
-		fontsCatMono: 'Online · Monospace',
-		fontsCatDisplay: 'Online · Display',
-		fontsCatScript: 'Online · Handwriting',
-		fontsSystemGroup: 'Fonts on this computer',
-		createTab: '+ Create',
-		saveChangesTitle: 'Save changes?',
-		saveChangesMessage: 'This PDF contains unsaved changes.',
-		saveChangesConfirm: 'Save',
-		saveChangesDiscard: "Don't save",
-		saveChangesCancel: 'Cancel',
-		untitledPdf: 'Untitled PDF',
-		combineTitle: 'Combine PDF files',
-		combineHelp: 'Pick several PDFs to merge into one. The new file will keep all pages in order.',
-		combineCta: 'Select files',
-		combineProcessing: 'Combining files...',
-		combineDone: 'PDFs combined.',
-		combineNeedTwo: 'Select at least two PDFs.',
-		protectTitle: 'Protect this PDF',
-		protectHelp: 'Set a password (AES-256). Required to open the file.',
-		protectPassword: 'Password',
-		protectConfirm: 'Confirm password',
-		protectCta: 'Protect',
-		protectMismatch: 'Passwords do not match.',
-		protectEmpty: 'Enter a password.',
-		protectProcessing: 'Encrypting PDF...',
-		protectDone: 'PDF protected.',
-		compressProcessing: 'Compressing PDF...',
-		compressDone: (saved) => `PDF compressed (${saved} smaller).`,
-		compressHelp: 'Downsamples and re-encodes embedded images. Higher quality keeps more detail; lower quality shrinks more.',
-		compressQuality: 'Quality',
-		compressLow: 'Small file (screen)',
-		compressMedium: 'Balanced',
-		compressHigh: 'High quality (print)',
-		deskewProcessing: 'Analyzing and straightening scan...',
-		deskewDone: (pages) => `Scan straightened: ${pages}.`,
-		deskewNone: 'No skew detected in this document.',
-		connectClaude: 'Connect',
-		connectClaudeDesc: 'Connect Slate to Claude Desktop (local MCP server) so Claude can edit your PDFs itself.',
-		connectClaudeDone: 'Claude Desktop connected. Restart Claude Desktop to see the "alto-pdf" tools.',
-		settingsTabGeneral: 'General',
-		settingsTabDisplay: 'Display',
-		settingsTabIdentity: 'Identity',
-		settingsTabAi: 'AI',
-		settingsTabConnectors: 'Connectors',
-		pageLayoutSetting: 'Page layout',
-		pageLayoutDesc: 'Continuous scrolling or one page at a time.',
-		autoSaveSetting: 'Default for new documents',
-		autoSaveDesc: 'Used when a file has no saved preference yet.',
-		autoUpdateSetting: 'Automatic updates',
-		autoUpdateDesc: 'Download and install new versions without asking, then restart Slate.',
-		autoSaveToolbar: 'Auto-save',
-		autoSaved: 'Saved automatically.',
-		pageLayoutContinuous: 'Continuous',
-		pageLayoutSingle: 'Single page',
-		identityNameLabel: 'Name',
-		identityNameDesc: 'Used to sign your notes and comments.',
-		identityEmailLabel: 'Email',
-		identityEmailDesc: 'Linked to your identity in documents.',
-		aiProviderLabel: 'Provider',
-		aiProviderDesc: 'The model assisting your documents.',
-		aiModelLabel: 'Model',
-		aiModelDesc: 'Leave empty for the recommended model.',
-		aiKeyLabel: 'API key',
-		aiKeyDesc: 'Stored only on this Mac.',
-		aiBaseUrlLabel: 'Local URL',
-		aiBaseUrlDesc: 'For a local model or compatible endpoint.',
-		aiConfigSaved: 'AI configuration saved.',
-		mcpClientsLabel: 'ChatGPT, Cursor & other MCP clients',
-		mcpClientsDesc: "Copy the path of Slate's MCP server to paste into any compatible client.",
-		copyMcpPath: 'Copy path',
-		mcpPathCopied: 'MCP server path copied to clipboard.',
-		smartGuides: 'Smart alignment guides',
-		smartGuidesDesc: 'Show red lines when a block aligns with another while dragging.',
-		rotateProcessing: 'Rotating page...',
-		rotateDone: 'Page rotated.',
-		rotatePageLeft: 'Rotate 90° left',
-		rotatePageRight: 'Rotate 90° right',
-		deleteThisPage: 'Delete this page',
-		deleteLastPage: 'The last page cannot be deleted.',
-		dragToReorder: 'Drag to reorder',
-		deleteProcessing: 'Deleting page...',
-		deleteDone: 'Page deleted.',
-		cancel: 'Cancel',
-		needPdfOpen: 'Open a PDF first.',
-		outlineTitle: 'Bookmarks',
-		sign: 'Sign',
-		signTitle: 'Fill & Sign',
-		aiKicker: 'AI',
-		aiTitle: 'AI assistant',
-		historyTitle: 'Modification history',
-		historyKicker: 'History',
-		historyTool: 'History',
-		historyEmpty: 'No modifications yet.',
-		historyCurrent: 'Current version',
-		historyOriginal: 'Original state',
-		historyUndone: 'Undone',
-		histEdit: 'Modification',
-		histTextEdit: 'Text edited',
-		histBlockMove: 'Block moved',
-		histBlockResize: 'Block resized',
-		histBlockDelete: 'Block deleted',
-		histBlockAdd: 'Text added',
-		histImageAdd: 'Image added',
-		histFormat: 'Formatting changed',
-		histDuplicate: 'Block duplicated',
-		histSignature: 'Signature',
-		histPage: 'Page modified',
-		options: 'Options',
-		apply: 'Apply',
-		processing: 'Processing…',
-		position: 'Position',
-		startAt: 'Start at',
-		fontSize: 'Font size',
-		margin: 'Margin (pt)',
-		matchCase: 'Match case',
-		posBottomCenter: 'Bottom center',
-		posBottomRight: 'Bottom right',
-		posBottomLeft: 'Bottom left',
-		posTopCenter: 'Top center',
-		posTopRight: 'Top right',
-		posTopLeft: 'Top left',
-		watermark: 'Add watermark',
-		watermarkHelp: 'A diagonal watermark is added to every page.',
-		watermarkText: 'Text',
-		watermarkSize: 'Size',
-		watermarkOpacity: 'Opacity',
-		watermarkRotation: 'Rotation (°)',
-		watermarkColor: 'Color',
-		watermarkBold: 'Bold',
-		watermarkEmpty: 'Enter watermark text.',
-		watermarkDone: 'Watermark added.',
-		pageNumbers: 'Add page numbers',
-		pageNumbersDone: 'Page numbers added.',
-		headerFooter: 'Header and footer',
-		headerFooterHelp: 'Adds editable text at the top and bottom of every page.',
-		headerText: 'Header',
-		footerText: 'Footer',
-		headerFooterEmpty: 'Enter a header or footer.',
-		headerFooterDone: 'Header and footer applied.',
-		imagesToPdf: 'Images to PDF',
-		imagesToPdfDone: 'PDF created from images.',
-		cropPages: 'Crop pages',
-		cropHelp: 'Margins (in points) removed from each side.',
-		cropTop: 'Top',
-		cropRight: 'Right',
-		cropBottom: 'Bottom',
-		cropLeft: 'Left',
-		cropDone: 'Pages cropped.',
-		autoRedact: 'Auto-redact',
-		autoRedactHelp: 'Comma-separated terms. Matching text is permanently removed.',
-		autoRedactTerms: 'Terms',
-		autoRedactEmpty: 'Enter at least one term.',
-		autoRedactNone: 'No match found.',
-		autoRedactDone: (n) => `${n} area(s) redacted.`,
-		redactCta: 'Redact',
-		flatten: 'Flatten',
-		flattenDone: 'PDF flattened.',
-		extractImages: 'Extract images',
-		extractImagesDone: (n) => `${n} image(s) extracted.`,
-		unlockPdf: 'Unlock (remove password)',
-		unlockHelp: 'Enter the current password to remove protection.',
-		unlockCta: 'Unlock',
-		unlockEmpty: 'Enter the password.',
-		unlockDone: 'Password removed.',
-		sanitize: 'Sanitize',
-		sanitizeDone: 'Scripts and triggers removed.',
-		repairPdf: 'Repair PDF',
-		repairProcessing: 'Repairing PDF...',
-		repairDone: 'PDF repaired and rebuilt.',
-		fillForms: 'Fill forms',
-		formsTitle: 'Form fields',
-		formsEmpty: 'This PDF has no fillable form.',
-		formsProcessing: 'Filling form...',
-		formsDone: 'Form filled and saved.',
-		removeAnnotations: 'Remove annotations',
-		removeAnnotationsDone: 'Annotations removed.',
-		removeBlankPages: 'Remove blank pages',
-		blankProcessing: 'Looking for blank pages...',
-		blankNone: 'No blank page found.',
-		blankDone: (count) => `${count} blank page${count > 1 ? 's' : ''} removed.`,
-		ocrSearchable: 'Make searchable (OCR)',
-		ocrLayerProcessing: 'Running OCR and adding a searchable text layer...',
-		ocrLayerDone: 'Searchable text layer added.',
-		signPdf: 'Sign with a certificate',
-		signHelp: 'Applies an invisible PAdES digital signature using your PKCS#12 certificate (.p12 / .pfx).',
-		signPassword: 'Certificate password',
-		signReason: 'Reason (optional)',
-		signLocation: 'Location (optional)',
-		signCta: 'Sign',
-		signProcessing: 'Signing the document...',
-		signDone: 'Document signed (PAdES).',
-		editBookmarks: 'Edit bookmarks',
-		bookmarkTitle: 'Title',
-		bookmarksDone: 'Bookmarks saved.'
-	},
-	fr: {
-		allTools: 'Tous les outils',
-		modify: 'Modifier',
-		convert: 'Convertir',
-		sign: 'Signer électroniquement',
-		searchPlaceholder: 'Rechercher du texte ou des outils',
-		search: 'Rechercher',
-		open: 'Ouvrir',
-		openAnother: 'Ouvrir',
-		exportNotes: 'Exporter les notes',
-		exportEditedPdf: 'Exporter',
-		saveDocument: 'Enregistrer',
-		share: 'Partager',
-		shareTitle: (name) => `Partager « ${name} »`,
-		shareInvitePlaceholder: "Ajouter le nom ou l'adresse e-mail pour l'invitation",
-		shareInfoLocal:
-			'Le fichier reste sur votre ordinateur — Slate ne charge rien dans le cloud.',
-		shareLinkHelp: 'Afficher dans le Finder pour joindre ou envoyer le PDF.',
-		sharePathCopied: 'Chemin du fichier copié dans le presse-papiers.',
-		shareOpenedWhatsApp: 'WhatsApp ouvert — chemin du fichier copié.',
-		shareOpenedGmail: 'Composition Gmail ouverte.',
-		shareOpenedOutlook: 'Composition Outlook ouverte.',
-		shareOpenedTeams: 'Message copié — colle-le dans Teams.',
-		shareOpenedEmail: 'Client mail ouvert.',
-		shareRevealed: 'Fichier affiché dans le Finder.',
-		shareFailed: 'Impossible de partager ce document.',
-		shareNoDocument: 'Ouvre un PDF avant de partager.',
-		settings: 'Paramètres',
-		closeTools: 'Fermer les outils',
-		openPdf: 'Ouvrir un PDF',
-		saveCopy: 'Enregistrer une copie',
-		findText: 'Rechercher du texte',
-		addComments: 'Ajouter des commentaires',
-		modifyPdf: 'Modifier un PDF',
-		exportPdf: 'Exporter un PDF',
-		combineFiles: 'Combiner des fichiers',
-		organizePages: 'Organiser les pages',
-		fillSign: 'Remplir et signer',
-		scanOcr: 'Scan et OCR',
-		protectPdf: 'Protéger un PDF',
-		redactPdf: 'Biffer un PDF',
-		compressPdf: 'Compresser un PDF',
-		deskewPdf: 'Redresser un scan',
-		exportImage: 'Exporter la page en image',
-		docProperties: 'Propriétés du document',
-		recentFiles: 'Fichiers récents',
-		prepareForm: 'Préparer un formulaire',
-		convertToPdf: 'Convertir en PDF',
-		addStamp: 'Ajouter un tampon',
-		useCertificate: 'Utiliser un certificat',
-		usePrepress: 'Utiliser le prépresse',
-		convertColors: 'Convertir les couleurs',
-		convertColorsDone: 'Couleurs converties en Coated FOGRA39.',
-		convertColorsNeedPdf: 'Ouvre un PDF avant de convertir les couleurs.',
-		convertColorsRunning: 'Conversion des couleurs vers FOGRA39…',
-		printTitle: 'Imprimer',
-		printPreparing: 'Préparation de l’impression…',
-		printSending: 'Envoi à l’imprimante…',
-		printDone: 'Travail d’impression envoyé.',
-		printNoPrinters: 'Aucune imprimante trouvée.',
-		printNeedPdf: 'Ouvre un PDF avant d’imprimer.',
-		measureObjects: 'Mesurer des objets',
-		compareFiles: 'Comparer des fichiers',
-		addMultimedia: 'Ajouter du contenu multimédia',
-		sendComments: 'Envoyer pour commentaires',
-		guidedActions: 'Utiliser des actions guidées',
-		prepareAccessibility: "Préparer l'accessibilité",
-		applyPdfStandards: 'Appliquer les normes PDF',
-		addSearchIndex: 'Ajouter un index de recherche',
-		useJavascript: 'Utiliser JavaScript',
-		customTool: 'Créer un outil personnalisé',
-		stylePdf: 'Styliser ce PDF',
-		translatePdf: 'Traduire ce PDF',
-		showMore: 'Afficher plus',
-		showLess: 'Afficher moins',
-		localOnly: 'Local uniquement',
-		localOnlyDesc: 'Les PDF et les notes restent sur ce Mac.',
-		noPdfOpen: 'Aucun PDF ouvert',
-		dropPdf: 'Dépose un PDF n’importe où.',
-		previous: 'Précédent',
-		next: 'Suivant',
-		fitWidth: 'Largeur page',
-		emptyTitle: 'Ouvrir un PDF',
-		emptyDesc: 'Dépose un fichier ici ou choisis-en un depuis ton ordinateur.',
-		choosePdf: 'Choisir un PDF',
-		notes: 'Notes',
-		annotations: 'Annotations',
-		notePlaceholder: 'Écris une note ou sélectionne un résultat...',
-		highlight: 'Surligner',
-		comment: 'Commenter',
-		noAnnotations: 'Aucune annotation sur cette page.',
-		pages: 'Pages',
-		document: 'Document',
-		noDocument: 'Aucun document',
-		pageSummaryEmpty: 'Ouvre un PDF pour voir les contrôles de page.',
-		scanBlocks: 'Scanner les blocs modifiables',
-		ocrPage: 'OCR de la page',
-		selectedText: 'Texte sélectionné',
-		editTextPlaceholder: 'Sélectionne un bloc de texte détecté...',
-		applyText: 'Appliquer',
-		hideBlock: 'Masquer',
-		nativeEditing: 'Édition native MVP',
-		nativeEditingDesc: 'Les blocs détectés peuvent être modifiés et déplacés, puis exportés dans un PDF aplati.',
-		defaultZoom: 'Zoom par défaut',
-		defaultZoomDesc: 'Appliqué à l’ouverture sauf si la largeur page est activée.',
-		language: 'Langue',
-		languageDesc: 'Utilise automatiquement la langue du Mac ou force une langue.',
-		fitWidthSetting: 'Ouvrir les documents en largeur page',
-		fitWidthDesc: 'Rend les pages plus grandes et plus lisibles par défaut.',
-		showTools: 'Afficher le panneau outils',
-		showToolsDesc: 'Garder le panneau façon Acrobat visible à gauche.',
-		showRail: 'Afficher la barre rapide',
-		showRailDesc: 'Garder les actions rapides visibles à droite.',
-		showNotes: 'Afficher les notes sur la page',
-		showNotesDesc: 'Affiche les bulles d’annotation au-dessus du PDF.',
-		highlightColor: 'Couleur de surlignage',
-		highlightColorDesc: 'Couleur par défaut des nouveaux surlignages.',
-		clearLocalNotes: 'Effacer les notes locales',
-		done: 'Terminé',
-		resultsEmpty: 'Les résultats apparaîtront ici.',
-		pdfLoaded: 'PDF chargé localement.',
-		openingPdf: 'Ouverture du PDF...',
-		onlyPdf: 'Seuls les fichiers PDF sont pris en charge.',
-		docRepaired: 'Document endommagé réparé à l\'ouverture.',
-		searching: 'Recherche...',
-		noResults: 'Aucun résultat.',
-		resultsFound: (count) => `${count} résultat(s) trouvé(s).`,
-		annotationSaved: 'Annotation enregistrée localement.',
-		textUpdated: 'Bloc de texte mis à jour.',
-		blockHidden: 'Bloc masqué pour l’export modifié.',
-		editEnabled: 'Mode modification activé.',
-		editDisabled: 'Mode modification désactivé.',
-		scanningBlocks: 'Scan des blocs de texte modifiables...',
-		blocksDetected: (count) => `${count} bloc(s) de texte modifiable(s) détecté(s).`,
-		ocrRunning: 'OCR local en cours...',
-		ocrDetected: (count) => `${count} bloc(s) OCR détecté(s) localement.`,
-		exportingEdited: 'Aplatissement du PDF modifié...',
-		exportedEdited: 'PDF modifié exporté.',
-		localNotesCleared: 'Notes locales effacées.',
-		fileSaved: 'Fichier enregistré.',
-		fontsWebGroup: 'Polices en ligne',
-		fontsCatSans: 'En ligne · Sans-serif',
-		fontsCatSerif: 'En ligne · Serif',
-		fontsCatMono: 'En ligne · Monospace',
-		fontsCatDisplay: 'En ligne · Display',
-		fontsCatScript: 'En ligne · Manuscrites',
-		fontsSystemGroup: 'Polices de cet ordinateur',
-		createTab: '+ Créer',
-		saveChangesTitle: 'Enregistrer les modifications ?',
-		saveChangesMessage: 'Ce PDF contient des modifications non enregistrées.',
-		saveChangesConfirm: 'Enregistrer',
-		saveChangesDiscard: 'Ne pas enregistrer',
-		saveChangesCancel: 'Annuler',
-		untitledPdf: 'PDF sans titre',
-		combineTitle: 'Combiner des fichiers PDF',
-		combineHelp: 'Sélectionne plusieurs PDF à fusionner en un seul. Les pages garderont leur ordre.',
-		combineCta: 'Choisir les fichiers',
-		combineProcessing: 'Fusion des fichiers...',
-		combineDone: 'PDF combinés.',
-		combineNeedTwo: 'Sélectionne au moins deux PDF.',
-		protectTitle: 'Protéger ce PDF',
-		protectHelp: 'Définis un mot de passe (AES-256). Il sera demandé à l’ouverture.',
-		protectPassword: 'Mot de passe',
-		protectConfirm: 'Confirmer le mot de passe',
-		protectCta: 'Protéger',
-		protectMismatch: 'Les mots de passe ne correspondent pas.',
-		protectEmpty: 'Saisis un mot de passe.',
-		protectProcessing: 'Chiffrement du PDF...',
-		protectDone: 'PDF protégé.',
-		compressProcessing: 'Compression du PDF...',
-		compressDone: (saved) => `PDF compressé (${saved} en moins).`,
-		compressHelp: 'Ré-échantillonne et ré-encode les images du PDF. Une qualité élevée conserve plus de détail ; une qualité basse réduit davantage le poids.',
-		compressQuality: 'Qualité',
-		compressLow: 'Fichier léger (écran)',
-		compressMedium: 'Équilibré',
-		compressHigh: 'Haute qualité (impression)',
-		deskewProcessing: 'Analyse et redressement du scan...',
-		deskewDone: (pages) => `Scan redressé : ${pages}.`,
-		deskewNone: 'Aucune inclinaison détectée dans ce document.',
-		connectClaude: 'Connecter',
-		connectClaudeDesc: 'Connecte Slate à Claude Desktop (serveur MCP local) pour que Claude modifie tes PDF lui-même.',
-		connectClaudeDone: 'Claude Desktop connecté. Redémarre Claude Desktop pour voir les outils « alto-pdf ».',
-		settingsTabGeneral: 'Général',
-		settingsTabDisplay: 'Affichage',
-		settingsTabIdentity: 'Identité',
-		settingsTabAi: 'IA',
-		settingsTabConnectors: 'Connecteurs',
-		pageLayoutSetting: 'Mise en page',
-		pageLayoutDesc: 'Défilement continu ou page par page.',
-		autoSaveSetting: 'Par défaut pour les nouveaux documents',
-		autoSaveDesc: 'Appliqué à l’ouverture d’un fichier qui n’a pas encore de préférence.',
-		autoUpdateSetting: 'Mises à jour automatiques',
-		autoUpdateDesc: 'Télécharge et installe les nouvelles versions sans demander, puis redémarre Slate.',
-		autoSaveToolbar: 'Enreg. auto',
-		autoSaved: 'Enregistré automatiquement.',
-		pageLayoutContinuous: 'Continu',
-		pageLayoutSingle: 'Page par page',
-		identityNameLabel: 'Nom',
-		identityNameDesc: 'Utilisé pour signer tes notes et commentaires.',
-		identityEmailLabel: 'E-mail',
-		identityEmailDesc: 'Associé à ton identité dans les documents.',
-		aiProviderLabel: 'Fournisseur',
-		aiProviderDesc: 'Le modèle qui assiste tes documents.',
-		aiModelLabel: 'Modèle',
-		aiModelDesc: 'Laisser vide pour le modèle recommandé.',
-		aiKeyLabel: 'Clé API',
-		aiKeyDesc: 'Stockée uniquement sur ce Mac.',
-		aiBaseUrlLabel: 'URL locale',
-		aiBaseUrlDesc: 'Pour un modèle local ou un endpoint compatible.',
-		aiConfigSaved: 'Configuration IA enregistrée.',
-		mcpClientsLabel: 'ChatGPT, Cursor et autres clients MCP',
-		mcpClientsDesc: "Copie le chemin du serveur MCP de Slate pour le coller dans n'importe quel client compatible.",
-		copyMcpPath: 'Copier le chemin',
-		mcpPathCopied: 'Chemin du serveur MCP copié dans le presse-papiers.',
-		smartGuides: "Guides d'alignement intelligents",
-		smartGuidesDesc: "Affiche des lignes rouges quand un bloc s'aligne avec un autre pendant le drag.",
-		rotateProcessing: 'Rotation de la page...',
-		rotateDone: 'Page tournée.',
-		rotatePageLeft: 'Tourner à 90° vers la gauche',
-		rotatePageRight: 'Tourner à 90° vers la droite',
-		deleteThisPage: 'Supprimer cette page',
-		deleteLastPage: 'Impossible de supprimer la dernière page.',
-		dragToReorder: 'Glisser pour réordonner',
-		deleteProcessing: 'Suppression de la page...',
-		deleteDone: 'Page supprimée.',
-		cancel: 'Annuler',
-		needPdfOpen: 'Ouvre d’abord un PDF.',
-		outlineTitle: 'Marque-pages',
-		sign: 'Signer',
-		signTitle: 'Remplir et signer',
-		aiKicker: 'IA',
-		aiTitle: 'Assistant IA',
-		historyTitle: 'Historique des modifications',
-		historyKicker: 'Historique',
-		historyTool: 'Historique',
-		historyEmpty: 'Aucune modification pour l’instant.',
-		historyCurrent: 'Version actuelle',
-		historyOriginal: 'État d’origine',
-		historyUndone: 'Annulée',
-		histEdit: 'Modification',
-		histTextEdit: 'Texte modifié',
-		histBlockMove: 'Bloc déplacé',
-		histBlockResize: 'Bloc redimensionné',
-		histBlockDelete: 'Bloc supprimé',
-		histBlockAdd: 'Texte ajouté',
-		histImageAdd: 'Image ajoutée',
-		histFormat: 'Mise en forme modifiée',
-		histDuplicate: 'Bloc dupliqué',
-		histSignature: 'Signature',
-		histPage: 'Page modifiée',
-		options: 'Options',
-		apply: 'Appliquer',
-		processing: 'Traitement…',
-		position: 'Position',
-		startAt: 'Commencer à',
-		fontSize: 'Taille de police',
-		margin: 'Marge (pt)',
-		matchCase: 'Respecter la casse',
-		posBottomCenter: 'Bas centre',
-		posBottomRight: 'Bas droite',
-		posBottomLeft: 'Bas gauche',
-		posTopCenter: 'Haut centre',
-		posTopRight: 'Haut droite',
-		posTopLeft: 'Haut gauche',
-		watermark: 'Ajouter un filigrane',
-		watermarkHelp: 'Un filigrane en diagonale est ajouté sur chaque page.',
-		watermarkText: 'Texte',
-		watermarkSize: 'Taille',
-		watermarkOpacity: 'Opacité',
-		watermarkRotation: 'Rotation (°)',
-		watermarkColor: 'Couleur',
-		watermarkBold: 'Gras',
-		watermarkEmpty: 'Saisis le texte du filigrane.',
-		watermarkDone: 'Filigrane ajouté.',
-		pageNumbers: 'Numéros de page',
-		pageNumbersDone: 'Numéros de page ajoutés.',
-		headerFooter: 'En-tête et pied de page',
-		headerFooterHelp: 'Ajoute un texte éditable en haut et en bas de chaque page.',
-		headerText: 'En-tête',
-		footerText: 'Pied de page',
-		headerFooterEmpty: 'Saisis un en-tête ou un pied de page.',
-		headerFooterDone: 'En-tête et pied de page appliqués.',
-		imagesToPdf: 'Images → PDF',
-		imagesToPdfDone: 'PDF créé à partir des images.',
-		cropPages: 'Rogner les pages',
-		cropHelp: 'Marges (en points) retirées de chaque côté.',
-		cropTop: 'Haut',
-		cropRight: 'Droite',
-		cropBottom: 'Bas',
-		cropLeft: 'Gauche',
-		cropDone: 'Pages rognées.',
-		autoRedact: 'Caviardage auto',
-		autoRedactHelp: 'Termes séparés par des virgules. Le texte trouvé est supprimé définitivement.',
-		autoRedactTerms: 'Termes',
-		autoRedactEmpty: 'Saisis au moins un terme.',
-		autoRedactNone: 'Aucune occurrence trouvée.',
-		autoRedactDone: (n) => `${n} zone(s) caviardée(s).`,
-		redactCta: 'Caviarder',
-		flatten: 'Aplatir',
-		flattenDone: 'PDF aplati.',
-		extractImages: 'Extraire les images',
-		extractImagesDone: (n) => `${n} image(s) extraite(s).`,
-		unlockPdf: 'Déverrouiller (retirer le mot de passe)',
-		unlockHelp: 'Saisis le mot de passe actuel pour retirer la protection.',
-		unlockCta: 'Déverrouiller',
-		unlockEmpty: 'Saisis le mot de passe.',
-		unlockDone: 'Mot de passe retiré.',
-		sanitize: 'Nettoyer (sanitize)',
-		sanitizeDone: 'Scripts et déclencheurs retirés.',
-		repairPdf: 'Réparer le PDF',
-		repairProcessing: 'Réparation du PDF...',
-		repairDone: 'PDF réparé et reconstruit.',
-		fillForms: 'Remplir les formulaires',
-		formsTitle: 'Champs du formulaire',
-		formsEmpty: 'Ce PDF ne contient pas de formulaire à remplir.',
-		formsProcessing: 'Remplissage du formulaire...',
-		formsDone: 'Formulaire rempli et enregistré.',
-		removeAnnotations: 'Supprimer les annotations',
-		removeAnnotationsDone: 'Annotations supprimées.',
-		removeBlankPages: 'Supprimer les pages blanches',
-		blankProcessing: 'Recherche des pages blanches...',
-		blankNone: 'Aucune page blanche détectée.',
-		blankDone: (count) => `${count} page${count > 1 ? 's' : ''} blanche${count > 1 ? 's' : ''} supprimée${count > 1 ? 's' : ''}.`,
-		ocrSearchable: 'Rendre recherchable (OCR)',
-		ocrLayerProcessing: 'OCR en cours, ajout du calque de texte recherchable...',
-		ocrLayerDone: 'Calque de texte recherchable ajouté.',
-		signPdf: 'Signer avec un certificat',
-		signHelp: 'Appose une signature numérique PAdES invisible à partir de ton certificat PKCS#12 (.p12 / .pfx).',
-		signPassword: 'Mot de passe du certificat',
-		signReason: 'Motif (optionnel)',
-		signLocation: 'Lieu (optionnel)',
-		signCta: 'Signer',
-		signProcessing: 'Signature du document...',
-		signDone: 'Document signé (PAdES).',
-		editBookmarks: 'Éditer les marque-pages',
-		bookmarkTitle: 'Titre',
-		bookmarksDone: 'Marque-pages enregistrés.'
+// Catalogues dans locales/*.json. fr est la référence (toutes les clés) ; en puis es
+// peuvent être partiels. Valeur = chaîne avec {0}, {1}… ou { one, other } (Intl.PluralRules,
+// pluriel choisi sur le premier argument).
+const SUPPORTED_LOCALES = ['fr', 'en', 'es'];
+const MESSAGE_FALLBACK = { es: ['en', 'fr'], en: ['fr'], fr: [] };
+const catalogs = Object.fromEntries(
+	await Promise.all(
+		SUPPORTED_LOCALES.map(async (l) => [l, await (await fetch(`./locales/${l}.json`)).json()])
+	)
+);
+
+// Erreurs renvoyées par Rust (texte source fr ou en, {0}… = paramètres) → clé de catalogue.
+const rustErrors = Object.entries(await (await fetch('./locales/rust-errors.json')).json()).map(
+	([source, key]) => {
+		const parts = source.split(/\{\d\}/).map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+		const last = parts.length - 1;
+		// Paramètre final : gourmand (jusqu'à la fin du message) ; sinon minimal.
+		const pattern = parts
+			.map((p, i) => (i === last ? p : `${p}([\\s\\S]*${i === last - 1 && !parts[last] ? '' : '?'})`))
+			.join('');
+		return { re: new RegExp(pattern), key, params: last };
 	}
-};
+);
+
+function localizeRustError(error) {
+	const translate = (message) => {
+		for (const { re, key, params } of rustErrors) {
+			message = message.replace(re, (_match, ...groups) => t(key, ...groups.slice(0, params)));
+		}
+		return message;
+	};
+	if (typeof error === 'string') return translate(error);
+	if (error instanceof Error) error.message = translate(error.message);
+	return error;
+}
 
 const iconNames = [
 	'open',
@@ -1225,9 +583,29 @@ const iconTints = {
 	bookmark: 'amber',
 };
 
+// Variante régionale (es-CL, en-GB, fr-CA…) → langue de base ; non gérée → null.
+function baseLocale(tag) {
+	const base = String(tag || '').toLowerCase().split(/[-_]/)[0];
+	return SUPPORTED_LOCALES.includes(base) ? base : null;
+}
+
 function currentLocale() {
-	if (state.settings.language && state.settings.language !== 'auto') return state.settings.language;
-	return navigator.language?.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+	const setting = state.settings.language;
+	if (setting && setting !== 'auto') return baseLocale(setting) ?? 'es';
+	for (const tag of navigator.languages ?? [navigator.language]) {
+		const base = baseLocale(tag);
+		if (base) return base;
+	}
+	return 'es';
+}
+
+// Locale BCP-47 pour Intl (dates, nombres) ; lundi premier jour de semaine sauf en.
+function intlLocale() {
+	return { fr: 'fr-FR', en: 'en-US', es: 'es' }[currentLocale()];
+}
+
+function weekStartsOn() {
+	return currentLocale() === 'en' ? 0 : 1;
 }
 
 // Aligne la langue des panneaux et menus NATIFS macOS (impression, enregistrer…)
@@ -1243,8 +621,16 @@ function syncNativeLanguage() {
 }
 
 function t(key, ...args) {
-	const value = translations[currentLocale()][key] ?? translations.en[key] ?? key;
-	return typeof value === 'function' ? value(...args) : value;
+	const locale = currentLocale();
+	for (const l of [locale, ...MESSAGE_FALLBACK[locale]]) {
+		let value = catalogs[l][key];
+		if (value === undefined) continue;
+		if (typeof value === 'object') {
+			value = value[new Intl.PluralRules(l).select(Number(args[0]))] ?? value.other;
+		}
+		return value.replace(/\{(\d+)\}/g, (_, i) => args[i] ?? '');
+	}
+	return key;
 }
 
 function setText(target, key) {
@@ -1272,9 +658,21 @@ function applyIcon(element, name) {
 	}
 }
 
+// Textes statiques de index.html : data-i18n="clé" (contenu) et data-i18n-<attr>="clé"
+// (title, placeholder, aria-label, alt). Appliqué à chaque changement de langue.
+function applyI18n(root = document) {
+	for (const el of root.querySelectorAll('[data-i18n]')) el.textContent = t(el.dataset.i18n, ...(el.dataset.i18nArgs?.split(',') ?? []));
+	for (const attr of ['title', 'placeholder', 'aria-label', 'alt']) {
+		for (const el of root.querySelectorAll(`[data-i18n-${attr}]`)) {
+			el.setAttribute(attr, t(el.getAttribute(`data-i18n-${attr}`)));
+		}
+	}
+}
+
 function localizeUi() {
 	document.documentElement.lang = currentLocale();
 	document.title = 'Slate';
+	applyI18n();
 
 	setText('.top-tabs [data-open-panel="tools"]', 'allTools');
 	setText(elements.modifyTab, 'modify');
@@ -1283,10 +681,7 @@ function localizeUi() {
 	setText(elements.createTabButton, 'createTab');
 	for (const button of document.querySelectorAll('[data-tool-disabled]')) {
 		button.disabled = true;
-		button.title =
-			currentLocale() === 'fr'
-				? 'Cette fonction sera câblée dans une prochaine passe.'
-				: button.dataset.toolDisabled;
+		button.title = t('toolSoon');
 	}
 	setPlaceholder(elements.searchInput, 'searchPlaceholder');
 	setText(elements.searchButton, 'search');
@@ -1434,14 +829,15 @@ function getInvoke() {
 
 async function invokeCommand(command, args) {
 	const invoke = getInvoke();
-	if (invoke) {
-		return invoke(command, args);
-	}
 	const bridge = window.slatePdfBridge;
-	if (bridge?.invoke) {
-		return bridge.invoke(command, args);
+	if (!invoke && !bridge?.invoke) {
+		throw new Error(t('nativeUnavailable'));
 	}
-	throw new Error('Native Tauri commands are unavailable in this window.');
+	try {
+		return await (invoke ? invoke(command, args) : bridge.invoke(command, args));
+	} catch (error) {
+		throw localizeRustError(error);
+	}
 }
 
 // Pour les commandes qui renvoient des octets bruts (PDF, fichiers) : côté Rust
@@ -2163,7 +1559,7 @@ async function openPdfFromBytes(bytes, fileName, options = {}) {
 				await activateTab(existing.id);
 				persistOpenSession();
 				setStatus(
-					currentLocale() === 'fr' ? 'Ce document est déjà ouvert.' : 'This document is already open.'
+					t('thisDocumentIsAlreadyOpen')
 				);
 				return;
 			}
@@ -2218,11 +1614,11 @@ async function openPdfFromBytes(bytes, fileName, options = {}) {
 		if (tab.filePath || tab.recoveryPath) await restorePersistedEditHistory(tab);
 	} catch (error) {
 		console.error(error);
-		setStatus(error instanceof Error ? error.message : 'Failed to open PDF.', 'error');
+		setStatus(error instanceof Error ? error.message : t('openFailed'), 'error');
 	}
 }
 
-const TAB_SAVED_MARK = `<span class="document-tab-saved" aria-label="Saved"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.2 4.8 8.8 9.8 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`;
+const tabSavedMark = () => `<span class="document-tab-saved" aria-label="${t('tabSaved')}"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.2 4.8 8.8 9.8 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`;
 let _justSavedTabId = null;
 let _justSavedTimer = null;
 
@@ -2244,11 +1640,11 @@ function flashSavedTab(tabId) {
 		el.classList.add('just-saved');
 		const mark = el.querySelector('.document-tab-saved');
 		if (mark) {
-			mark.setAttribute('aria-label', currentLocale() === 'fr' ? 'Enregistré' : 'Saved');
+			mark.setAttribute('aria-label', t('saved'));
 		} else {
-			el.querySelector('.document-tab-title')?.insertAdjacentHTML('afterend', TAB_SAVED_MARK);
+			el.querySelector('.document-tab-title')?.insertAdjacentHTML('afterend', tabSavedMark());
 			const added = el.querySelector('.document-tab-saved');
-			added?.setAttribute('aria-label', currentLocale() === 'fr' ? 'Enregistré' : 'Saved');
+			added?.setAttribute('aria-label', t('saved'));
 		}
 	}
 	if (elements.saveButton) {
@@ -2269,8 +1665,8 @@ function renderTabs() {
 		tabButton.dataset.tabId = tab.id;
 		tabButton.innerHTML = `
 			<span class="document-tab-title">${escapeHtml(tab.fileName || t('untitledPdf'))}</span>
-			${tab.dirty ? '<span class="document-tab-dirty" aria-label="Unsaved changes"></span>' : justSaved ? TAB_SAVED_MARK : ''}
-			<span class="document-tab-close" aria-label="Close tab">×</span>
+			${tab.dirty ? `<span class="document-tab-dirty" aria-label="${t('unsavedChanges')}"></span>` : justSaved ? tabSavedMark() : ''}
+			<span class="document-tab-close" aria-label="${t('closeTab')}">×</span>
 		`;
 		tabButton.addEventListener('click', () => {
 			void activateTab(tab.id);
@@ -2574,7 +1970,7 @@ async function onNativeTabDragEnded(action) {
 		return;
 	}
 	if (action === 'copied') {
-		setStatus(currentLocale() === 'fr' ? 'PDF déposé.' : 'PDF dropped.');
+		setStatus(t('pdfDropped'));
 	}
 	commitTabOrderFromDom();
 }
@@ -2595,9 +1991,7 @@ async function detachTabToNewWindow(tabId, event) {
 	const payload = await buildTabTransferPayload(tab);
 	if (!payload) {
 		setStatus(
-			currentLocale() === 'fr'
-				? 'Impossible d’ouvrir une nouvelle fenêtre : document introuvable.'
-				: 'Cannot open a new window: document missing.',
+			t('cannotOpenANewWindow'),
 			'error'
 		);
 		commitTabOrderFromDom();
@@ -2658,9 +2052,9 @@ function scrollActiveTabIntoView() {
 
 const SIGNATURES_KEY = 'alto-saved-signatures';
 const SIGNATURE_FONTS = [
-	{ label: 'Cursive', css: '"Snell Roundhand", "Apple Chancery", cursive' },
-	{ label: 'Élégant', css: '"Zapfino", "Apple Chancery", cursive' },
-	{ label: 'Manuscrit', css: '"Bradley Hand", "Segoe Script", cursive' }
+	{ get label() { return t('sigFontCursive'); }, css: '"Snell Roundhand", "Apple Chancery", cursive' },
+	{ get label() { return t('sigFontElegant'); }, css: '"Zapfino", "Apple Chancery", cursive' },
+	{ get label() { return t('sigFontHandwritten'); }, css: '"Bradley Hand", "Segoe Script", cursive' }
 ];
 
 const signElements = {};
@@ -2724,66 +2118,33 @@ function persistSavedSignatures(items) {
 }
 
 function signCopy(kind) {
-	const fr = currentLocale() === 'fr';
 	const initials = kind === 'initials';
 	return {
 		add: initials
-			? fr
-				? '+ Ajouter un paraphe'
-				: '+ Add initials'
-			: fr
-				? '+ Ajouter une signature'
-				: '+ Add a signature',
+			? t('addInitials')
+			: t('addASignature'),
 		title: initials
-			? fr
-				? 'Créer un paraphe'
-				: 'Create initials'
-			: fr
-				? 'Créer une signature'
-				: 'Create a signature',
+			? t('createInitials')
+			: t('createASignature'),
 		save: initials
-			? fr
-				? 'Enregistrer le paraphe'
-				: 'Save initials'
-			: fr
-				? 'Enregistrer la signature'
-				: 'Save signature',
+			? t('saveInitials')
+			: t('saveSignature'),
 		placeholder: initials
-			? fr
-				? 'Tape tes initiales'
-				: 'Type your initials'
-			: fr
-				? 'Tape ton nom'
-				: 'Type your name',
+			? t('typeYourInitials')
+			: t('typeYourName'),
 		emptyDraw: initials
-			? fr
-				? 'Dessine ton paraphe.'
-				: 'Draw your initials.'
-			: fr
-				? 'Dessine ta signature.'
-				: 'Draw your signature.',
+			? t('drawYourInitials')
+			: t('drawYourSignature'),
 		empty: initials
-			? fr
-				? 'Paraphe vide.'
-				: 'Empty initials.'
-			: fr
-				? 'Signature vide.'
-				: 'Empty signature.',
+			? t('emptyInitials')
+			: t('emptySignature'),
 		saved: initials
-			? fr
-				? 'Paraphe enregistré.'
-				: 'Initials saved.'
-			: fr
-				? 'Signature enregistrée.'
-				: 'Signature saved.',
+			? t('initialsSaved')
+			: t('signatureSaved'),
 		arm: initials
-			? fr
-				? 'Clique sur la page pour poser ton paraphe.'
-				: 'Click on the page to place your initials.'
-			: fr
-				? 'Clique sur la page pour poser ta signature.'
-				: 'Click on the page to place your signature.',
-		alt: initials ? (fr ? 'paraphe' : 'initials') : 'signature'
+			? t('clickOnThePageTo')
+			: t('clickOnThePageTo2'),
+		alt: initials ? (t('initials')) : 'signature'
 	};
 }
 
@@ -2814,7 +2175,7 @@ function renderSignSlot(listEl, kind) {
 		const del = document.createElement('button');
 		del.type = 'button';
 		del.className = 'sign-item-delete';
-		del.setAttribute('aria-label', 'Supprimer');
+		del.setAttribute('aria-label', t('deleteNote'));
 		del.textContent = '×';
 		del.addEventListener('click', (event) => {
 			event.stopPropagation();
@@ -3362,7 +2723,7 @@ function setupSignFeature() {
 		reader.onload = () => {
 			_signImportDataUrl = reader.result;
 			if (signElements.importPreview) {
-				signElements.importPreview.innerHTML = `<img src="${_signImportDataUrl}" alt="aperçu" />`;
+				signElements.importPreview.innerHTML = `<img src="${_signImportDataUrl}" alt="${t('sigPreview')}" />`;
 			}
 		};
 		reader.readAsDataURL(file);
@@ -3694,7 +3055,7 @@ async function setupAiAssistant() {
 					base_url: aiState.config.baseUrl
 				}
 			});
-			aiElements.configStatus.textContent = 'Connexion enregistrée.';
+			aiElements.configStatus.textContent = t('aiConnSaved');
 			aiElements.settings.open = false;
 		} catch (error) {
 			aiElements.configStatus.textContent = String(error);
@@ -3734,9 +3095,11 @@ function appendAiBubble(role, text) {
 	return msg;
 }
 
+const AI_REPLY_LANGUAGE = { fr: 'français', en: 'anglais', es: 'espagnol' };
+
 async function buildAiSystemPrompt() {
 	const lines = [
-		"Tu es l'assistant intégré de Slate, un éditeur PDF. Tu réponds en français, de façon concise.",
+		`Tu es l'assistant intégré de Slate, un éditeur PDF. Tu réponds en ${AI_REPLY_LANGUAGE[currentLocale()]}, de façon concise.`,
 		"Tu peux proposer des modifications du document. Pour cela, termine ta réponse par un bloc de code délimité ```alto-actions contenant un tableau JSON d'actions.",
 		'Actions disponibles :',
 		'- {"action":"replace_text","find":"texte exact actuel","replace":"nouveau texte","page":N}',
@@ -3777,7 +3140,7 @@ function parseAiActions(text) {
 async function sendAiMessage(text) {
 	if (aiState.busy) return;
 	if (aiState.config.provider !== 'local' && !aiState.config.apiKey) {
-		appendAiBubble('system', 'Configure d’abord ta clé API dans « Connexion au modèle ».');
+		appendAiBubble('system', t('aiNeedKey'));
 		aiElements.settings.open = true;
 		return;
 	}
@@ -3818,17 +3181,17 @@ async function sendAiMessage(text) {
 function describeAiAction(action) {
 	switch (action.action) {
 		case 'replace_text':
-			return `Remplacer « ${action.find} » par « ${action.replace} »${action.page ? ` (page ${action.page})` : ''}`;
+			return t('aiReplaceAction', action.find, action.replace, action.page ? t('aiPageSuffix', action.page) : '');
 		case 'redact':
-			return `Masquer « ${action.find} »${action.page ? ` (page ${action.page})` : ''}`;
+			return t('aiRedactAction', action.find, action.page ? t('aiPageSuffix', action.page) : '');
 		case 'rotate_page':
-			return `Pivoter la page ${action.page} de ${action.angle}°`;
+			return t('aiRotateAction', action.page, action.angle);
 		case 'delete_page':
-			return `Supprimer la page ${action.page}`;
+			return t('aiDeleteAction', action.page);
 		case 'goto_page':
-			return `Aller à la page ${action.page}`;
+			return t('aiGotoAction', action.page);
 		default:
-			return `Action inconnue : ${action.action}`;
+			return t('aiUnknownAction', action.action);
 	}
 }
 
@@ -3850,17 +3213,17 @@ function renderAiActionCards(actions) {
 		const apply = document.createElement('button');
 		apply.type = 'button';
 		apply.className = 'ai-apply-button';
-		apply.textContent = 'Appliquer';
+		apply.textContent = t('apply');
 		const skip = document.createElement('button');
 		skip.type = 'button';
 		skip.className = 'ai-skip-button';
-		skip.textContent = 'Ignorer';
+		skip.textContent = t('aiSkip');
 		apply.addEventListener('click', async () => {
 			apply.disabled = true;
 			const ok = await applyAiAction(action);
 			if (ok) {
 				apply.classList.add('done');
-				apply.textContent = 'Appliqué';
+				apply.textContent = t('aiApplied');
 				skip.remove();
 			} else {
 				apply.disabled = false;
@@ -3877,7 +3240,7 @@ function renderAiActionCards(actions) {
 		const all = document.createElement('button');
 		all.type = 'button';
 		all.className = 'ai-apply-all';
-		all.textContent = 'Tout appliquer';
+		all.textContent = t('aiApplyAll');
 		all.addEventListener('click', () => {
 			cards.forEach((btn) => {
 				if (!btn.disabled) btn.click();
@@ -3941,7 +3304,7 @@ async function applyAiAction(action) {
 				await ensureEditBlocksForPage(page);
 				const block = findAiBlock(action.find, state.page);
 				if (!block) {
-					appendAiBubble('system', `Texte « ${action.find} » introuvable sur la page ${state.page}.`);
+					appendAiBubble('system', t('aiTextNotFound', action.find, state.page));
 					return false;
 				}
 				pushHistory('histTextEdit');
@@ -3958,7 +3321,7 @@ async function applyAiAction(action) {
 				await ensureEditBlocksForPage(page);
 				const block = findAiBlock(action.find, state.page);
 				if (!block) {
-					appendAiBubble('system', `Texte « ${action.find} » introuvable sur la page ${state.page}.`);
+					appendAiBubble('system', t('aiTextNotFound', action.find, state.page));
 					return false;
 				}
 				pushHistory('histBlockDelete');
@@ -3968,7 +3331,7 @@ async function applyAiAction(action) {
 				return true;
 			}
 			default:
-				appendAiBubble('system', `Action non supportée : ${action.action}`);
+				appendAiBubble('system', t('aiUnsupportedAction', action.action));
 				return false;
 		}
 	} catch (error) {
@@ -3994,7 +3357,7 @@ function setupToolsResize() {
 	const handle = document.createElement('div');
 	handle.className = 'tools-resize-handle';
 	handle.setAttribute('role', 'separator');
-	handle.setAttribute('aria-label', 'Redimensionner le panneau');
+	handle.setAttribute('aria-label', t('resizePanel'));
 	document.body.append(handle);
 
 	const apply = (value) => {
@@ -4038,7 +3401,6 @@ function setupToolsResize() {
 
 function setupDefaultAppPrompt() {
 	elements.defaultAppYes?.addEventListener('click', async () => {
-		const fr = currentLocale() === 'fr';
 		try {
 			await invokeCommand('set_default_pdf_handler');
 			let nowDefault = false;
@@ -4050,15 +3412,11 @@ function setupDefaultAppPrompt() {
 			if (nowDefault) {
 				setDefaultAppPref('done');
 				setStatus(
-					fr
-						? 'Slate est maintenant ton lecteur PDF par défaut.'
-						: 'Slate is now your default PDF reader.'
+					t('slateIsNowYourDefault')
 				);
 			} else {
 				setStatus(
-					fr
-						? 'Choisis Slate comme lecteur PDF dans les réglages qui viennent de s’ouvrir.'
-						: 'Choose Slate as your default PDF reader in the settings that just opened.'
+					t('chooseSlateAsYourDefault')
 				);
 			}
 		} catch (error) {
@@ -4390,7 +3748,7 @@ async function mountPagesStack() {
 		wrapper.style.height = `${viewport.height}px`;
 
 		const canvas = document.createElement('canvas');
-		canvas.setAttribute('aria-label', `PDF page ${pageNumber}`);
+		canvas.setAttribute('aria-label', t('pdfPageAria', pageNumber));
 		canvas.width = Math.floor(viewport.width * ratio);
 		canvas.height = Math.floor(viewport.height * ratio);
 		canvas.style.width = `${viewport.width}px`;
@@ -4715,7 +4073,7 @@ async function rerenderPageQuietly(pageNumber) {
 
 	const ratio = pageRenderRatio();
 	const canvas = document.createElement('canvas');
-	canvas.setAttribute('aria-label', `PDF page ${pageNumber}`);
+	canvas.setAttribute('aria-label', t('pdfPageAria', pageNumber));
 	canvas.width = Math.floor(cssWidth * ratio);
 	canvas.height = Math.floor(cssHeight * ratio);
 	canvas.style.width = `${cssWidth}px`;
@@ -5328,10 +4686,12 @@ function dateStorageValue(masked) {
 
 function dateGuideOf(format) {
 	const pattern = normalizeDateFormat(format);
-	if (currentLocale() !== 'fr') return pattern;
+	const locale = currentLocale();
+	if (locale === 'en') return pattern;
 	return pattern.replace(DATE_FORMAT_TOKEN_RE, (token) => {
-		if (token === 'dd') return 'jj';
-		if (token === 'd') return 'j';
+		// fr : jj/mm/aaaa ; es : dd/mm/aaaa
+		if (locale === 'fr' && token === 'dd') return 'jj';
+		if (locale === 'fr' && token === 'd') return 'j';
 		if (token === 'yyyy') return 'aaaa';
 		if (token === 'yy') return 'aa';
 		return token;
@@ -5385,7 +4745,7 @@ function applyDateMask(input, raw, format) {
 function isoToDate(iso, format) {
 	if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return '';
 	const [yyyy, mm, dd] = iso.split('-');
-	const locale = currentLocale() === 'fr' ? 'fr-FR' : 'en-US';
+	const locale = intlLocale();
 	const date = new Date(Number(yyyy), Number(mm) - 1, Number(dd));
 	return dateFormatTokens(format)
 		.map((entry) => {
@@ -5516,7 +4876,7 @@ function bindFormLayer(container, widgets, viewport) {
 			section.classList.add('form-image-button');
 			section.title =
 				widget.alternativeText ||
-				(currentLocale() === 'fr' ? 'Cliquer pour choisir une image' : 'Click to choose an image');
+				(t('clickToChooseAnImage'));
 			section.addEventListener(
 				'click',
 				(event) => {
@@ -5584,7 +4944,7 @@ function ensureSignatureHitTarget(container, widget, viewport) {
 	section.classList.add('form-signature-field');
 	section.title =
 		widget.alternativeText ||
-		(currentLocale() === 'fr' ? 'Cliquer pour signer' : 'Click to sign');
+		(t('clickToSign'));
 	positionSignatureHitTarget(section, widget, viewport);
 	return section;
 }
@@ -5689,7 +5049,7 @@ function positionDateCalendar(anchor) {
 }
 
 function dateWeekdayLabels(weekStartsOn) {
-	const locale = currentLocale() === 'fr' ? 'fr-FR' : 'en-US';
+	const locale = intlLocale();
 	const labels = [];
 	for (let i = 0; i < 7; i += 1) {
 		const day = new Date(2024, 0, 1 + i);
@@ -5704,8 +5064,8 @@ function renderDateCalendar() {
 	const view = _dateCal.view instanceof Date ? _dateCal.view : new Date();
 	const year = view.getFullYear();
 	const month = view.getMonth();
-	const locale = currentLocale() === 'fr' ? 'fr-FR' : 'en-US';
-	const weekStartsOn = currentLocale() === 'fr' ? 1 : 0;
+	const locale = intlLocale();
+	const weekStartsOn = weekStartsOn();
 	const selectedIso = dateToIso(_dateCal.input?.value || '', _dateCal.format);
 	const todayIso = toIsoDate(new Date());
 	const title = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(
@@ -5717,7 +5077,7 @@ function renderDateCalendar() {
 	const prev = document.createElement('button');
 	prev.type = 'button';
 	prev.className = 'form-date-calendar-nav';
-	prev.setAttribute('aria-label', currentLocale() === 'fr' ? 'Mois précédent' : 'Previous month');
+	prev.setAttribute('aria-label', t('previousMonth'));
 	prev.textContent = '‹';
 	prev.addEventListener('click', () => {
 		_dateCal.view = new Date(year, month - 1, 1);
@@ -5730,7 +5090,7 @@ function renderDateCalendar() {
 	const next = document.createElement('button');
 	next.type = 'button';
 	next.className = 'form-date-calendar-nav';
-	next.setAttribute('aria-label', currentLocale() === 'fr' ? 'Mois suivant' : 'Next month');
+	next.setAttribute('aria-label', t('nextMonth'));
 	next.textContent = '›';
 	next.addEventListener('click', () => {
 		_dateCal.view = new Date(year, month + 1, 1);
@@ -6143,7 +5503,7 @@ async function handleFormImageButton(fieldName) {
 	try {
 		const images = await invokeCommand('pick_images');
 		if (!images || !images.length) return;
-		setStatus(currentLocale() === 'fr' ? 'Insertion de l’image…' : 'Inserting image…');
+		setStatus(t('insertingImage'));
 		if (state.nativeTextDirty) await syncNativeDocumentBytes({ render: false });
 		const tab = currentTab();
 		if (tab) {
@@ -6159,7 +5519,7 @@ async function handleFormImageButton(fieldName) {
 		await replaceCurrentDocumentBytes(updated);
 		markDirty();
 		refreshFormsPanelValues();
-		setStatus(currentLocale() === 'fr' ? 'Image insérée.' : 'Image inserted.');
+		setStatus(t('imageInserted'));
 	} catch (error) {
 		setStatus(error instanceof Error ? error.message : String(error), 'error');
 	}
@@ -6183,9 +5543,7 @@ function handleFormSignatureField(fieldName) {
 	const hasSaved = loadSavedSignatures().some((item) => signatureKind(item) === 'signature');
 	if (!hasSaved) openSignatureModal('signature');
 	setStatus(
-		currentLocale() === 'fr'
-			? 'Choisis une signature ou crées-en une.'
-			: 'Choose a signature or create one.'
+		t('chooseASignatureOrCreate')
 	);
 }
 
@@ -6196,7 +5554,7 @@ async function applyFormSignature(sig) {
 	try {
 		const image = dataUrlToBytes(sig.dataUrl);
 		if (!image.length) return;
-		setStatus(currentLocale() === 'fr' ? 'Signature en cours…' : 'Signing…');
+		setStatus(t('signing'));
 		if (state.nativeTextDirty) await syncNativeDocumentBytes({ render: false });
 		const tab = currentTab();
 		if (tab) {
@@ -6212,7 +5570,7 @@ async function applyFormSignature(sig) {
 		await replaceCurrentDocumentBytes(updated);
 		markDirty();
 		refreshFormsPanelValues();
-		setStatus(currentLocale() === 'fr' ? 'Signature apposée.' : 'Signature applied.');
+		setStatus(t('signatureApplied'));
 	} catch (error) {
 		setStatus(error instanceof Error ? error.message : String(error), 'error');
 	}
@@ -6809,7 +6167,7 @@ function renderResults() {
 		const button = document.createElement('button');
 		button.type = 'button';
 		button.className = `result-button ${index === state.search.activeIndex ? 'active' : ''}`;
-		button.innerHTML = `<strong>Page ${result.page}</strong>${escapeHtml(result.snippet)}`;
+		button.innerHTML = `<strong>${t('noteCardMeta', result.page)}</strong>${escapeHtml(result.snippet)}`;
 		button.addEventListener('click', () => goToResult(result, index));
 		elements.results.append(button);
 	});
@@ -6828,8 +6186,8 @@ function renderNotes() {
 		const card = document.createElement('div');
 		card.className = 'note-card';
 		card.innerHTML = `
-			<button class="delete-note" type="button" data-id="${annotation.id}">Delete</button>
-			<strong>${annotation.type} · Page ${annotation.page}${annotation.author ? ` · ${escapeHtml(annotation.author)}` : ''}</strong>
+			<button class="delete-note" type="button" data-id="${annotation.id}">${t('deleteNote')}</button>
+			<strong>${annotation.type} · ${t('noteCardMeta', annotation.page)}${annotation.author ? ` · ${escapeHtml(annotation.author)}` : ''}</strong>
 			${escapeHtml(annotation.text)}
 		`;
 		card.querySelector('button')?.addEventListener('click', () => deleteAnnotation(annotation.id));
@@ -7232,7 +6590,7 @@ async function runOcrForCurrentPage(openPanel = false, options = {}) {
 	} catch (error) {
 		console.error(error);
 		if (!silent) {
-			setStatus(error instanceof Error ? error.message : 'Local OCR failed.', 'error');
+			setStatus(error instanceof Error ? error.message : t('ocrFailed'), 'error');
 		}
 		return 0;
 	}
@@ -7676,7 +7034,7 @@ function _mergeFontFamilies(families) {
 // libellé "auto" (police détectée du bloc).
 let _fontComboFamilies = [];
 let _fontComboValue = '';
-let _fontComboAutoLabel = 'Police du document';
+let _fontComboAutoLabel = '';
 // Plage de texte mémorisée à l'ouverture du combobox (si on éditait en inline avec
 // une sous-sélection). Permet d'appliquer la police aux SEULS caractères choisis,
 // car ouvrir/chercher dans le popover détruit la sélection native.
@@ -7690,7 +7048,7 @@ function isFontComboOpen() {
 function setFontComboValue(value) {
 	_fontComboValue = value || '';
 	if (!elements.fontComboValue) return;
-	const label = _fontComboValue || _fontComboAutoLabel || 'Police du document';
+	const label = _fontComboValue || _fontComboAutoLabel || t('fontDocument');
 	elements.fontComboValue.textContent = label;
 	elements.fontComboValue.style.fontFamily = _fontComboValue
 		? `"${_fontComboValue}", sans-serif`
@@ -7703,7 +7061,7 @@ function renderFontComboList(filter) {
 	if (!list) return;
 	const query = (filter || '').trim().toLowerCase();
 	const rows = [];
-	const autoLabel = _fontComboAutoLabel || 'Police du document';
+	const autoLabel = _fontComboAutoLabel || t('fontDocument');
 	if (!query || autoLabel.toLowerCase().includes(query)) {
 		rows.push({ value: '', label: autoLabel });
 	}
@@ -7717,7 +7075,7 @@ function renderFontComboList(filter) {
 	if (!rows.length) {
 		const empty = document.createElement('div');
 		empty.className = 'font-combo-empty';
-		empty.textContent = 'Aucune police trouvée';
+		empty.textContent = t('fontNone');
 		list.append(empty);
 		return;
 	}
@@ -8878,7 +8236,7 @@ function appendFontWarningBadge(editLayer, block, visualBox) {
 	const badge = document.createElement('div');
 	badge.className = 'font-warning-badge';
 	badge.textContent = '!';
-	badge.title = `Police « ${base} » non disponible sur cet ordinateur. Le texte d'origine est préservé tel quel ; les caractères ajoutés utilisent une police approchante. Installez la police pour une correspondance exacte.`;
+	badge.title = t('fontUnavailable', base);
 	const x = (visualBox?.x ?? block.x) + (visualBox?.width ?? block.width);
 	const y = visualBox?.y ?? block.y;
 	badge.style.left = `${x + 8}px`;
@@ -8938,15 +8296,15 @@ function detectFieldKind(text, documentType = 'other') {
 
 function fieldLabel(kind) {
 	return ({
-		document_number: 'Numéro',
-		date: 'Date',
-		total: 'Total',
-		tax: 'TVA',
-		company_id: 'SIRET/SIREN',
-		vat_id: 'TVA intracom',
-		iban: 'IBAN',
-		party: 'Tiers'
-	})[kind] || 'Champ';
+		document_number: t('fieldNumber'),
+		date: t('fieldDate'),
+		total: t('fieldTotal'),
+		tax: t('fieldTax'),
+		company_id: t('fieldCompanyId'),
+		vat_id: t('fieldVatId'),
+		iban: t('fieldIban'),
+		party: t('fieldParty')
+	})[kind] || t('fieldDefault');
 }
 
 function isCriticalField(kind) {
@@ -9110,13 +8468,13 @@ function appendBlockQualityBadge(editLayer, block) {
 		label = fieldLabel(block.fieldKind);
 		cls = 'badge-native';
 	} else if (isOcr && confidence < 70) {
-		label = 'OCR · confiance faible';
+		label = t('badgeOcrLow');
 		cls = 'badge-low';
 	} else if (isOcr) {
 		label = 'OCR';
 		cls = 'badge-ocr';
 	} else {
-		label = 'PDF natif';
+		label = t('badgeNative');
 		cls = 'badge-native';
 	}
 	const badge = document.createElement('div');
@@ -9539,9 +8897,7 @@ function enterEditingMode(element, block) {
 			event.preventDefault();
 			event.stopPropagation();
 			setStatus(
-				currentLocale() === 'fr'
-					? 'Ajout de ligne non supporté sur ce texte PDF.'
-					: 'Adding lines is not supported on this PDF text.',
+				t('addingLinesIsNotSupported'),
 				'info'
 			);
 			return;
@@ -9927,7 +9283,7 @@ function renderEditBlocksForPage(pageNumber) {
 			element.style.top = `${Math.round(block.y)}px`;
 			element.tabIndex = 0;
 			element.setAttribute('role', 'button');
-			element.setAttribute('aria-label', block.text || (block.kind === 'image' ? 'Image' : 'Bloc'));
+			element.setAttribute('aria-label', block.text || (block.kind === 'image' ? t('blockImage') : t('blockBlock')));
 			element.title = block.text;
 
 			// Bloc-paragraphe : interligne = pas entre lignes d'origine.
@@ -12032,9 +11388,7 @@ function rejectUncommittedNativeEdit(block, error) {
 		scheduleNativeCaretUpdate();
 	});
 	setStatus(
-		currentLocale() === 'fr'
-			? 'Cette frappe a été refusée pour préserver exactement le PDF.'
-			: 'This keystroke was rejected to preserve the PDF exactly.',
+		t('thisKeystrokeWasRejectedTo'),
 		'info'
 	);
 	console.warn('Édition native refusée sans changement de rendu.', error);
@@ -12082,9 +11436,7 @@ async function recoverCommittedNativeMismatch(block, error) {
 		scheduleNativeCaretUpdate();
 	});
 	setStatus(
-		currentLocale() === 'fr'
-			? 'La frappe a été annulée sans changer la police ni le rendu du PDF.'
-			: 'The keystroke was cancelled without changing the PDF font or rendering.',
+		t('theKeystrokeWasCancelledWithout'),
 		'info'
 	);
 	console.warn('Incohérence native restaurée sans repli HTML.', error);
@@ -12137,9 +11489,7 @@ function queueNativeTextEdit(block) {
 						}
 						renderEditBlocksForPage(block.page);
 						setStatus(
-							currentLocale() === 'fr'
-								? 'Cette frappe a été refusée pour préserver exactement le PDF.'
-								: 'This keystroke was rejected to preserve the PDF exactly.',
+							t('thisKeystrokeWasRejectedTo'),
 							'info'
 						);
 						return;
@@ -12528,9 +11878,7 @@ function commitGlyphEdit(block, newText, caretOffset) {
 		const after = (newText || '').split('\n').length;
 		if (before !== after) {
 			setStatus(
-				currentLocale() === 'fr'
-					? 'Ajout ou suppression de ligne non supporté sur ce texte PDF.'
-					: 'Adding or removing lines is not supported on this PDF text.',
+				t('addingOrRemovingLinesIs'),
 				'info'
 			);
 			return;
@@ -12959,8 +12307,8 @@ function startInlineEdit(id, opts = {}) {
 		const base = baseFamilyName(cleanFontName(block.fontName)) || '';
 		setStatus(
 			base
-				? `Logo non éditable (police « ${base} » non détectée). Vous pouvez le déplacer.`
-				: 'Logo non éditable. Vous pouvez le déplacer.',
+				? t('logoLockedFont', base)
+				: t('logoLocked'),
 			'info'
 		);
 		selectEditBlock(id);
@@ -13264,7 +12612,7 @@ function updateFormatPanel(block) {
 	}
 
 	const detected = cleanFontName(block.fontName);
-	_fontComboAutoLabel = detected ? `Auto : ${detected}` : 'Police détectée';
+	_fontComboAutoLabel = detected ? t('fontAuto', detected) : t('fontDetected');
 	if (detected) ensureCloudFont(baseFamilyName(detected));
 
 	setFontComboValue(block.fontFamilyOverride || '');
@@ -13372,11 +12720,11 @@ function updateFontWarning(detected) {
 		icon.textContent = '!';
 		const label = document.createElement('span');
 		label.className = 'format-font-warning-label';
-		label.textContent = `Police « ${base} » non installée`;
+		label.textContent = t('fontNotInstalled', base);
 		const link = document.createElement('button');
 		link.type = 'button';
 		link.className = 'format-font-warning-link';
-		link.textContent = 'Télécharger';
+		link.textContent = t('download');
 		link.addEventListener('click', () => {
 			invokeCommand('open_external', { url: `https://fonts.google.com/?query=${query}` }).catch(() => {});
 		});
@@ -14456,7 +13804,7 @@ function activateAddTextTool() {
 	}
 	if (!state.editMode) toggleEditMode(true);
 	setEditTool('add-text');
-	setStatus(currentLocale() === 'fr' ? 'Cliquez dans la page pour ajouter du texte.' : 'Click the page to add text.');
+	setStatus(t('clickThePageToAdd'));
 }
 
 function bytesToImageDataUrl(bytes) {
@@ -14506,9 +13854,7 @@ async function activateAddImageTool() {
 			height: dims.height
 		});
 		setStatus(
-			currentLocale() === 'fr'
-				? 'Clique sur la page pour placer l’image.'
-				: 'Click the page to place the image.'
+			t('clickThePageToPlace')
 		);
 	} catch (error) {
 		console.error(error);
@@ -14525,9 +13871,7 @@ function activateAddSignatureTool() {
 	setEditTool('select');
 	openDrawer('sign');
 	setStatus(
-		currentLocale() === 'fr'
-			? 'Choisis une signature ou un paraphe, puis clique sur la page pour le poser.'
-			: 'Pick a saved signature or initials, then click the page to place it.'
+		t('pickASavedSignatureOr')
 	);
 }
 
@@ -14791,16 +14135,16 @@ function updateUi(renderPanels = true) {
 	elements.app.classList.toggle('rail-hidden', !state.settings.showRail);
 	elements.documentName.textContent = state.fileName || t('noPdfOpen');
 	elements.documentMeta.textContent = hasPdf
-		? `${state.pdf.numPages} pages · ${bytesToMb(state.fileBytes.byteLength)}`
+		? t('docMeta', state.pdf.numPages, bytesToMb(state.fileBytes.byteLength))
 		: t('dropPdf');
 	elements.openButton.textContent = hasPdf ? t('openAnother') : t('open');
-	elements.openButton.setAttribute('aria-label', hasPdf ? 'Open another PDF' : 'Open PDF');
+	elements.openButton.setAttribute('aria-label', hasPdf ? t('openAnotherPdf') : t('openPdf'));
 	elements.chooseEmpty.querySelector('span:last-child').textContent = hasPdf ? t('openAnother') : t('openPdf');
 	elements.pageLabel.textContent = hasPdf ? `${state.page} / ${state.pdf.numPages}` : '0 / 0';
 	elements.zoomLabel.textContent = `${Math.round(state.zoom * 100)}%`;
 	elements.pageSummaryTitle.textContent = hasPdf ? state.fileName : t('noDocument');
 	elements.pageSummaryMeta.textContent = hasPdf
-		? `Page ${state.page} of ${state.pdf.numPages}. Current zoom: ${Math.round(state.zoom * 100)}%.`
+		? t('pageSummary', state.page, state.pdf.numPages, Math.round(state.zoom * 100))
 		: t('pageSummaryEmpty');
 	persistCurrentTabState();
 	renderTabs();
@@ -14944,7 +14288,7 @@ async function handleSaveDocument() {
 	try {
 		const tab = currentTab();
 		if (tab && tab.dirty) {
-			setStatus(currentLocale() === 'fr' ? 'Enregistrement…' : 'Saving…');
+			setStatus(t('saving'));
 		}
 		if (state.nativeTextDirty) await syncNativeDocumentBytes({ render: false });
 		const bytes = new Uint8Array(await currentDocumentBytes());
@@ -14964,7 +14308,7 @@ async function handleSaveDocument() {
 		return Boolean(savedPath);
 	} catch (error) {
 		console.error(error);
-		setStatus(error instanceof Error ? error.message : 'Enregistrement impossible.', 'error');
+		setStatus(error instanceof Error ? error.message : t('saveFailed'), 'error');
 		return false;
 	}
 }
@@ -14981,7 +14325,7 @@ async function handleSaveAsDocument() {
 		return Boolean(savedPath);
 	} catch (error) {
 		console.error(error);
-		setStatus(error instanceof Error ? error.message : 'Enregistrement impossible.', 'error');
+		setStatus(error instanceof Error ? error.message : t('saveFailed'), 'error');
 		return false;
 	}
 }
@@ -15085,10 +14429,7 @@ async function handleCompressPdf() {
 		const filename = suggestFileName('compresse', 'alto-compresse.pdf');
 		const saved = await saveNativeFile(filename, 'pdf', bytes);
 		if (saved) {
-			const fmt = t('compressDone');
-			const detail = `${humanFileSize(reduction)} · ${percent}%`;
-			const message = typeof fmt === 'function' ? fmt(detail) : fmt;
-			setStatus(message);
+			setStatus(t('compressDone', `${humanFileSize(reduction)} · ${percent}%`));
 		}
 	} catch (error) {
 		console.error(error);
@@ -15368,7 +14709,7 @@ async function handleAutoRedact() {
 		help: t('autoRedactHelp'),
 		confirm: t('redactCta'),
 		fields: [
-			{ id: 'terms', label: t('autoRedactTerms'), type: 'text', placeholder: 'Dupont, 06 12 34 56 78' },
+			{ id: 'terms', label: t('autoRedactTerms'), type: 'text', placeholder: t('redactExample') },
 			{ id: 'matchCase', label: t('matchCase'), type: 'checkbox', value: false }
 		]
 	});
@@ -15391,8 +14732,7 @@ async function handleAutoRedact() {
 		}
 		const saved = await saveNativeFile(suggestFileName('caviarde'), 'pdf', new Uint8Array(result.bytes));
 		if (saved) {
-			const fmt = t('autoRedactDone');
-			setStatus(typeof fmt === 'function' ? fmt(result.count) : fmt);
+			setStatus(t('autoRedactDone', result.count));
 		} else {
 			setStatus('');
 		}
@@ -15494,8 +14834,7 @@ async function handleRemoveBlankPages() {
 			new Uint8Array(result.bytes)
 		);
 		if (saved) {
-			const fmt = t('blankDone');
-			setStatus(typeof fmt === 'function' ? fmt(removed.length) : fmt);
+			setStatus(t('blankDone', removed.length));
 		} else {
 			setStatus('');
 		}
@@ -15586,8 +14925,7 @@ async function handleExtractImages() {
 			setStatus('');
 			return;
 		}
-		const fmt = t('extractImagesDone');
-		setStatus(typeof fmt === 'function' ? fmt(report.count) : fmt);
+		setStatus(t('extractImagesDone', report.count));
 	} catch (error) {
 		console.error(error);
 		setStatus(error instanceof Error ? error.message : String(error), 'error');
@@ -15729,8 +15067,7 @@ async function handleDeskewPdf() {
 		const summary = corrected
 			.map((entry) => `p.${entry.page} (${entry.angle > 0 ? '+' : ''}${entry.angle.toFixed(1)}°)`)
 			.join(', ');
-		const fmt = t('deskewDone');
-		setStatus(typeof fmt === 'function' ? fmt(summary) : fmt);
+		setStatus(t('deskewDone', summary));
 	} catch (error) {
 		console.error(error);
 		setStatus(error instanceof Error ? error.message : String(error), 'error');
@@ -16035,14 +15372,12 @@ function renderFitLabelSummary(fit) {
 	}
 	const percent = Math.round(fit.scale * 100);
 	const parts = [
-		`Document ${formatPrintMm(fit.sourceWidthPt)} × ${formatPrintMm(fit.sourceHeightPt)} mm,`,
-		percent >= 100 ? 'imprimé à 100 %' : `réduit à ${percent} %`,
-		`pour tenir sur ${formatPrintMm(fit.paperWidthPt)} × ${formatPrintMm(fit.paperHeightPt)} mm`
+		t('printSummaryDoc', formatPrintMm(fit.sourceWidthPt), formatPrintMm(fit.sourceHeightPt)),
+		percent >= 100 ? t('printAt100') : t('printReduced', percent),
+		t('printFit', formatPrintMm(fit.paperWidthPt), formatPrintMm(fit.paperHeightPt))
 	];
 	if (fit.compactedGutters > 0) {
-		parts.push(
-			`· ${fit.compactedGutters} espace${fit.compactedGutters > 1 ? 's' : ''} vide${fit.compactedGutters > 1 ? 's' : ''} resserré${fit.compactedGutters > 1 ? 's' : ''}`
-		);
+		parts.push(t('printGutters', fit.compactedGutters));
 	}
 	summary.textContent = parts.join(' ');
 	summary.classList.remove('hidden');
@@ -16062,10 +15397,10 @@ function paperSourceLabel(choice) {
 	const lower = id.toLowerCase();
 	if (lower === 'auto') return 'Auto';
 	if (lower.includes('by-pass') || lower.includes('bypass') || lower.includes('manual')) {
-		return 'Bac manuel';
+		return t('printTrayManual');
 	}
 	const tray = lower.match(/(?:tray|cassette|bac)[_-]?(\d+)/);
-	if (tray) return `BAC ${tray[1]}`;
+	if (tray) return t('printTray', tray[1]);
 	if (choice?.label && choice.label !== choice.id) return choice.label;
 	return id;
 }
@@ -16151,7 +15486,7 @@ function updatePrintAdvancedButton() {
 	if (elements.printAdvancedOpen) {
 		elements.printAdvancedOpen.disabled = available === 0;
 		elements.printAdvancedOpen.textContent =
-			count > 0 ? `Options avancées (${count})` : 'Options avancées';
+			count > 0 ? t('printAdvancedN', count) : t('printAdvanced');
 	}
 	if (elements.printLayoutFocus) {
 		elements.printLayoutFocus.disabled = available === 0;
@@ -16166,8 +15501,7 @@ function renderPrintAdvanced() {
 	if (!visible.length) {
 		const empty = document.createElement('p');
 		empty.className = 'print-advanced-empty';
-		empty.textContent =
-			'Cette imprimante n’expose aucun réglage supplémentaire via CUPS.';
+		empty.textContent = t('printNoCups');
 		body.appendChild(empty);
 		return;
 	}
@@ -16181,7 +15515,7 @@ function renderPrintAdvanced() {
 			const item = document.createElement('option');
 			item.value = choice.id;
 			item.textContent = choice.isDefault
-				? `${choice.label} (défaut)`
+				? t('printChoiceDefault', choice.label)
 				: choice.label;
 			select.appendChild(item);
 		}
@@ -16380,7 +15714,7 @@ async function renderPrintPreview() {
 	const total = state.pdf.numPages || 1;
 	_printPreviewPage = Math.max(1, Math.min(total, _printPreviewPage || 1));
 	if (elements.printPreviewPage) {
-		elements.printPreviewPage.textContent = `Page ${_printPreviewPage} sur ${total}`;
+		elements.printPreviewPage.textContent = t('printPreviewPage', _printPreviewPage, total);
 	}
 	if (elements.printPreviewPrev) elements.printPreviewPrev.disabled = _printPreviewPage <= 1;
 	if (elements.printPreviewNext) elements.printPreviewNext.disabled = _printPreviewPage >= total;
@@ -16420,7 +15754,7 @@ async function renderPrintPreview() {
 			elements.printDimsLabel.textContent = `${formatPrintMm(base.width)} × ${formatPrintMm(base.height)} mm`;
 		}
 		if (elements.printScaleLabel) {
-			elements.printScaleLabel.textContent = `Échelle : ${Math.round(placement.scale * 100)} %`;
+			elements.printScaleLabel.textContent = t('printScale', Math.round(placement.scale * 100));
 		}
 
 		const maxWidth = 360;
@@ -16504,7 +15838,7 @@ async function drawFittedLabelPreview(canvas, fit, token) {
 		elements.printDimsLabel.textContent = `${formatPrintMm(base.width)} × ${formatPrintMm(base.height)} mm`;
 	}
 	if (elements.printScaleLabel) {
-		elements.printScaleLabel.textContent = `Échelle : ${Math.round(fit.scale * 100)} %`;
+		elements.printScaleLabel.textContent = t('printScale', Math.round(fit.scale * 100));
 	}
 	renderFitLabelSummary(fit);
 }
@@ -16554,7 +15888,7 @@ async function openPrintModal() {
 		return;
 	}
 	if (!window.__TAURI__) {
-		setStatus('Impression disponible dans l’app desktop.', 'error');
+		setStatus(t('printDesktopOnly'), 'error');
 		return;
 	}
 	setPrintError('');
@@ -16583,8 +15917,8 @@ async function openPrintModal() {
 		for (const printer of list) {
 			const opt = document.createElement('option');
 			opt.value = printer.name;
-			const ready = printer.isReady === false ? ' · hors ligne' : '';
-			opt.textContent = `${printer.displayName || printer.name}${printer.isDefault ? ' (défaut)' : ''}${ready}`;
+			const ready = printer.isReady === false ? t('printOffline') : '';
+			opt.textContent = `${printer.displayName || printer.name}${printer.isDefault ? t('printDefaultSuffix') : ''}${ready}`;
 			elements.printPrinter.appendChild(opt);
 		}
 		// Dernière imprimante utilisée d’abord ; défaut système seulement si
@@ -16794,7 +16128,7 @@ async function handleExportPageImage() {
 		const mime = format === 'png' ? 'image/png' : 'image/jpeg';
 		const quality = format === 'png' ? undefined : 0.95;
 		const blob = await new Promise((resolve) => canvas.toBlob(resolve, mime, quality));
-		if (!blob) throw new Error('Encodage image impossible.');
+		if (!blob) throw new Error(t('imageEncodeFailed'));
 		const bytes = new Uint8Array(await blob.arrayBuffer());
 		const filename = suggestFileName(`page-${state.page}`, `alto-page-${state.page}.${format}`)
 			.replace(/\.pdf$/i, `.${format}`);
@@ -16808,9 +16142,7 @@ async function handleExportPageImage() {
 function openFormatChoice(formats) {
 	return new Promise((resolve) => {
 		const choice = window.prompt(
-			currentLocale() === 'fr'
-				? `Format d'export (${formats.join(' / ')}) :`
-				: `Export format (${formats.join(' / ')}):`,
+			t('exportFormat', formats.join(' / ')),
 			formats[0]
 		);
 		if (!choice) {
@@ -16898,17 +16230,17 @@ function formatPdfVersionLabel(version) {
 function formatFileSizeAcrobat(bytes) {
 	const size = Number(bytes) || 0;
 	const mo = size / (1024 * 1024);
-	const moLabel = mo.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-	const octets = Math.round(size).toLocaleString('de-DE');
-	return `${moLabel} Mo (${octets} octets)`;
+	const moLabel = mo.toLocaleString(intlLocale(), { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+	const octets = Math.round(size).toLocaleString(intlLocale());
+	return t('fileSizeAcrobat', moLabel, octets);
 }
 
 function yesNo(value) {
-	return value ? 'Oui' : 'Non';
+	return value ? t('yes') : t('no');
 }
 
 function allowedLabel(allowed) {
-	return allowed ? 'Autorisée' : 'Non autorisée';
+	return allowed ? t('allowed') : t('notAllowed');
 }
 
 function setPropsTab(tabId) {
@@ -16954,7 +16286,9 @@ function showPropertiesModal(props, pageFormat) {
 	setText('props-tagged', yesNo(Boolean(props.tagged)));
 	setText('props-linearized', yesNo(Boolean(props.linearized)));
 
-	setText('props-security-method', props.securityMethod || (props.encrypted ? 'Mot de passe' : 'Aucune'));
+	// Rust renvoie « Mot de passe » / « Aucune » : on les relocalise.
+	const security = { 'Mot de passe': t('secPassword'), Aucune: t('secNone') }[props.securityMethod];
+	setText('props-security-method', security || props.securityMethod || (props.encrypted ? t('secPassword') : t('secNone')));
 	setText('props-perm-print', allowedLabel(Boolean(props.canPrint)));
 	setText('props-perm-modify', allowedLabel(Boolean(props.canModify)));
 	setText('props-perm-assemble', allowedLabel(Boolean(props.canModify)));
@@ -16963,24 +16297,24 @@ function showPropertiesModal(props, pageFormat) {
 	setText('props-perm-forms', allowedLabel(Boolean(props.canAnnotate)));
 
 	const layoutMap = {
-		SinglePage: 'Une seule page',
-		OneColumn: 'Une colonne',
-		TwoColumnLeft: 'Deux colonnes (gauche)',
-		TwoColumnRight: 'Deux colonnes (droite)',
-		TwoPageLeft: 'Deux pages (gauche)',
-		TwoPageRight: 'Deux pages (droite)'
+		SinglePage: t('layoutSingle'),
+		OneColumn: t('layoutOneColumn'),
+		TwoColumnLeft: t('layoutTwoColumnLeft'),
+		TwoColumnRight: t('layoutTwoColumnRight'),
+		TwoPageLeft: t('layoutTwoPageLeft'),
+		TwoPageRight: t('layoutTwoPageRight')
 	};
 	const modeMap = {
-		UseNone: 'Page seule',
-		UseOutlines: 'Signets et page',
-		UseThumbs: 'Vignettes et page',
-		FullScreen: 'Plein écran',
-		UseOC: 'Calques et page',
-		UseAttachments: 'Pièces jointes et page'
+		UseNone: t('modeNone'),
+		UseOutlines: t('modeOutlines'),
+		UseThumbs: t('modeThumbs'),
+		FullScreen: t('modeFullScreen'),
+		UseOC: t('modeOC'),
+		UseAttachments: t('modeAttachments')
 	};
-	setText('props-page-layout', layoutMap[props.pageLayout] || props.pageLayout || 'Par défaut');
-	setText('props-page-mode', modeMap[props.pageMode] || props.pageMode || 'Par défaut');
-	setText('props-trapped', props.trapped || 'Non spécifié');
+	setText('props-page-layout', layoutMap[props.pageLayout] || props.pageLayout || t('propDefault'));
+	setText('props-page-mode', modeMap[props.pageMode] || props.pageMode || t('propDefault'));
+	setText('props-trapped', props.trapped || t('propUnspecified'));
 
 	const fontsList = document.getElementById('props-fonts-list');
 	if (fontsList) {
@@ -16988,17 +16322,17 @@ function showPropertiesModal(props, pageFormat) {
 		const fonts = Array.isArray(props.fonts) ? props.fonts : [];
 		if (!fonts.length) {
 			const empty = document.createElement('li');
-			empty.textContent = 'Aucune police détectée dans ce document.';
+			empty.textContent = t('propNoFonts');
 			fontsList.append(empty);
 		} else {
 			for (const font of fonts) {
 				const li = document.createElement('li');
 				const name = document.createElement('span');
 				name.className = 'font-name';
-				name.textContent = font.name || 'Sans nom';
+				name.textContent = font.name || t('propUnnamed');
 				const meta = document.createElement('span');
 				meta.className = 'font-meta';
-				const bits = [font.subtype || null, font.encoding || null, font.embedded ? 'Incorporée' : 'Non incorporée'].filter(Boolean);
+				const bits = [font.subtype || null, font.encoding || null, font.embedded ? t('fontEmbedded') : t('fontNotEmbedded')].filter(Boolean);
 				meta.textContent = bits.join(' · ');
 				li.append(name, meta);
 				fontsList.append(li);
@@ -17064,7 +16398,7 @@ async function applyPropertiesModal() {
 			subject,
 			keywords
 		});
-		if (!bytes?.length) throw new Error('Métadonnées non enregistrées.');
+		if (!bytes?.length) throw new Error(t('metaNotSaved'));
 		state.fileBytes = bytes;
 		const tab = currentTab();
 		if (tab) tab.fileBytes = bytes;
@@ -17076,7 +16410,7 @@ async function applyPropertiesModal() {
 		invalidateAllPages();
 		await renderCurrentPage();
 		closePropertiesModal();
-		setStatus('Métadonnées mises à jour.', 'info');
+		setStatus(t('metaUpdated'), 'info');
 	} catch (error) {
 		console.error(error);
 		setStatus(error instanceof Error ? error.message : String(error), 'error');
@@ -17099,7 +16433,7 @@ function formatPdfDate(raw) {
 		)
 	);
 	if (isNaN(date.getTime())) return raw;
-	return date.toLocaleString(currentLocale() === 'fr' ? 'fr-FR' : 'en-US');
+	return date.toLocaleString(intlLocale());
 }
 
 const RECENT_FILES_KEY = 'alto-recent-files';
@@ -17280,7 +16614,7 @@ function handleShowRecent() {
 	if (!list.length) {
 		const li = document.createElement('li');
 		li.className = 'recent-empty';
-		li.textContent = currentLocale() === 'fr' ? 'Aucun fichier récent.' : 'No recent files.';
+		li.textContent = t('noRecentFiles');
 		elements.recentList.append(li);
 	} else {
 		for (const item of list) {
@@ -17309,9 +16643,7 @@ function closeRecentModal() {
 async function openRecentFile(item) {
 	if (!item.path) {
 		setStatus(
-			currentLocale() === 'fr'
-				? 'Fichier non localisé — rouvrez-le via « Ouvrir ».'
-				: 'File location unknown — reopen it via “Open”.',
+			t('fileLocationUnknownReopenIt'),
 			'error'
 		);
 		return;
@@ -17336,7 +16668,7 @@ async function openRecentFile(item) {
 
 function notifyRecentMissing() {
 	setStatus(
-		currentLocale() === 'fr' ? 'Fichier manquant ou déplacé.' : 'File missing or moved.',
+		t('fileMissingOrMoved'),
 		'error'
 	);
 }
@@ -17344,10 +16676,10 @@ function notifyRecentMissing() {
 function homeGreetingText() {
 	// Heure locale du fuseau de la machine (pas UTC).
 	const hour = new Date().getHours();
-	const fr = currentLocale() === 'fr';
 	let salutation;
-	if (hour < 18) salutation = fr ? 'Bonjour' : hour < 12 ? 'Good morning' : 'Hello';
-	else salutation = fr ? 'Bonsoir' : 'Good evening';
+	if (hour < 12) salutation = t('greetingMorning');
+	else if (hour < 18) salutation = t('greetingDay');
+	else salutation = t('greetingEvening');
 	const name = (state.settings.identityName || '').trim();
 	const first = name ? name.split(/\s+/)[0] : '';
 	return first ? `${salutation}, ${first}` : salutation;
@@ -17364,13 +16696,12 @@ function profileInitials() {
 function formatRecentDate(timestamp) {
 	if (!timestamp) return '';
 	const date = new Date(timestamp);
-	const fr = currentLocale() === 'fr';
 	const now = new Date();
 	const sameDay = date.toDateString() === now.toDateString();
 	if (sameDay) {
-		return date.toLocaleTimeString(fr ? 'fr-FR' : 'en-US', { hour: '2-digit', minute: '2-digit' });
+		return date.toLocaleTimeString(intlLocale(), { hour: '2-digit', minute: '2-digit' });
 	}
-	return date.toLocaleDateString(fr ? 'fr-FR' : 'en-US', { day: 'numeric', month: 'short' });
+	return date.toLocaleDateString(intlLocale(), { day: 'numeric', month: 'short' });
 }
 
 function refreshProfileAvatar() {
@@ -17419,9 +16750,7 @@ function renderHome() {
 		const empty = document.createElement('p');
 		empty.className = 'home-recents-empty';
 		empty.textContent =
-			currentLocale() === 'fr'
-				? 'Aucun fichier récent. Ouvrez un PDF pour commencer.'
-				: 'No recent files yet. Open a PDF to get started.';
+			t('noRecentFilesYetOpen');
 		body.append(empty);
 		return;
 	}
@@ -17467,7 +16796,7 @@ function renderHome() {
 		remove.className = 'recent-card-remove';
 		remove.setAttribute('role', 'button');
 		remove.tabIndex = 0;
-		remove.title = currentLocale() === 'fr' ? 'Retirer des récents' : 'Remove from recents';
+		remove.title = t('removeFromRecents');
 		remove.setAttribute('aria-label', remove.title);
 		remove.innerHTML =
 			'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6 18 18M18 6 6 18"/></svg>';
@@ -17508,14 +16837,13 @@ function hostPlatform() {
 }
 
 function revealInFolderLabel() {
-	const fr = currentLocale() === 'fr';
 	switch (hostPlatform()) {
 		case 'mac':
-			return fr ? 'Afficher dans le Finder' : 'Show in Finder';
+			return t('showInFinder');
 		case 'windows':
-			return fr ? 'Afficher dans l’Explorateur' : 'Show in Explorer';
+			return t('showInExplorer');
 		default:
-			return fr ? 'Afficher dans le dossier' : 'Show in folder';
+			return t('showInFolder');
 	}
 }
 
@@ -17559,9 +16887,7 @@ async function revealRecentFile(item) {
 	} catch (error) {
 		console.warn('reveal_file_in_folder failed', error);
 		setStatus(
-			currentLocale() === 'fr'
-				? 'Fichier introuvable : il a été déplacé ou supprimé.'
-				: 'File not found: it was moved or deleted.',
+			t('fileNotFoundItWas'),
 			'error'
 		);
 	}
@@ -17569,16 +16895,15 @@ async function revealRecentFile(item) {
 
 function openRecentContextMenu(x, y, item, onRemove) {
 	const el = recentContextMenuRoot();
-	const fr = currentLocale() === 'fr';
 	const entries = [
-		{ label: fr ? 'Ouvrir' : 'Open', action: () => void openRecentFile(item) },
+		{ label: t('open2'), action: () => void openRecentFile(item) },
 		{
 			label: revealInFolderLabel(),
 			disabled: !item.path,
 			action: () => void revealRecentFile(item)
 		},
 		{ separator: true },
-		{ label: fr ? 'Retirer des récents' : 'Remove from recents', danger: true, action: onRemove }
+		{ label: t('removeFromRecents'), danger: true, action: onRemove }
 	];
 	el.replaceChildren();
 	for (const entry of entries) {
@@ -17951,26 +17276,26 @@ function buildExportAuditReport() {
 		const strategy = exportStrategyForPage(pageNumber);
 		strategies.push(strategy);
 		if (strategy.mode === 'flatten_page') {
-			warnings.push(`Page ${pageNumber} aplatie (${strategy.reason}) : texte non sélectionnable sur cette page.`);
+			warnings.push(t('auditFlattened', pageNumber, strategy.reason));
 		}
 	}
 	for (const block of state.editBlocks) {
 		const dirty = block.hidden || block.added || isBlockDirty(block);
 		if (!dirty) continue;
 		if (block.critical) {
-			const action = block.hidden ? 'masqué/supprimé' : 'modifié';
-			warnings.push(`Champ critique ${fieldLabel(block.fieldKind)} ${action} page ${block.page}.`);
+			const action = block.hidden ? t('auditHidden') : t('auditModified');
+			warnings.push(t('auditCritical', fieldLabel(block.fieldKind), action, block.page));
 		}
 		if (block.source === 'ocr' && Number(block.confidence ?? 100) < 70) {
-			warnings.push(`Bloc OCR faible confiance exporté page ${block.page}.`);
+			warnings.push(t('auditOcrLow', block.page));
 		} else if (block.source === 'ocr' && canVectorEditBlock(block)) {
-			warnings.push(`Bloc OCR page ${block.page} exporté en couche texte PDF native.`);
+			warnings.push(t('auditOcrNative', block.page));
 		}
 	}
 	const totalsChanged = state.editBlocks.some((block) => block.fieldKind === 'total' && isBlockDirty(block));
 	const taxChanged = state.editBlocks.some((block) => block.fieldKind === 'tax' && isBlockDirty(block));
 	if (totalsChanged && !taxChanged) {
-		warnings.push('Total modifié sans TVA associée modifiée.');
+		warnings.push(t('auditTotal'));
 	}
 	return {
 		warnings: Array.from(new Set(warnings)).slice(0, 8),
@@ -17981,11 +17306,11 @@ function buildExportAuditReport() {
 function confirmExportAudit(report) {
 	if (!report?.warnings?.length) return true;
 	const message = [
-		'Audit avant export :',
+		t('auditTitle'),
 		'',
 		...report.warnings.map((warning) => `- ${warning}`),
 		'',
-		'Continuer quand même ?'
+		t('auditContinue')
 	].join('\n');
 	return window.confirm(message);
 }
@@ -18149,7 +17474,7 @@ async function exportEditedPdfBytes(options = {}) {
 	if (options.audit) {
 		const report = buildExportAuditReport();
 		if (!confirmExportAudit(report)) {
-			throw new Error('Export annulé après audit.');
+			throw new Error(t('auditCancelled'));
 		}
 	}
 	await ensureEditorFontsReady();
@@ -18594,7 +17919,7 @@ function formatHistoryTime(ts) {
 		date.getFullYear() === now.getFullYear() &&
 		date.getMonth() === now.getMonth() &&
 		date.getDate() === now.getDate();
-	const locale = currentLocale() === 'fr' ? 'fr-FR' : 'en-US';
+	const locale = intlLocale();
 	const time = date.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
 	if (sameDay) return time;
 	return `${date.toLocaleDateString(locale, { day: 'numeric', month: 'short' })} ${time}`;
@@ -19031,7 +18356,6 @@ async function renderFormsPanel() {
 		return;
 	}
 	_formsPanelFields = new Map(fields.map((field) => [field.name, field]));
-	const isFr = currentLocale() === 'fr';
 
 	for (const field of fields) {
 		const row = document.createElement(
@@ -19118,14 +18442,14 @@ async function renderFormsPanel() {
 			const button = document.createElement('button');
 			button.type = 'button';
 			button.className = 'forms-field-image';
-			button.textContent = isFr ? 'Choisir une image…' : 'Choose an image…';
+			button.textContent = t('chooseAnImage');
 			button.addEventListener('click', () => void handleFormImageButton(field.name));
 			row.append(button);
 		} else if (field.kind === 'signature') {
 			const button = document.createElement('button');
 			button.type = 'button';
 			button.className = 'forms-field-image';
-			button.textContent = isFr ? 'Signer…' : 'Sign…';
+			button.textContent = t('sign2');
 			button.addEventListener('click', () => void handleFormSignatureField(field.name));
 			row.append(button);
 		}
@@ -19334,9 +18658,7 @@ function bindTauriMenuEvents() {
 	});
 	tauriListen('alto-menu-unsupported', () =>
 		setStatus(
-			currentLocale() === 'fr'
-				? 'Cette commande de menu sera ajoutée dans une prochaine version.'
-				: 'This menu command will be added in a future version.',
+			t('thisMenuCommandWillBe'),
 			'error'
 		)
 	);
@@ -19528,7 +18850,7 @@ async function openConvertColorsModal() {
 	openPrepressPanel();
 	const statusEl = elements.convertColorsProfileStatus;
 	if (statusEl) {
-		statusEl.textContent = 'Recherche du profil ICC…';
+		statusEl.textContent = t('iccSearching');
 		statusEl.dataset.tone = '';
 	}
 	elements.convertColorsBackdrop?.classList.remove('hidden');
@@ -19537,12 +18859,11 @@ async function openConvertColorsModal() {
 		const info = await invokeCommand('fogra39_profile_status');
 		if (statusEl) {
 			if (info) {
-				statusEl.textContent = `Profil trouvé : ${info}`;
+				statusEl.textContent = t('iccFound', info);
 				statusEl.dataset.tone = 'ok';
 				elements.convertColorsOk.disabled = false;
 			} else {
-				statusEl.textContent =
-					'Profil Coated FOGRA39 introuvable. Installe Acrobat (profil Adobe) ou place ISOcoated_v2_eci.icc dans ~/Library/ColorSync/Profiles/.';
+				statusEl.textContent = t('iccMissing');
 				statusEl.dataset.tone = 'error';
 				elements.convertColorsOk.disabled = true;
 			}
@@ -19574,7 +18895,7 @@ async function applyConvertColorsFogra39() {
 			bytes: Array.from(state.fileBytes),
 			iccPath: null
 		});
-		if (!bytes?.length) throw new Error('Conversion sans résultat.');
+		if (!bytes?.length) throw new Error(t('colorNoResult'));
 		state.fileBytes = bytes;
 		const tab = currentTab();
 		if (tab) tab.fileBytes = bytes;
@@ -19661,9 +18982,7 @@ function parseShareInvitees(raw) {
 
 function buildShareMessage(path) {
 	const name = state.fileName || 'document.pdf';
-	return currentLocale() === 'fr'
-		? `Document PDF : ${name}\n\nFichier : ${path}\n\n(Ouvrez le Finder via Slate pour joindre le fichier.)`
-		: `PDF document: ${name}\n\nFile: ${path}\n\n(Use Slate’s Finder reveal to attach the file.)`;
+	return t('pdfDocumentFileUseSlate', name, path);
 }
 
 async function ensureShareablePath() {
@@ -20064,10 +19383,10 @@ function updateCreateSourceUi() {
 	});
 	if (state.createSource === 'blank') {
 		elements.createPick.style.display = 'none';
-		elements.createHint.textContent = 'Une page A4 blanche sera créée.';
+		elements.createHint.textContent = t('createBlankHint');
 	} else {
 		elements.createPick.style.display = '';
-		elements.createHint.textContent = 'Choisir parmi .pdf pour le moment (autres formats à venir).';
+		elements.createHint.textContent = t('createPickHint');
 	}
 }
 
@@ -20085,7 +19404,7 @@ async function confirmCreate() {
 			await openFile(file);
 		} catch (error) {
 			console.error(error);
-			setStatus(error instanceof Error ? error.message : 'Création impossible.', 'error');
+			setStatus(error instanceof Error ? error.message : t('createFailed'), 'error');
 		}
 	}
 }
@@ -20260,12 +19579,8 @@ elements.modifierMoreTools?.addEventListener('click', () => {
 	const open = panel.classList.toggle('hidden') === false;
 	trigger.setAttribute('aria-expanded', String(open));
 	trigger.textContent = open
-		? currentLocale() === 'fr'
-			? 'Moins'
-			: 'Less'
-		: currentLocale() === 'fr'
-			? 'Plus'
-			: 'More';
+		? t('less')
+		: t('more');
 });
 elements.scanEditBlocks.addEventListener('click', scanEditableBlocks);
 elements.ocrCurrentPage.addEventListener('click', () => runOcrForCurrentPage(true));
@@ -20881,7 +20196,7 @@ elements.saveChangesFilename.addEventListener('keydown', (event) => {
 elements.propertiesOkButton?.addEventListener('click', () => void applyPropertiesModal());
 elements.propertiesCancelButton?.addEventListener('click', closePropertiesModal);
 elements.propertiesHelpButton?.addEventListener('click', () => {
-	setStatus('Aide : métadonnées du PDF (titre, auteur, sécurité, polices…).', 'info');
+	setStatus(t('propsHelp'), 'info');
 });
 elements.propertiesBackdrop?.addEventListener('click', closePropertiesModal);
 elements.prepressBack?.addEventListener('click', closePrepressPanel);
@@ -21157,9 +20472,7 @@ document.querySelectorAll('[data-tool-action]').forEach((button) => {
 				break;
 			default:
 				setStatus(
-					currentLocale() === 'fr'
-						? 'Cette action n’est pas encore disponible.'
-						: 'This action is not available yet.',
+					t('thisActionIsNotAvailable'),
 					'error'
 				);
 		}
@@ -21169,9 +20482,7 @@ document.querySelectorAll('[data-tool-action]').forEach((button) => {
 document.querySelectorAll('[data-tool-disabled]').forEach((button) => {
 	button.addEventListener('click', () =>
 		setStatus(
-			currentLocale() === 'fr'
-				? 'Cette fonction n’est pas encore disponible.'
-				: button.dataset.toolDisabled,
+			t('toolNotAvailable'),
 			'error'
 		)
 	);
@@ -21202,7 +20513,7 @@ elements.searchForm.addEventListener('submit', async (event) => {
 		setStatus(results.length ? t('resultsFound', results.length) : t('noResults'));
 	} catch (error) {
 		console.error(error);
-		setStatus(error instanceof Error ? error.message : 'Search failed.', 'error');
+		setStatus(error instanceof Error ? error.message : t('searchFailed'), 'error');
 	} finally {
 		elements.searchButton.textContent = t('search');
 		updateUi();
@@ -21274,14 +20585,13 @@ function maybeCheckForUpdates() {
 function showUpdateToast(info) {
 	const auto = isAutoUpdateEnabled();
 	if (!auto && info && info.version && _updateDismissedVersion === info.version) return;
-	const fr = currentLocale() === 'fr';
 	const existing = document.getElementById('slate-update-toast');
 	if (existing) {
 		if (info.version && existing.dataset.version !== info.version) {
 			existing.dataset.version = info.version;
 			const sub = existing.querySelector('.slate-update-toast-sub');
 			if (sub && !_updateInProgress) {
-				sub.textContent = fr ? `Slate ${info.version} est prêt à être installé.` : `Slate ${info.version} is ready to install.`;
+				sub.textContent = t('slateIsReadyToInstall', info.version);
 			}
 		}
 		if (auto && !_updateInProgress) void startUpdateInstall(existing);
@@ -21294,7 +20604,7 @@ function showUpdateToast(info) {
 	toast.setAttribute('role', 'alert');
 	toast.dataset.version = info.version || '';
 	toast.innerHTML = `
-		<button type="button" class="slate-update-toast-close" aria-label="${fr ? 'Ignorer' : 'Dismiss'}" title="${fr ? 'Ignorer jusqu’au prochain lancement' : 'Dismiss until next launch'}">
+		<button type="button" class="slate-update-toast-close" aria-label="${t('dismiss')}" title="${t('dismissUntilNextLaunch')}">
 			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
 		</button>
 		<div class="slate-update-toast-body">
@@ -21302,14 +20612,14 @@ function showUpdateToast(info) {
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
 			</span>
 			<div class="slate-update-toast-text">
-				<div class="slate-update-toast-title">${fr ? 'Mise à jour disponible' : 'Update available'}</div>
-				<div class="slate-update-toast-sub">${fr ? `Slate ${info.version} est prêt à être installé.` : `Slate ${info.version} is ready to install.`}</div>
+				<div class="slate-update-toast-title">${t('updateAvailable')}</div>
+				<div class="slate-update-toast-sub">${t('slateIsReadyToInstall', info.version)}</div>
 			</div>
 		</div>
 		<div class="slate-update-toast-actions">
-			<button type="button" class="slate-update-later">${fr ? 'Plus tard' : 'Later'}</button>
-			<button type="button" class="slate-update-now">${fr ? 'Mettre à jour' : 'Update'}</button>
-			<button type="button" class="slate-update-always">${fr ? 'Mettre à jour automatiquement' : 'Update automatically'}</button>
+			<button type="button" class="slate-update-later">${t('later')}</button>
+			<button type="button" class="slate-update-now">${t('update')}</button>
+			<button type="button" class="slate-update-always">${t('updateAutomatically')}</button>
 		</div>
 		<div class="slate-update-progress" hidden><div class="slate-update-progress-bar"></div></div>
 	`;
@@ -21339,7 +20649,6 @@ function dismissUpdateToast(toast) {
 async function startUpdateInstall(toast) {
 	if (_updateInProgress) return;
 	_updateInProgress = true;
-	const fr = currentLocale() === 'fr';
 	const actions = toast.querySelector('.slate-update-toast-actions');
 	const sub = toast.querySelector('.slate-update-toast-sub');
 	const progress = toast.querySelector('.slate-update-progress');
@@ -21347,7 +20656,7 @@ async function startUpdateInstall(toast) {
 	if (actions) actions.remove();
 	toast.querySelector('.slate-update-toast-close')?.remove();
 	if (progress) progress.hidden = false;
-	if (sub) sub.textContent = fr ? 'Téléchargement de la mise à jour…' : 'Downloading update…';
+	if (sub) sub.textContent = t('downloadingUpdate');
 
 	const tauriListen = window.__TAURI__?.event?.listen;
 	let unlisten = null;
@@ -21364,7 +20673,7 @@ async function startUpdateInstall(toast) {
 	try {
 		// install_update télécharge, installe, puis redémarre l'app : on ne revient
 		// normalement jamais ici en cas de succès.
-		if (sub) sub.textContent = fr ? 'Enregistrement du travail…' : 'Saving your work…';
+		if (sub) sub.textContent = t('savingYourWork');
 		await flushAutosave({ reason: 'update', allTabs: true });
 		persistOpenSession();
 		await flushOpenSessionToDisk();
@@ -21373,7 +20682,7 @@ async function startUpdateInstall(toast) {
 		} catch (_err) {
 			/* install_update pose le flag côté Rust */
 		}
-		if (sub) sub.textContent = fr ? 'Téléchargement de la mise à jour…' : 'Downloading update…';
+		if (sub) sub.textContent = t('downloadingUpdate');
 		await invokeCommand('install_update');
 	} catch (err) {
 		_updateInProgress = false;
@@ -21386,18 +20695,16 @@ async function startUpdateInstall(toast) {
 			_updateRetryCount += 1;
 			const secs = Math.round(UPDATE_RETRY_DELAY_MS / 1000);
 			if (sub) {
-				sub.textContent = fr
-					? `Échec du téléchargement. Nouvelle tentative dans ${secs} s…`
-					: `Download failed. Retrying in ${secs} s…`;
+				sub.textContent = t('downloadFailedRetryingInS', secs);
 			}
 			setTimeout(() => {
 				if (document.body.contains(toast)) void startUpdateInstall(toast);
 			}, UPDATE_RETRY_DELAY_MS);
 			return;
 		}
-		if (sub) sub.textContent = fr ? 'Échec de la mise à jour.' : 'Update failed.';
+		if (sub) sub.textContent = t('updateFailed');
 		showUpdateRetryButton(toast);
-		setStatus(fr ? 'La mise à jour a échoué.' : 'Update failed.', 'error');
+		setStatus(t('updateFailed2'), 'error');
 	}
 }
 
@@ -21405,13 +20712,12 @@ async function startUpdateInstall(toast) {
 // (le pop-up n'était plus actionnable, l'utilisateur restait bloqué).
 function showUpdateRetryButton(toast) {
 	if (!toast || toast.querySelector('.slate-update-toast-actions')) return;
-	const fr = currentLocale() === 'fr';
 	const actions = document.createElement('div');
 	actions.className = 'slate-update-toast-actions';
 	const retry = document.createElement('button');
 	retry.type = 'button';
 	retry.className = 'slate-update-now';
-	retry.textContent = fr ? 'Réessayer' : 'Retry';
+	retry.textContent = t('retry');
 	retry.addEventListener('click', () => {
 		_updateRetryCount = 0;
 		void startUpdateInstall(toast);

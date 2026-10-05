@@ -1,0 +1,3 @@
+/* Español — necesario para que NSSavePanel / NSOpenPanel sigan la configuración regional ES. */
+CFBundleDisplayName = "Slate";
+CFBundleName = "Slate";
